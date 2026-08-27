@@ -155,3 +155,57 @@ Written by the delivery kit's skills (and welcome from humans too). Configured i
   was worth doing needs that before anything else, so it is stated plainly in the
   requirements rather than buried in an assumptions list.
 - Context: shape / user took the position when asked
+
+## 2026-08-27 — Add a sixth annotation tier, `1-kit`, for the kit's own specification files
+
+- Decision: introduce `1-kit` — the kit's own methodology and specification files other than
+  the active delivery profile, cited by path. `1-profile` keeps its existing meaning; the
+  boundary between them is decidable by path, so a reader never has to judge which applies.
+- Alternatives considered: widen `1-profile` to cover all kit files (the design's own
+  proposal); mark the affected lines `ungrounded`.
+- Reason: nine lines in the generated conventions are kit design decisions with no external
+  source, and one of them already ships mis-tiered as `1-docs` with "kit design" as its
+  source — neither a path nor a URL. None of the five existing tiers fits. Widening
+  `1-profile` would have overloaded a tier that currently means one specific file, blurring
+  a boundary that is otherwise checkable by path. Marking them `ungrounded` was rejected
+  because those lines *are* grounded in a file a reader can open, and understating that is
+  the same class of error this feature exists to fix.
+- Cost, accepted knowingly: the requirements' § 8 states "Custom needs: None", so this is
+  vocabulary beyond what they authorised, and the requirements' own tier preamble now needs
+  editing to match. The maintainer chose it with that cost stated.
+- Context: build phase 1B / user chose the alternative the design argued against.
+
+## 2026-08-27 — Carry the `read_on` field name as provisional rather than settling it
+
+- Decision: write the Phase 1B contracts and the Phase 3 specifications with `read_on` marked
+  provisional throughout, and run the FR-015 validation gate before implementation begins in
+  the kit repository.
+- Alternatives considered: run the gate now, before the contracts are written; waive it in
+  writing and treat `read_on` as final.
+- Reason: FR-015 makes the `verified:` → `read_on:` verb change a merge gate — two versions
+  of one conventions file put to a model to see whether it distinguishes their grounding —
+  and the gate has not run. Waiving it would ship the untested bet the requirements
+  deliberately flagged. Running it first would have blocked contract work on an experiment
+  whose outcome changes one token. The contracts are instead written so the verb is
+  substitutable: `read_on` appears in no function name, exported symbol, file name, or
+  fixture path, and a conformance assertion enforces that. If the gate comes back against
+  the name, the change is a text substitution rather than a redesign.
+- Context: build phase 1B / user chose to defer with the substitutability property in place.
+
+## 2026-08-27 — Report schema-version drift on stderr, and say nothing when the key is absent
+
+- Decision: the gate subcommand gains a version reader whose entire output is one advisory
+  line on stderr; `evaluateGate()`'s return object, stdout, and the exit code are unchanged.
+  A file whose `schema_version` line is absent or unparseable produces no advisory.
+- Alternatives considered: add the drift to `evaluateGate()`'s return value; print a second
+  stdout line; add a separate `schema-report` subcommand; report on an absent key.
+- Reason: the conformance test asserts `evaluateGate()`'s return with `deepStrictEqual` in
+  nine cases and asserts the exact stdout word across all thirteen skills' gate call sites,
+  so the first two options break shipped tests and a documented contract thirteen skills
+  branch on. A separate subcommand would be called by nothing without editing all thirteen
+  gate stanzas, far outside this feature's file list. Silence on an absent key was chosen
+  because every real artifact carries it, the absent-key migration signal is already owned by
+  the provenance check, and reporting would fire on the test suite's own stub fixture — an
+  advisory that cries wolf during the tests is one nobody reads in the field.
+- Context: build phase 1B / design decision, grounded in the specific assertions at
+  `ai-delivery/tests/portability-conformance.js` lines 92–138 and 218–246.

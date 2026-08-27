@@ -284,3 +284,193 @@ the assumption is load-bearing and was untested.
 No questions. `brief.md` generated from framing, synthesis (including the revised Chosen
 Direction), and the risk challenge. Seven open questions carried forward for the shape
 skill, each with a named owner.
+
+---
+
+## Build — Phase 1A (2026-08-27)
+
+### Q20 — The requirements target the kit repo, but the build is running in kit-scratch. Where should this be built?
+
+**A.** Design and specs only; stop before code.
+
+**Decision recorded.** The requirements' § 8 file list is entirely in
+`/Users/maxdamsky/Projects/ai-delivery-kit` (Node and markdown). The setup record governing
+this build is kit-scratch's, which records Python, pytest, and `greenfield: true` — a stack
+`docs/decisions.md` says was *chosen, not detected*, because the repository was empty. The
+kit repository has no `.ai-delivery/` of its own, so Phase 4's required conventions and
+rubrics describe nothing that this feature touches.
+
+Alternatives declined: building in the kit repository directly (needs setup run there first,
+and would discard this session's Phase 1 work); building a Python analogue here as a harness
+exercise (exercises the build skill but does not fix the real defect).
+
+Consequence: Phases 1A–1C, unit confirmation, and per-unit specs run here, written against
+the real kit files read directly. Implementation is deferred to the kit repository.
+
+### Q21 — FR-015 makes the verb change a merge gate. How should the design treat it?
+
+**A.** Note it as an open gate and defer to the maintainer.
+
+**Decision recorded.** The experiment — two versions of a conventions file, one `verified:`
+and one `read_on:`, put to a model to classify each line's grounding — has not run. The
+design therefore treats `read_on` as **provisional** and says so at every point it commits to
+the name. Owner: kit maintainer.
+
+Alternatives declined: designing sequencing around it as a hard blocker on Unit 1 (premature
+while the field name itself is unsettled); running it during this phase (out of scope for a
+design-and-specs invocation).
+
+### Phase 1A findings not carried from requirements
+
+**A fourth defect, found by direct inspection.** `conventions.md` carries
+`[source: kit design · tier: 1-docs · verified: 2026-08-12]`. "kit design" is neither a path
+nor a URL, and `1-docs` is defined as documentation "actually fetched." The kit has no tier
+for its own design decisions, so one was borrowed dishonestly. Raised as ADR-003, left open
+for the maintainer.
+
+**FR-010's target counted.** Eight of the thirteen Linear Conventions bullets in
+`conventions.md` ship with no annotation.
+
+**FR-012 has a contract collision.** `artifact-schemas.md § 8` states the gate prints
+*exactly* `MISSING`, `STALE`, or `FRESH`; thirteen skills branch on that word and
+`tests/portability-conformance.js` asserts it. Reporting version drift on stdout would break
+all three. Resolved as ADR-002: the advisory goes to stderr, leaving stdout and the exit code
+byte-for-byte unchanged.
+
+---
+
+## Phase 1B — Detailed Contracts (2026-08-27)
+
+### Q22 — ADR-003: how should the kit's own specification files be cited?
+
+**A.** Add a new `1-kit` tier.
+
+**Decision recorded.** `1-kit` means the kit's own methodology and specification files other
+than the active delivery profile, cited by path. `1-profile` is unchanged, and the boundary is
+decidable by path: the active profile file is `1-profile`, any other kit file is `1-kit`.
+
+This is the alternative Phase 1A argued against. Its cost was stated when the question was
+put and is accepted: the requirements' § 8 says "Custom needs: None", so this is vocabulary
+beyond what they authorised, and the requirements' tier preamble now needs editing to match.
+That edit is carried as an action in `design/1b-contracts.md`.
+
+Alternatives declined: widening `1-profile` to cover all kit files (Phase 1A's own proposal —
+overloads a tier that currently names one specific file); marking the lines `ungrounded`
+(understates the truth, since those lines are grounded in a file a reader can open).
+
+### Q23 — FR-015: the verb-change validation gate has not run. What now?
+
+**A.** Keep it provisional — write 1B and the specs with `read_on` marked provisional, and run
+the gate before implementation begins in the kit repository.
+
+**Decision recorded.** The contracts are written so the verb is substitutable: `read_on`
+appears only in the third slot of an annotation, never in a function name, exported symbol,
+file name, or fixture path, and the schema-version reader never matches on it. Conformance
+assertion 22 enforces that property, which is what turns "provisional" from a promise into
+something checkable.
+
+Alternatives declined: running the gate during this phase (blocks contract work on an
+experiment that changes one token); waiving it in writing (ships the untested bet the
+requirements deliberately made a merge gate).
+
+### Phase 1B findings not carried from Phase 1A
+
+**The gate's return shape is frozen by the test, not just by the documentation.**
+`ai-delivery/tests/portability-conformance.js` asserts `evaluateGate()`'s return with
+`assert.deepStrictEqual` in nine cases, so adding a third key to that object fails all nine.
+Phase 1A's ADR-002 reached the stderr answer by reasoning about the § 8 stdout contract; this
+phase found the harder constraint underneath it. The same test does *not* assert on stderr,
+which is what leaves the advisory channel open. Recorded as Contract 5.
+
+**`reference-output/` contradicts the schema specification.** `artifact-schemas.md § 1` says
+`rubrics.md` carries `schema_version: 2`, but all three files in the kit's `reference-output/`
+carry `schema_version: 1`. Artifacts generated on 2026-08-12 carry conventions 1, gates 1,
+rubrics 2 — matching FR-011. `reference-output/` is a stale sample predating the rubrics bump.
+Refreshing it is folded into Unit 4's scope rather than raised as a separate defect.
+
+**A row of the conversion mapping cannot be mechanical.** `source: kit design` names no file,
+so the conversion cannot derive the replacement path by transformation. Phase 3 must enumerate
+the nine affected bullets with their target paths individually — a table of specific edits, not
+a rule.
+
+---
+
+## Phase 2 — Decomposition (2026-08-27)
+
+### Q24 — All five units append assertions to the kit's single test file. How should the decomposition handle that conflict?
+
+**A.** Accept and serialize.
+
+**Decision recorded.** `ai-delivery/tests/portability-conformance.js` is treated as this
+repository's `requirements.txt` — the decomposition guide's own named example of an acceptable
+shared file. The consequence is stated rather than hidden: **there is no parallel first batch**,
+and the five units run in six sequential batches. The cost is low because every unit is a small
+text edit to a specification file, so serialization spends ordering rather than weeks.
+
+Alternatives declined: splitting into per-unit test files (invents a new test convention in a
+repository whose portability is a hard, tested constraint, and nothing currently discovers or
+runs multiple test files); moving all assertions into the integration unit (breaks the
+profile's test-first rule — assertions would follow the behaviour rather than precede it).
+
+### Q25 — Approve creating the integration issue in Linear?
+
+**A.** Skeletons only, no Linear write.
+
+**Decision recorded.** The six spec skeletons were written to `specs/` and Linear was left
+untouched. No issue was created and no issue state was changed; all five units remain in
+Backlog. Creating the integration issue is carried as a pending action in `tracker.md § Build`
+with the kit maintainer as owner, including the exact shape it must take — top-level,
+`integration` label, final milestone, blocked-by CDR-10..14.
+
+### Phase 2 findings
+
+**One conflict was eliminated rather than accepted.** CDR-10 and CDR-11 both had a claim on
+`artifact-schemas.md`: the requirements' § 8 puts the § 3/§ 4/§ 5 skeletons under "grammar
+definition" but puts FR-010 under the emitter. The file was given entirely to CDR-10 — the
+skeleton text is grammar, the behaviour that emits against it is CDR-11's `SKILL.md` change.
+
+**No sub-issues were needed.** Each of the five tracked units is one component at one
+architectural boundary, matching implementation grain one-to-one.
+
+---
+
+## Phase 3 — Code Specs (2026-08-27)
+
+Six specs written to `specs/`, 1,450 lines. No new questions were put to the user; the
+following were found by direct inspection of the kit repository and are recorded as findings.
+
+### Phase 3 findings
+
+**The file CDR-13 edits contains the defect CDR-13 exists to prevent.** `setup/SKILL.md`'s
+re-run staleness table currently reads: *"Artifact `schema_version` vs current → Regenerate
+skeletons, carry confirmed content forward, **refresh dates**."* Refreshing dates is exactly
+what FR-013 forbids — it would advance every date without any source being re-read, which is
+the original defect performed at scale by the fix for it. Changing that row is now the single
+most important edit in CDR-13.
+
+**"owner ruling" is a source class the design did not anticipate.** The § 4 Linear Conventions
+skeleton holds 16 bullets, counted 2026-08-27: 7 carry no annotation, 4 carry
+`source: kit design`, and 5 carry `source: owner ruling` — all nine annotated ones mis-tiered
+`1-docs` with a source that is neither a path nor a URL. ADR-003's `1-kit` tier covers "kit
+design" cleanly. It does not obviously cover a maintainer's ruling, because no tier describes
+a human decision recorded nowhere.
+
+The specs resolve it this way: the rulings *are* recorded — a search on 2026-08-27 found the
+initiative-binding rulings discussed across the kit's plan and run-record documents — so each
+bullet cites the document carrying its ruling, tier `1-kit`. **Where no record exists, the
+honest fix is to record the decision and then cite it**, not to annotate it `3-model` (which
+would claim model knowledge for a human decision) and not to leave it bare (which would claim
+human authorship of a kit-written line). That is an action for the kit maintainer, carried in
+CDR-10's spec.
+
+**`reference-output/` contradicts the specification it illustrates.** All three sample files
+carry `schema_version: 1` and `verified:` dates from 2026-08-02, while `artifact-schemas.md`
+§ 1 already states rubrics carries 2. Live artifacts generated 2026-08-12 carry 1, 1, 2 —
+matching FR-011. The samples are stale, not a second opinion; refreshing them is folded into
+CDR-13 rather than raised as a separate defect.
+
+**The conversion is larger than it reads.** A typical generated repository carries roughly 65
+annotations — 41 in `conventions.md`, 22 in `rubrics.md`, 2 in `gates.md`, counted 2026-08-27.
+CDR-13's spec therefore requires the proposal be grouped by artifact and conversion kind with
+counts: a proposal a user cannot read is a proposal they accept without reading, which would
+defeat the diff-and-propose guarantee that is the conversion's only safety property.
