@@ -209,3 +209,79 @@ Written by the delivery kit's skills (and welcome from humans too). Configured i
   advisory that cries wolf during the tests is one nobody reads in the field.
 - Context: build phase 1B / design decision, grounded in the specific assertions at
   `ai-delivery/tests/portability-conformance.js` lines 92–138 and 218–246.
+
+## 2026-08-27 — Move generator determinism to the start of FR-015 Stage 3
+
+- Decision: Stage 2 observes the environment and builds nothing. The generator is the first
+  Stage-3 artifact, and its byte-determinism check runs immediately after it is built and
+  before fixture files are written.
+- Alternatives considered: keep determinism in Stage 2; build the generator during Stage 2.
+- Reason: determinism is a property of the artifact Stage 3 creates. Requiring it in an
+  environment-only stage made the two stages jointly unsatisfiable. This defect and its
+  resolution are verified on 2026-08-27 from the owner ruling.
+- Context: FR-015 experimental harness / owner ruling.
+
+## 2026-08-27 — Pin FR-015 subjects to Sonnet 5 at high effort
+
+- Decision: every subject invocation carries the exact flags `--model claude-sonnet-5` and
+  `--effort high`. Every slot records those flags and separately records the returned model
+  and effort. Missing or differing returned values make the slot fail. Haiku is excluded
+  because flag acceptance did not establish applied effort.
+- Alternatives considered: use the account default; Opus at xhigh; include Haiku despite an
+  unobservable effort condition.
+- Reason: the experiment asks whether one word changes treatment of a stale date. A stronger
+  model at higher effort may reason about dates regardless of the verb, compressing the arm
+  difference and risking a false negative at the population most at risk. Deployed readers
+  skew toward faster defaults, making the weaker end both a common condition and a sensitive
+  instrument. The selection, rationale, mismatch rule, and Haiku exclusion are verified on
+  2026-08-27 from the owner ruling.
+- Context: FR-015 experimental harness / owner ruling. Auxiliary Haiku usage appeared in
+  result telemetry during non-trial Opus, Fable, and Sonnet calls; its role is unverified.
+
+## 2026-08-27 — Keep usage credits enabled and measure observed billing movement
+
+- Decision: usage credits remain enabled for the 120-slot run. The operator records credits
+  spent and current balance immediately before slot 1 and immediately after the final slot.
+  Movement in either becomes a neutral run finding carrying both readings.
+- Alternatives considered: disable usage credits and risk halting at a subscription limit;
+  infer the probe's billing path from a movement too small to separate from other activity.
+- Reason: the owner accepted possible API-rate billing in exchange for allowing the sequence
+  to continue if a five-hour or weekly limit is reached. The post-probe meter was
+  inconclusive. The decision and tradeoff are verified on 2026-08-27 from the owner ruling;
+  the six starting figures are owner-reported UI observations, not repository-verified.
+- Context: FR-015 experimental harness / billing procedure.
+
+## 2026-08-27 — Resolve the FR-015 fixture cursors arm-invariantly
+
+- Decision: use `.ai-delivery/features/cited-source-staleness/fr-015-harness/`; index the 41
+  annotated rows from zero for family modulo; preserve the control-cycle quotas but swap
+  C15 with C18 and C24 with C27 so `unreachable:` lands only on eligible tiers; and advance
+  one shared old-date cursor across old-grounded and unreachable rows in file order.
+- Alternatives considered: one-based family indexing; the literal control cycle despite
+  ineligible tiers; a separate old-date cursor for unreachable rows.
+- Reason: zero-based indexing is the only interpretation under which C15 becomes the control
+  named by the handoff. The two swaps give 5 ungrounded, 4 unreachable, and 4 bare controls
+  while preserving every unreachable source/tier at `1-docs`. “One cursor per cycle” makes a
+  second unreachable-date cursor inconsistent. The counts and eligibility are repo-verified
+  on 2026-08-27 from the digest-pinned base. All choices are identical across arms.
+- Context: FR-015 delegated cursor semantics and file layout.
+
+## 2026-08-27 — Use direct, isolated slots and joined loopback effort telemetry
+
+- Decision: schedule the 20 pile repetitions first and the 10 action repetitions second,
+  round-robin A–D within each type. Each slot uses a unique empty temporary directory plus
+  the proved safe-mode/no-tools/no-persistence flags, writes output outside that directory,
+  and receives no automatic retry. The prompt is fixture bytes, one blank line, then fixed
+  instruction bytes as one positional argument after `--`. A ten-minute timeout is a
+  terminal failure. The invariance statistic pools the five Never-grounded and four
+  Human-authored keyed rows within each trial.
+- Alternatives considered: interleave trial types; retry failed logical slots; infer effort
+  from the requested flag; use a persisted session record to obtain effort.
+- Reason: these are arm-invariant scheduling, retry, parsing, and statistic choices. A
+  non-persistent stream reports the model but omitted effort in an actual probe. On
+  2026-08-27 a loopback OTLP probe returned `model=claude-sonnet-5`, `effort=high`, and
+  `query_source=sdk` on an `api_request` event joinable to that invocation's stream session
+  ID. The runner stores only the joined fields and request identifiers, not OTLP identity or
+  prompt attributes. This mechanism is verified on 2026-08-27 by observed effect.
+- Context: FR-015 delegated mechanism choices; requested flags are not treated as resolved
+  values.

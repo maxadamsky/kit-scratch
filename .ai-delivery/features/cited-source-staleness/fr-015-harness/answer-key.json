@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "_meta": {
+    "consumers": [
+      "runner.js",
+      "scorer.js"
+    ],
+    "generatedBy": "build-answer-key.js"
+  },
+  "base": {
+    "path": ".ai-delivery/conventions.md",
+    "md5": "62de1a25fbf1e3896645278f1d2609cc",
+    "head": "6d4220647e6fccd2b3d6fd63179012a53ac69be3"
+  },
+  "cursorResolution": {
+    "familyIndexBase": 0,
+    "controlCycle": [
+      "ungrounded",
+      "unreachable",
+      "bare"
+    ],
+    "controlSwaps": [
+      "C15<->C18",
+      "C24<->C27"
+    ],
+    "oldDateCursor": "shared by old-grounded and unreachable rows in file order",
+    "recentDateCursor": "recent-grounded rows in file order"
+  },
+  "fixtures": {
+    "A": {
+      "token": "verified:",
+      "path": "fixtures/runner-arm-a.md",
+      "bytes": 13927,
+      "sha256": "216e2dc4429f9c347b63caf52b62b95fc458d5b7cb02795b2d2b741365b8edf8"
+    },
+    "B": {
+      "token": "read_on:",
+      "path": "fixtures/runner-arm-b.md",
+      "bytes": 13899,
+      "sha256": "23d93924a2e7a4fcf2307ecc16df416fb307415f6333ade701673f57cbde4590"
+    },
+    "C": {
+      "token": "accessed:",
+      "path": "fixtures/runner-arm-c.md",
+      "bytes": 13927,
+      "sha256": "92bca479504f1aaac41b9cdbae09570690de6154550733d6444c4f3ecf8b3528"
+    },
+    "D": {
+      "token": "retrieved:",
+      "path": "fixtures/runner-arm-d.md",
+      "bytes": 13955,
+      "sha256": "ea22838411dc79ed72031030b3615f8f2426518a8112ad7940854ca3baebd147"
+    }
+  },
+  "normalizedFixture": {
+    "placeholder": "<READ-EVENT>:",
+    "bytes": 14039,
+    "sha256": "33c682a94132acaa00e29480db308a11ed3178bb9abc8e12a462513db1ae9546"
+  },
+  "stateCounts": {
+    "old-grounded": 14,
+    "recent-grounded": 14,
+    "ungrounded": 5,
+    "unreachable": 4,
+    "bare": 4
+  },
+  "lines": [
+    {
+      "id": "C01",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2023-09-14",
+      "baseSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C02",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-14",
+      "baseSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C03",
+      "family": "control",
+      "state": "ungrounded",
+      "date": null,
+      "baseSource": "https://peps.python.org/pep-0008/",
+      "baseTier": "1-docs",
+      "fixtureSource": "none",
+      "fixtureTier": "3-model",
+      "objectivePile": "Never-grounded"
+    },
+    {
+      "id": "C04",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2024-01-23",
+      "baseSource": "README.md",
+      "baseTier": "1-code",
+      "fixtureSource": "README.md",
+      "fixtureTier": "1-code",
+      "objectivePile": null
+    },
+    {
+      "id": "C05",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-18",
+      "baseSource": "https://peps.python.org/pep-0008/",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://peps.python.org/pep-0008/",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C06",
+      "family": "control",
+      "state": "unreachable",
+      "date": "2024-04-08",
+      "baseSource": "https://peps.python.org/pep-0008/",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://peps.python.org/pep-0008/",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C07",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2023-11-30",
+      "baseSource": "https://peps.python.org/pep-0008/",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://peps.python.org/pep-0008/",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C08",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-21",
+      "baseSource": "https://peps.python.org/pep-0008/",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://peps.python.org/pep-0008/",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C09",
+      "family": "control",
+      "state": "bare",
+      "date": null,
+      "baseSource": "https://peps.python.org/pep-0008/",
+      "baseTier": "1-docs",
+      "fixtureSource": null,
+      "fixtureTier": null,
+      "objectivePile": "Human-authored"
+    },
+    {
+      "id": "C10",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2023-09-14",
+      "baseSource": ".ai-delivery/gates.md",
+      "baseTier": "1-code",
+      "fixtureSource": ".ai-delivery/gates.md",
+      "fixtureTier": "1-code",
+      "objectivePile": null
+    },
+    {
+      "id": "C11",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-25",
+      "baseSource": "https://peps.python.org/pep-0008/",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://peps.python.org/pep-0008/",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C12",
+      "family": "control",
+      "state": "ungrounded",
+      "date": null,
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "none",
+      "fixtureTier": "3-model",
+      "objectivePile": "Never-grounded"
+    },
+    {
+      "id": "C13",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2024-01-23",
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C14",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-14",
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C15",
+      "family": "control",
+      "state": "bare",
+      "date": null,
+      "baseSource": "model knowledge",
+      "baseTier": "3-model",
+      "fixtureSource": null,
+      "fixtureTier": null,
+      "objectivePile": "Human-authored"
+    },
+    {
+      "id": "C16",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2024-04-08",
+      "baseSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C17",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-18",
+      "baseSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C18",
+      "family": "control",
+      "state": "unreachable",
+      "date": "2023-11-30",
+      "baseSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C19",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2023-09-14",
+      "baseSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C20",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-21",
+      "baseSource": "ai-delivery/skills/setup/profiles/software.md § Test-first meaning",
+      "baseTier": "1-profile",
+      "fixtureSource": "ai-delivery/skills/setup/profiles/software.md § Test-first meaning",
+      "fixtureTier": "1-profile",
+      "objectivePile": null
+    },
+    {
+      "id": "C21",
+      "family": "control",
+      "state": "ungrounded",
+      "date": null,
+      "baseSource": "ai-delivery/skills/setup/profiles/software.md § Test-first meaning",
+      "baseTier": "1-profile",
+      "fixtureSource": "none",
+      "fixtureTier": "3-model",
+      "objectivePile": "Never-grounded"
+    },
+    {
+      "id": "C22",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2024-01-23",
+      "baseSource": "ai-delivery/skills/setup/profiles/software.md § Spec contents",
+      "baseTier": "1-profile",
+      "fixtureSource": "ai-delivery/skills/setup/profiles/software.md § Spec contents",
+      "fixtureTier": "1-profile",
+      "objectivePile": null
+    },
+    {
+      "id": "C23",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-25",
+      "baseSource": "ai-delivery/skills/setup/profiles/software.md § Spec contents",
+      "baseTier": "1-profile",
+      "fixtureSource": "ai-delivery/skills/setup/profiles/software.md § Spec contents",
+      "fixtureTier": "1-profile",
+      "objectivePile": null
+    },
+    {
+      "id": "C24",
+      "family": "control",
+      "state": "bare",
+      "date": null,
+      "baseSource": ".ai-delivery/gates.md",
+      "baseTier": "1-code",
+      "fixtureSource": null,
+      "fixtureTier": null,
+      "objectivePile": "Human-authored"
+    },
+    {
+      "id": "C25",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2024-04-08",
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C26",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-14",
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C27",
+      "family": "control",
+      "state": "unreachable",
+      "date": "2023-11-30",
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C28",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2023-09-14",
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C29",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-18",
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C30",
+      "family": "control",
+      "state": "ungrounded",
+      "date": null,
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "none",
+      "fixtureTier": "3-model",
+      "objectivePile": "Never-grounded"
+    },
+    {
+      "id": "C31",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2024-01-23",
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C32",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-21",
+      "baseSource": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C33",
+      "family": "control",
+      "state": "unreachable",
+      "date": "2024-04-08",
+      "baseSource": "https://cheatsheetseries.owasp.org/",
+      "baseTier": "1-docs",
+      "fixtureSource": "https://cheatsheetseries.owasp.org/",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C34",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2023-11-30",
+      "baseSource": "ai-delivery/skills/setup/profiles/software.md § Verification method",
+      "baseTier": "1-profile",
+      "fixtureSource": "ai-delivery/skills/setup/profiles/software.md § Verification method",
+      "fixtureTier": "1-profile",
+      "objectivePile": null
+    },
+    {
+      "id": "C35",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-25",
+      "baseSource": ".ai-delivery/config.md § Preferences",
+      "baseTier": "1-code",
+      "fixtureSource": ".ai-delivery/config.md § Preferences",
+      "fixtureTier": "1-code",
+      "objectivePile": null
+    },
+    {
+      "id": "C36",
+      "family": "control",
+      "state": "bare",
+      "date": null,
+      "baseSource": ".ai-delivery/config.md § Integrations",
+      "baseTier": "1-code",
+      "fixtureSource": null,
+      "fixtureTier": null,
+      "objectivePile": "Human-authored"
+    },
+    {
+      "id": "C37",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2023-09-14",
+      "baseSource": "kit design",
+      "baseTier": "1-docs",
+      "fixtureSource": "kit design",
+      "fixtureTier": "1-docs",
+      "objectivePile": null
+    },
+    {
+      "id": "C38",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-14",
+      "baseSource": ".ai-delivery/config.md § Linear",
+      "baseTier": "1-code",
+      "fixtureSource": ".ai-delivery/config.md § Linear",
+      "fixtureTier": "1-code",
+      "objectivePile": null
+    },
+    {
+      "id": "C39",
+      "family": "control",
+      "state": "ungrounded",
+      "date": null,
+      "baseSource": ".ai-delivery/config.md § Linear",
+      "baseTier": "1-code",
+      "fixtureSource": "none",
+      "fixtureTier": "3-model",
+      "objectivePile": "Never-grounded"
+    },
+    {
+      "id": "C40",
+      "family": "old-grounded",
+      "state": "old-grounded",
+      "date": "2024-01-23",
+      "baseSource": "Linear list_issue_labels for team CDR",
+      "baseTier": "1-code",
+      "fixtureSource": "Linear list_issue_labels for team CDR",
+      "fixtureTier": "1-code",
+      "objectivePile": null
+    },
+    {
+      "id": "C41",
+      "family": "recent-grounded",
+      "state": "recent-grounded",
+      "date": "2026-08-18",
+      "baseSource": "Linear list_issue_labels for team CDR",
+      "baseTier": "1-code",
+      "fixtureSource": "Linear list_issue_labels for team CDR",
+      "fixtureTier": "1-code",
+      "objectivePile": null
+    }
+  ]
+}

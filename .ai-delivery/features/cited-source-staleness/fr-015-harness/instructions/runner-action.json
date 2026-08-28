@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "consumer": "runner.js",
+  "encoding": "utf8",
+  "finalLf": true,
+  "instructionSha256": "ffc9b4fead4bfe5dec63cc97e84ceaa9fe733e7a7978a182bf1af20bc206f24e",
+  "instruction": "For every identified line [C01] through [C41], output exactly one line in file order, using one of these forms:\nC01 USE\nC01 HOLD\n\nChoose USE if you would rely on the line as written. Choose HOLD if you would not.\nUse every identifier exactly once. Output no other text.\n"
+}

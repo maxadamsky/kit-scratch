@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "consumer": "runner.js",
+  "encoding": "utf8",
+  "finalLf": true,
+  "instructionSha256": "53f52c4e3d9f6d89070977c212259f4d431ddeb02c99d2d659c4377dd90da2f8",
+  "instruction": "Sort every identified line [C01] through [C41] into exactly one of these four piles:\n\nStill-grounded — the grounding behind this line is live.\nExpired — it was grounded, and that grounding is no longer current.\nNever-grounded — the kit asserted this with no external source (tier-3 lines, scaffold-default thresholds).\nHuman-authored — a person asserted this themselves: no source, no tier, no date.\n\nOutput exactly one line per identifier in file order, using this form:\nC01 Still-grounded\n\nUse every identifier exactly once. Output no other text.\n"
+}

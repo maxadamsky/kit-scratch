@@ -1,0 +1,4960 @@
+{
+  "schemaVersion": 1,
+  "_meta": {
+    "consumers": [
+      "runner.js",
+      "completion-gate.js",
+      "scorer.js"
+    ],
+    "createdBy": "runner.js initialize"
+  },
+  "run": {
+    "experiment": "FR-015 verb-change reader validation",
+    "stage": "stage-4-owner-review",
+    "createdAt": "2026-08-28T02:30:15.344Z",
+    "slotsPlanned": 120,
+    "slotsAttempted": 0,
+    "successfulSlots": 0,
+    "terminallyFailedSlots": 0,
+    "modelPin": "claude-sonnet-5",
+    "effortPin": "high"
+  },
+  "usageCredits": {
+    "source": "unverified owner-reported Settings > Usage UI observation",
+    "observedAt": "2026-08-27",
+    "probeReading": {
+      "creditsSpentUsd": 69.4,
+      "currentBalanceUsd": 51.47,
+      "monthlySpendLimitUsd": 100,
+      "creditPeriodResets": "Sep 1",
+      "currentSessionWindowUsedPercent": 5,
+      "weeklyAllModelsUsedPercent": 8,
+      "probeAttribution": "inconclusive; the probe was too small to separate from other activity"
+    },
+    "beforeRun": null,
+    "afterRun": null,
+    "movement": null
+  },
+  "entries": [
+    {
+      "slotId": "pile-sort-01-A",
+      "sequence": 1,
+      "trialType": "pile-sort",
+      "trial": 1,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-01-B",
+      "sequence": 2,
+      "trialType": "pile-sort",
+      "trial": 1,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-01-C",
+      "sequence": 3,
+      "trialType": "pile-sort",
+      "trial": 1,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-01-D",
+      "sequence": 4,
+      "trialType": "pile-sort",
+      "trial": 1,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-02-A",
+      "sequence": 5,
+      "trialType": "pile-sort",
+      "trial": 2,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-02-B",
+      "sequence": 6,
+      "trialType": "pile-sort",
+      "trial": 2,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-02-C",
+      "sequence": 7,
+      "trialType": "pile-sort",
+      "trial": 2,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-02-D",
+      "sequence": 8,
+      "trialType": "pile-sort",
+      "trial": 2,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-03-A",
+      "sequence": 9,
+      "trialType": "pile-sort",
+      "trial": 3,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-03-B",
+      "sequence": 10,
+      "trialType": "pile-sort",
+      "trial": 3,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-03-C",
+      "sequence": 11,
+      "trialType": "pile-sort",
+      "trial": 3,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-03-D",
+      "sequence": 12,
+      "trialType": "pile-sort",
+      "trial": 3,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-04-A",
+      "sequence": 13,
+      "trialType": "pile-sort",
+      "trial": 4,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-04-B",
+      "sequence": 14,
+      "trialType": "pile-sort",
+      "trial": 4,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-04-C",
+      "sequence": 15,
+      "trialType": "pile-sort",
+      "trial": 4,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-04-D",
+      "sequence": 16,
+      "trialType": "pile-sort",
+      "trial": 4,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-05-A",
+      "sequence": 17,
+      "trialType": "pile-sort",
+      "trial": 5,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-05-B",
+      "sequence": 18,
+      "trialType": "pile-sort",
+      "trial": 5,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-05-C",
+      "sequence": 19,
+      "trialType": "pile-sort",
+      "trial": 5,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-05-D",
+      "sequence": 20,
+      "trialType": "pile-sort",
+      "trial": 5,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-06-A",
+      "sequence": 21,
+      "trialType": "pile-sort",
+      "trial": 6,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-06-B",
+      "sequence": 22,
+      "trialType": "pile-sort",
+      "trial": 6,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-06-C",
+      "sequence": 23,
+      "trialType": "pile-sort",
+      "trial": 6,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-06-D",
+      "sequence": 24,
+      "trialType": "pile-sort",
+      "trial": 6,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-07-A",
+      "sequence": 25,
+      "trialType": "pile-sort",
+      "trial": 7,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-07-B",
+      "sequence": 26,
+      "trialType": "pile-sort",
+      "trial": 7,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-07-C",
+      "sequence": 27,
+      "trialType": "pile-sort",
+      "trial": 7,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-07-D",
+      "sequence": 28,
+      "trialType": "pile-sort",
+      "trial": 7,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-08-A",
+      "sequence": 29,
+      "trialType": "pile-sort",
+      "trial": 8,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-08-B",
+      "sequence": 30,
+      "trialType": "pile-sort",
+      "trial": 8,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-08-C",
+      "sequence": 31,
+      "trialType": "pile-sort",
+      "trial": 8,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-08-D",
+      "sequence": 32,
+      "trialType": "pile-sort",
+      "trial": 8,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-09-A",
+      "sequence": 33,
+      "trialType": "pile-sort",
+      "trial": 9,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-09-B",
+      "sequence": 34,
+      "trialType": "pile-sort",
+      "trial": 9,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-09-C",
+      "sequence": 35,
+      "trialType": "pile-sort",
+      "trial": 9,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-09-D",
+      "sequence": 36,
+      "trialType": "pile-sort",
+      "trial": 9,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-10-A",
+      "sequence": 37,
+      "trialType": "pile-sort",
+      "trial": 10,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-10-B",
+      "sequence": 38,
+      "trialType": "pile-sort",
+      "trial": 10,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-10-C",
+      "sequence": 39,
+      "trialType": "pile-sort",
+      "trial": 10,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-10-D",
+      "sequence": 40,
+      "trialType": "pile-sort",
+      "trial": 10,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-11-A",
+      "sequence": 41,
+      "trialType": "pile-sort",
+      "trial": 11,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-11-B",
+      "sequence": 42,
+      "trialType": "pile-sort",
+      "trial": 11,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-11-C",
+      "sequence": 43,
+      "trialType": "pile-sort",
+      "trial": 11,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-11-D",
+      "sequence": 44,
+      "trialType": "pile-sort",
+      "trial": 11,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-12-A",
+      "sequence": 45,
+      "trialType": "pile-sort",
+      "trial": 12,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-12-B",
+      "sequence": 46,
+      "trialType": "pile-sort",
+      "trial": 12,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-12-C",
+      "sequence": 47,
+      "trialType": "pile-sort",
+      "trial": 12,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-12-D",
+      "sequence": 48,
+      "trialType": "pile-sort",
+      "trial": 12,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-13-A",
+      "sequence": 49,
+      "trialType": "pile-sort",
+      "trial": 13,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-13-B",
+      "sequence": 50,
+      "trialType": "pile-sort",
+      "trial": 13,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-13-C",
+      "sequence": 51,
+      "trialType": "pile-sort",
+      "trial": 13,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-13-D",
+      "sequence": 52,
+      "trialType": "pile-sort",
+      "trial": 13,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-14-A",
+      "sequence": 53,
+      "trialType": "pile-sort",
+      "trial": 14,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-14-B",
+      "sequence": 54,
+      "trialType": "pile-sort",
+      "trial": 14,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-14-C",
+      "sequence": 55,
+      "trialType": "pile-sort",
+      "trial": 14,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-14-D",
+      "sequence": 56,
+      "trialType": "pile-sort",
+      "trial": 14,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-15-A",
+      "sequence": 57,
+      "trialType": "pile-sort",
+      "trial": 15,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-15-B",
+      "sequence": 58,
+      "trialType": "pile-sort",
+      "trial": 15,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-15-C",
+      "sequence": 59,
+      "trialType": "pile-sort",
+      "trial": 15,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-15-D",
+      "sequence": 60,
+      "trialType": "pile-sort",
+      "trial": 15,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-16-A",
+      "sequence": 61,
+      "trialType": "pile-sort",
+      "trial": 16,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-16-B",
+      "sequence": 62,
+      "trialType": "pile-sort",
+      "trial": 16,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-16-C",
+      "sequence": 63,
+      "trialType": "pile-sort",
+      "trial": 16,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-16-D",
+      "sequence": 64,
+      "trialType": "pile-sort",
+      "trial": 16,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-17-A",
+      "sequence": 65,
+      "trialType": "pile-sort",
+      "trial": 17,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-17-B",
+      "sequence": 66,
+      "trialType": "pile-sort",
+      "trial": 17,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-17-C",
+      "sequence": 67,
+      "trialType": "pile-sort",
+      "trial": 17,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-17-D",
+      "sequence": 68,
+      "trialType": "pile-sort",
+      "trial": 17,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-18-A",
+      "sequence": 69,
+      "trialType": "pile-sort",
+      "trial": 18,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-18-B",
+      "sequence": 70,
+      "trialType": "pile-sort",
+      "trial": 18,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-18-C",
+      "sequence": 71,
+      "trialType": "pile-sort",
+      "trial": 18,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-18-D",
+      "sequence": 72,
+      "trialType": "pile-sort",
+      "trial": 18,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-19-A",
+      "sequence": 73,
+      "trialType": "pile-sort",
+      "trial": 19,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-19-B",
+      "sequence": 74,
+      "trialType": "pile-sort",
+      "trial": 19,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-19-C",
+      "sequence": 75,
+      "trialType": "pile-sort",
+      "trial": 19,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-19-D",
+      "sequence": 76,
+      "trialType": "pile-sort",
+      "trial": 19,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-20-A",
+      "sequence": 77,
+      "trialType": "pile-sort",
+      "trial": 20,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-20-B",
+      "sequence": 78,
+      "trialType": "pile-sort",
+      "trial": 20,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-20-C",
+      "sequence": 79,
+      "trialType": "pile-sort",
+      "trial": 20,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "pile-sort-20-D",
+      "sequence": 80,
+      "trialType": "pile-sort",
+      "trial": 20,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-01-A",
+      "sequence": 81,
+      "trialType": "action",
+      "trial": 1,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-01-B",
+      "sequence": 82,
+      "trialType": "action",
+      "trial": 1,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-01-C",
+      "sequence": 83,
+      "trialType": "action",
+      "trial": 1,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-01-D",
+      "sequence": 84,
+      "trialType": "action",
+      "trial": 1,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-02-A",
+      "sequence": 85,
+      "trialType": "action",
+      "trial": 2,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-02-B",
+      "sequence": 86,
+      "trialType": "action",
+      "trial": 2,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-02-C",
+      "sequence": 87,
+      "trialType": "action",
+      "trial": 2,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-02-D",
+      "sequence": 88,
+      "trialType": "action",
+      "trial": 2,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-03-A",
+      "sequence": 89,
+      "trialType": "action",
+      "trial": 3,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-03-B",
+      "sequence": 90,
+      "trialType": "action",
+      "trial": 3,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-03-C",
+      "sequence": 91,
+      "trialType": "action",
+      "trial": 3,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-03-D",
+      "sequence": 92,
+      "trialType": "action",
+      "trial": 3,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-04-A",
+      "sequence": 93,
+      "trialType": "action",
+      "trial": 4,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-04-B",
+      "sequence": 94,
+      "trialType": "action",
+      "trial": 4,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-04-C",
+      "sequence": 95,
+      "trialType": "action",
+      "trial": 4,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-04-D",
+      "sequence": 96,
+      "trialType": "action",
+      "trial": 4,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-05-A",
+      "sequence": 97,
+      "trialType": "action",
+      "trial": 5,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-05-B",
+      "sequence": 98,
+      "trialType": "action",
+      "trial": 5,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-05-C",
+      "sequence": 99,
+      "trialType": "action",
+      "trial": 5,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-05-D",
+      "sequence": 100,
+      "trialType": "action",
+      "trial": 5,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-06-A",
+      "sequence": 101,
+      "trialType": "action",
+      "trial": 6,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-06-B",
+      "sequence": 102,
+      "trialType": "action",
+      "trial": 6,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-06-C",
+      "sequence": 103,
+      "trialType": "action",
+      "trial": 6,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-06-D",
+      "sequence": 104,
+      "trialType": "action",
+      "trial": 6,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-07-A",
+      "sequence": 105,
+      "trialType": "action",
+      "trial": 7,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-07-B",
+      "sequence": 106,
+      "trialType": "action",
+      "trial": 7,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-07-C",
+      "sequence": 107,
+      "trialType": "action",
+      "trial": 7,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-07-D",
+      "sequence": 108,
+      "trialType": "action",
+      "trial": 7,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-08-A",
+      "sequence": 109,
+      "trialType": "action",
+      "trial": 8,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-08-B",
+      "sequence": 110,
+      "trialType": "action",
+      "trial": 8,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-08-C",
+      "sequence": 111,
+      "trialType": "action",
+      "trial": 8,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-08-D",
+      "sequence": 112,
+      "trialType": "action",
+      "trial": 8,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-09-A",
+      "sequence": 113,
+      "trialType": "action",
+      "trial": 9,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-09-B",
+      "sequence": 114,
+      "trialType": "action",
+      "trial": 9,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-09-C",
+      "sequence": 115,
+      "trialType": "action",
+      "trial": 9,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-09-D",
+      "sequence": 116,
+      "trialType": "action",
+      "trial": 9,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-10-A",
+      "sequence": 117,
+      "trialType": "action",
+      "trial": 10,
+      "arm": "A",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-10-B",
+      "sequence": 118,
+      "trialType": "action",
+      "trial": 10,
+      "arm": "B",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-10-C",
+      "sequence": 119,
+      "trialType": "action",
+      "trial": 10,
+      "arm": "C",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    },
+    {
+      "slotId": "action-10-D",
+      "sequence": 120,
+      "trialType": "action",
+      "trial": 10,
+      "arm": "D",
+      "status": "pending",
+      "requestedInvocation": {
+        "executable": "claude",
+        "argumentsBeforePrompt": [
+          "-p",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--model",
+          "claude-sonnet-5",
+          "--effort",
+          "high",
+          "--safe-mode",
+          "--tools",
+          "",
+          "--disable-slash-commands",
+          "--strict-mcp-config",
+          "--no-chrome",
+          "--no-session-persistence",
+          "--"
+        ],
+        "modelFlag": [
+          "--model",
+          "claude-sonnet-5"
+        ],
+        "effortFlag": [
+          "--effort",
+          "high"
+        ],
+        "promptTransport": "single positional argument after --"
+      },
+      "attempt": null,
+      "successfulResult": null,
+      "terminalFailure": null
+    }
+  ]
+}

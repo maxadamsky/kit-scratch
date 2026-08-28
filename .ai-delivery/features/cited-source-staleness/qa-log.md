@@ -474,3 +474,17 @@ annotations — 41 in `conventions.md`, 22 in `rubrics.md`, 2 in `gates.md`, cou
 CDR-13's spec therefore requires the proposal be grouped by artifact and conversion kind with
 counts: a proposal a user cannot read is a proposal they accept without reading, which would
 defeat the diff-and-propose guarantee that is the conversion's only safety property.
+
+---
+
+## FR-015 Stage 3 harness observations (2026-08-27)
+
+**The digest-pinned base contains four irregular `source:` occurrences across three distinct
+strings.** Repo-verified on 2026-08-27 against `.ai-delivery/conventions.md` at MD5
+`62de1a25fbf1e3896645278f1d2609cc`: C15 carries `model knowledge`, C37 carries
+`kit design`, and C40/C41 carry `Linear list_issue_labels for team CDR`.
+
+**Each generated fixture preserves three irregular occurrences across two distinct strings.**
+Repo-verified on 2026-08-27 across all four fixtures: C37 retains `kit design`, and C40/C41
+retain `Linear list_issue_labels for team CDR`. C15 is a control whose annotation is absent.
+This records the fixture bytes only; it makes no claim about a current emitter.
