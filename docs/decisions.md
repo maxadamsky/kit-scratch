@@ -285,3 +285,35 @@ Written by the delivery kit's skills (and welcome from humans too). Configured i
   prompt attributes. This mechanism is verified on 2026-08-27 by observed effect.
 - Context: FR-015 delegated mechanism choices; requested flags are not treated as resolved
   values.
+
+## 2026-08-28 — FR-015 outcome and successor direction
+
+On 2026-08-28, owner Max Adamsky ruled:
+
+1. **Experiment outcome.** FR-015 has run and failed. Under the decision rule frozen before
+   the run, the floor control failed in all four arms and no candidate verb passed the
+   primary measure. The result is decisive against the feature as designed.
+2. **Disposition of the verb change.** The verb change does not proceed. `read_on:` is not
+   adopted. `accessed:` and `retrieved:` are not adopted. The annotation grammar's
+   slot-three question is settled by measurement rather than by choosing a different word.
+3. **Replacement design, in principle and not yet specified.**
+
+   - The annotation's date becomes a horizon—how long the grounding is good for—rather than
+     a record of when a source was last read.
+   - A gate computes the state from that horizon against the current date and writes the
+     resulting token into the line.
+   - The token is output only. It is never hand-authored by a person or an agent. The horizon
+     is the only field a human sets. A hand-typed state token would restore the exact defect
+     FR-015 disproved.
+   - The horizon's default derives from the line's tier.
+   - The computation is entirely local. No network, account, or external service is required
+     for the feature to work.
+   - An optional Linear issue at file level may notify when a file has expired lines. Its
+     absence changes notification only, never correctness. A recipient with no Linear
+     configured gets the whole feature minus the reminder.
+4. **Prior art, as context and not a dependency.** Notion's wiki verification property stores
+   an end date and computes a state of verified, unverified, or expired from it, notifying the
+   page owner on expiry. Nothing in this design uses or requires Notion.
+5. **Known evidence limit.** The evidence is one run, one model (`claude-sonnet-5` at high
+   effort), and one artifact type (a generated conventions file). Whether the same holds for
+   other artifact types or other models is untested. The FR-015 harness can retest it.
