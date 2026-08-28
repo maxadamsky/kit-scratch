@@ -479,10 +479,9 @@ defeat the diff-and-propose guarantee that is the conversion's only safety prope
 
 ## FR-015 Stage 3 harness observations (2026-08-27)
 
-**The digest-pinned base contains four irregular `source:` occurrences across three distinct
-strings.** Repo-verified on 2026-08-27 against `.ai-delivery/conventions.md` at MD5
-`62de1a25fbf1e3896645278f1d2609cc`: C15 carries `model knowledge`, C37 carries
-`kit design`, and C40/C41 carry `Linear list_issue_labels for team CDR`.
+Canonical record: `ai-delivery-kit` commit
+`df93e2bd8d0c3e7d056d3b82045d18893ac57321`, `CONVERSION-FINDINGS.md` §
+"The digest-pinned base contains irregular source values".
 
 **Each generated fixture preserves three irregular occurrences across two distinct strings.**
 Repo-verified on 2026-08-27 across all four fixtures: C37 retains `kit design`, and C40/C41
