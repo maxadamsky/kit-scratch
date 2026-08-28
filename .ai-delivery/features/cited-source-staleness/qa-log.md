@@ -488,3 +488,12 @@ strings.** Repo-verified on 2026-08-27 against `.ai-delivery/conventions.md` at 
 Repo-verified on 2026-08-27 across all four fixtures: C37 retains `kit design`, and C40/C41
 retain `Linear list_issue_labels for team CDR`. C15 is a control whose annotation is absent.
 This records the fixture bytes only; it makes no claim about a current emitter.
+
+---
+
+## FR-015 Stage 5 run evidence (2026-08-28)
+
+**The raw run is preserved without a copied measurement.** Repo-verified on 2026-08-28:
+`fr-015-harness/observations.json` is the completed-run evidence. The measurement and decision
+are intentionally not restated here; `fr-015-harness/scorer.js` derives them from that file
+with its `measure` and `score` commands.
