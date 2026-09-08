@@ -367,3 +367,26 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   wrote an empty fingerprint, which is a defect in that file rather than evidence that code
   arrived. The rewritten fingerprint is what makes the staleness gate meaningful again.
 - Context: setup re-run / judgment stated in the proposal for correction
+
+## 2026-09-07 — Exclude the .git directory from the stack fingerprint
+
+- Decision: drop the six `.git` directory observations (`.git`, `.git/hooks`, `.git/info`,
+  `.git/logs`, `.git/objects`, `.git/refs`) from the fingerprint input set, leaving 50
+  observations: 3 directory enumerations, 2 file reads, and 45 path probes.
+- Alternatives considered: keep them, as the setup skill's literal instruction requires —
+  it says to merge the shared runtime's fingerprint_inputs unchanged and pass that exact
+  set "without reclassification or a maintained allowlist"; or amend and force-push the
+  previous commit to hide that it shipped a fingerprint that was stale on arrival.
+- Reason: the shared runtime's recursive walk enumerates the .git directory, and
+  `.git/objects` gains a subdirectory on every commit. Following the instruction literally
+  produces a fingerprint that reads STALE the moment anything is committed, including the
+  commit that writes the fingerprint itself — which is what happened at commit 9dfa787.
+  The staleness gate exists to say whether the detected stack changed; git's object store
+  changing is not a stack change, and a gate that can never read FRESH in a live repository
+  reports nothing. This is a defect in the kit rather than in this project, and it should be
+  fixed in the shared runtime's discovery output. Force-pushing was rejected because this
+  branch is the shared base for the later handoff pull requests.
+- Cost, accepted knowingly: this deviates from a written instruction in the setup skill, so
+  a future setup re-run that follows that instruction literally will reintroduce the six
+  observations and the same defect.
+- Context: setup re-run / defect found by running the gate after committing, not before
