@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: null
+regenerated_on: 2026-09-07
 greenfield: true
 ---
 
@@ -40,24 +40,28 @@ treated as team decisions), never the structure. Re-run setup after a stack chan
 ## Integrations
 
 - linear: connected
-- linear_team: CDR
-- notion: absent
+- linear_team: MAX
+- notion: connected
 - notion_parent: null
 - context7: absent
 
 ## Linear
 
-- team_id: dfb47107-1a3f-4ff6-8078-b0fdb40e4310
-- team_key: CDR
-- team_name: Cdrun-metrics
+- team_id: 06118a06-7715-441f-9c3e-7a216a09549d
+- team_key: MAX
+- team_name: Max-test-workspace
+- initiative_id: null
+- initiative_name: null
 - state_backlog: Backlog
 - state_unstarted: Todo
 - state_started: In Progress
 - state_completed: Done
 - state_canceled: Canceled
 - state_review: null
+- handoff_milestone_name: Handed off
+- handoff_reviewer: null
 - state_table: Backlog=backlog; Todo=unstarted; In Progress=started; Done=completed; Canceled=canceled; Duplicate=duplicate
-- detected_on: 2026-08-12
+- detected_on: 2026-09-07
 
 ## Preferences
 

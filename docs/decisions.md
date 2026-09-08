@@ -303,3 +303,67 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
 - Reason: copied state can drift; location pointers reconcile the repositories by
   construction.
 - Context: records consolidation / owner ruling on 2026-08-28.
+
+## 2026-09-07 — Move this project's Linear home to team MAX
+
+- Decision: team MAX (Max-test-workspace, id 06118a06-7715-441f-9c3e-7a216a09549d) replaces
+  team CDR (Cdrun-metrics) as the home for this project's work.
+- Alternatives considered: keeping the CDR binding and treating the missing team as a
+  transient connector problem.
+- Reason: the user directed the move, and the connected Linear workspace exposes exactly one
+  team, which is MAX. CDR is not reachable through this connector at all, so the stored
+  binding pointed at a team no skill in this session could read or write. Every per-type
+  state name and the complete state table were re-detected from MAX rather than carried over.
+- Context: setup re-run / user instruction
+
+## 2026-09-07 — Decline an initiative binding, and record why one could not be chosen
+
+- Decision: initiative_id and initiative_name are both recorded as null — a deliberate
+  decline, not the absent-key state that would mean this config predates initiative binding.
+- Alternatives considered: binding to a named initiative on the user's word without being
+  able to verify it.
+- Reason: the user declined. Independently, the Linear server connected here exposes no
+  initiative-listing or initiative-reading call, so the kit's initiative read contract cannot
+  run in this session and no candidate set could have been offered. The four projects visible
+  in the workspace all report an empty initiative list. Recording the decline explicitly is
+  what stops later skills from halting to offer a setup re-run.
+- Context: setup re-run / user decision, with the connector limitation stated
+
+## 2026-09-07 — Adopt "Handed off" as the handoff milestone and record no default reviewer
+
+- Decision: handoff_milestone_name is "Handed off"; handoff_reviewer is null.
+- Alternatives considered: leaving the milestone unset; defaulting the reviewer to the active
+  GitHub account, maxadamsky.
+- Reason: the milestone spine on the fixture project runs Shaped, Specified, Prototyped,
+  Handed off, Built, Shipped. "Handed off" is the last stage the kit moves and "Built" is the
+  first that engineering moves, so that boundary is exactly the point engineering is being
+  asked to take the work. The reviewer was left blank at the user's direction: this is a test
+  workspace with no engineering lead, and inventing one would put a real GitHub handle on
+  review requests nobody agreed to. Null here means ship asks at handoff rather than assuming.
+- Context: setup re-run / milestone detected from the named project, reviewer set by user
+  correction
+
+## 2026-09-07 — Keep documents in the repository although Notion became reachable
+
+- Decision: Notion is recorded connected; notion_parent stays null and stakeholder documents
+  continue to live under the feature directory in this repository.
+- Alternatives considered: nominating a Notion parent page now that the server is reachable.
+- Reason: availability changed, the standing decision did not. The 2026-08-12 entry records
+  that the user directed Notion not be used for this project, and reachability is not a
+  reason to reverse a preference. Recording connected rather than absent keeps the record
+  honest about what this session can actually see.
+- Context: setup re-run / integration probe weighed against a standing decision
+
+## 2026-09-07 — Keep the project greenfield after rewriting an empty fingerprint
+
+- Decision: greenfield stays true, and the stack fingerprint is rewritten from zero bytes to
+  56 typed observations.
+- Alternatives considered: treating the changed observation set as the end of greenfield,
+  which is what the re-run rules say a changed observation normally means.
+- Reason: greenfield is a property of the repository, not of the fingerprint file. Detection
+  re-ran in full and found what it found before: no dependency manifest, no source file, no
+  CI configuration, no infrastructure code and no data-stack signal, across 45 path probes
+  and 9 directory enumerations. The observation set changed only because the previous run
+  wrote an empty fingerprint, which is a defect in that file rather than evidence that code
+  arrived. The rewritten fingerprint is what makes the staleness gate meaningful again.
+- Context: setup re-run / judgment stated in the proposal for correction
