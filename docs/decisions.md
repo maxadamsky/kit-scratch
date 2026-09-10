@@ -390,3 +390,18 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   a future setup re-run that follows that instruction literally will reintroduce the six
   observations and the same defect.
 - Context: setup re-run / defect found by running the gate after committing, not before
+
+## 2026-09-09 — Keep the decision record out of the stack fingerprint's read journal
+
+- Decision: the fingerprint's read journal carries README.md and .gitignore only.
+  docs/decisions.md is excluded although setup read it during detection.
+- Alternatives considered: journalling it too, on the grounds that it is this project's
+  own documentation and setup genuinely read it during the detection pass.
+- Reason: the kit's own skills append entries to docs/decisions.md, so its hash moves
+  whenever a skill records a decision. Fingerprinting it would make the staleness gate
+  fire on work that changed no stack fact — the same shape as the .git enumeration defect
+  recorded on 2026-09-07. A file the kit writes is not a stack input even when setup read
+  it, which is the rule that already keeps setup's other outputs out of the fingerprint.
+  The cost accepted is that a rewrite of the standing decisions will not itself make the
+  gate stale.
+- Context: setup re-run / user correction to setup's proposal
