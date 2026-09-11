@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: 2026-09-07
+regenerated_on: 2026-09-11
 greenfield: true
 ---
 
@@ -59,6 +59,8 @@ treated as team decisions), never the structure. Re-run setup after a stack chan
 - state_canceled: Canceled
 - state_review: null
 - handoff_milestone_name: Handed off
+- handoff_reviewer: null
+- milestone_names: {}
 - state_table: Backlog=backlog; Todo=unstarted; In Progress=started; Done=completed; Canceled=canceled; Duplicate=duplicate
 - detected_on: 2026-09-07
 
