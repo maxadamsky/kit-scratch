@@ -60,7 +60,7 @@ treated as team decisions), never the structure. Re-run setup after a stack chan
 - state_review: null
 - handoff_milestone_name: Handed off
 - handoff_reviewer: null
-- milestone_names: {}
+- milestone_names: {"21d2580f-fa80-4227-9df6-48894a9c798e":{"shaped":"Shaped","specified":"Specified","prototyped":"Prototyped","handed_off":"Handed off","built":"Built","shipped":"Shipped"}}
 - state_table: Backlog=backlog; Todo=unstarted; In Progress=started; Done=completed; Canceled=canceled; Duplicate=duplicate
 - detected_on: 2026-09-07
 

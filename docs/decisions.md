@@ -405,3 +405,21 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   The cost accepted is that a rewrite of the standing decisions will not itself make the
   gate stale.
 - Context: setup re-run / user correction to setup's proposal
+
+## 2026-09-12 — Keep three README units that share one file, built one after another
+
+- Decision: decompose repository usage documentation into three Linear issues: MAX-16
+  (the README purpose statement), MAX-17 (the evidence branch table) and MAX-18 (the kit
+  version line). MAX-17 and MAX-18 are each blocked by MAX-16, and because all three edit
+  README.md they are built one after another rather than in parallel.
+- Alternatives considered: merging the three units into one issue covering all three
+  functional requirements, which would honour the software profile's rule that units touch
+  separate files.
+- Reason: each unit gives a reader something new on its own (what the repository is for,
+  which branches are evidence, which kit version it reflects), which is the profile's test
+  for a unit at requirements time. The approved scope limits the work to the single
+  README, so the shared file cannot be restructured away; build serializes the two later
+  units instead.
+- Cost, accepted knowingly: there is no parallel batch after the foundation, so build runs
+  the three units in sequence.
+- Context: shape decomposition / approved by Max as proposed
