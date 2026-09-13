@@ -456,3 +456,40 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   off, Built or Shipped milestone, and at handoff the kit finds no Handed off milestone here
   and must use its choice for a missing milestone.
 - Context: shape decomposition / milestone set chosen and approved by Max
+
+## 2026-09-13 — Build folder summary as three independent units, with no blocked-by links
+
+- Decision: decompose folder summary into three Linear issues in the Folder summary
+  project, each at the Shaped milestone and with no blocked-by links: MAX-22 (show a
+  folder's file count and total size, Urgent), MAX-23 (break a folder's files down by file
+  type, Urgent) and MAX-24 (say plainly when a folder cannot be summarized, Medium). MAX-22
+  owns reading the folder and offers its file list through an agreed interface; MAX-23 and
+  MAX-24 work against that interface with stand-ins in their tests, and build connects them.
+- Alternatives considered: making MAX-23 and MAX-24 blocked by MAX-22, because the type
+  breakdown and the path message only reach a person through MAX-22's summary; or folding
+  the path message into MAX-22's acceptance criteria.
+- Reason: the software profile asks for units that can be built independently, with
+  interfaces agreed up front and dependencies removed by restructuring rather than recorded
+  as links. The plain path message was not raised at intake; it was added because the
+  goals require correct figures, and a failed read must not produce figures.
+- Cost, accepted knowingly: a person sees the type breakdown and the path message only
+  after build connects them to MAX-22's summary, and five of the six requirements are
+  Urgent, above the kit's guideline that no more than 60% be Urgent or High.
+- Context: shape decomposition / approved by Max as proposed
+
+## 2026-09-13 — Add the four missing delivery stages to the Folder summary project's milestones
+
+- Decision: the Folder summary project keeps its existing milestones, Shaped, Editorial
+  review and Specified, unchanged, and gains four new milestones after them, in this order:
+  Prototyped, Handed off, Built and Shipped, each described with the stage it marks and who
+  moves issues into it. Shaped and Specified stand for the kit's Shaped and Specified
+  stages; Editorial review stands for no stage and stays unused. The mapping is recorded
+  under milestone_names, the per-project milestone mapping in .ai-delivery/config.md.
+- Alternatives considered: keeping the existing three and creating nothing, which leaves
+  four stages without a milestone; or replacing with the kit's stage names by exact match,
+  which reaches the same seven milestones without Max mapping the existing names himself.
+- Reason: Max chose to adopt the delta — map the existing names himself and create only the
+  stages the project lacked.
+- Cost, accepted knowingly: the project carries an Editorial review milestone, between
+  Shaped and Specified, that no kit stage uses.
+- Context: shape decomposition / milestone set chosen and approved by Max
