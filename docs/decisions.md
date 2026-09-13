@@ -493,3 +493,47 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
 - Cost, accepted knowingly: the project carries an Editorial review milestone, between
   Shaped and Specified, that no kit stage uses.
 - Context: shape decomposition / milestone set chosen and approved by Max
+
+## 2026-09-13 — Build text preview as two independent units, with no blocked-by links
+
+- Decision: decompose text preview into two Linear issues in the Text preview project,
+  each Urgent, at the Shaped milestone and with no blocked-by links: MAX-25 (preview the
+  opening lines of a text file, covering FR-001 to FR-003) and MAX-26 (say plainly when a
+  file is empty or not text, covering FR-004 and FR-005). FR means functional requirement
+  in .ai-delivery/features/text-preview/requirements.md. MAX-25 reads and shows a file's
+  lines; MAX-26 decides whether a file is empty or not text and words the note. Each agrees
+  its interface up front and uses a stand-in for the other in its tests, and build
+  connects them.
+- Alternatives considered: splitting the empty-file note and the not-text note into
+  separate issues, which would reach the software profile's typical range of three to nine
+  units; or folding both notes into MAX-25's acceptance criteria.
+- Reason: each issue gives a person something new on its own. The empty-file check has a
+  single trivial acceptance criterion, so it stays with the not-text note rather than
+  standing alone.
+- Cost, accepted knowingly: two units is below the profile's typical range, and all five
+  requirements and both units are Urgent, above the kit's guideline that no more than 60%
+  be Urgent or High; Max approved the priorities as drafted because intake named every item
+  a must-include. Four decisions stay open for the maintainer to settle before build: how
+  many lines a preview shows, how a file is judged to be text, how a preview is requested
+  and shown, and what a person sees when a file cannot be read.
+- Context: shape decomposition / approved by Max as proposed
+
+## 2026-09-13 — Use the kit's stage names for the Text preview project's milestones, leaving Editorial review unused
+
+- Decision: the Text preview project reuses its existing Shaped and Specified milestones,
+  by exact name, for the kit's Shaped and Specified stages, and gains four new milestones
+  after them, in this order: Prototyped, Handed off, Built and Shipped, each described with
+  the stage it marks and who moves issues into it. Editorial review stays untouched and
+  stands for no stage. The mapping is recorded under milestone_names, the per-project
+  milestone mapping in .ai-delivery/config.md.
+- Alternatives considered: keeping the existing three and creating nothing, which leaves
+  four stages without a milestone; or adopting the delta, with Max mapping the existing
+  names before only the missing stages are created.
+- Reason: Max chose to replace — use the kit's stage names without mapping, reuse exact
+  matches, and create the missing names.
+- Cost, accepted knowingly: the project carries an Editorial review milestone, between
+  Shaped and Specified, that no kit stage uses. Two stored milestone descriptions differ
+  from the text Max approved: Handed off adds the clause "asking engineering to take the
+  work", and Prototyped words the same meaning as a fuller sentence. Max chose to continue
+  with both as created; restoring the approved wording is an edit in Linear that Max owns.
+- Context: shape decomposition / milestone set chosen and approved by Max

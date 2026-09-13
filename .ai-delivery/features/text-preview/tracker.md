@@ -7,4 +7,7 @@
 
 ## Units
 
+- preview-opening-lines: MAX-25 https://linear.app/max-test-workspace/issue/MAX-25/preview-the-opening-lines-of-a-text-file
+- note-empty-or-non-text: MAX-26 https://linear.app/max-test-workspace/issue/MAX-26/say-plainly-when-a-file-is-empty-or-not-text
+
 ## Build
