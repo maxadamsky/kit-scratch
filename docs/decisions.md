@@ -423,3 +423,36 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
 - Cost, accepted knowingly: there is no parallel batch after the foundation, so build runs
   the three units in sequence.
 - Context: shape decomposition / approved by Max as proposed
+
+## 2026-09-13 — Export notebook text outputs first, then images and notes for undisplayable outputs
+
+- Decision: decompose notebook export into three Linear issues in the Notebook export
+  project: MAX-19 (export a notebook and its text outputs to one shareable file, Urgent),
+  MAX-20 (include image and chart outputs, High) and MAX-21 (show a note where an output
+  cannot be displayed, Medium). MAX-20 and MAX-21 are each blocked by MAX-19 and can be
+  built in parallel once it is done.
+- Alternatives considered: one issue covering all five functional requirements, or folding
+  image and chart outputs into the first unit.
+- Reason: text outputs alone already let an author hand a colleague a readable file, so the
+  first unit delivers value soonest; images and the note for undisplayable outputs each add
+  a new capability on top of that export, so neither can start before it.
+- Cost, accepted knowingly: the software profile asks for units that touch separate files
+  with no dependencies between them. MAX-20 and MAX-21 depend on MAX-19, and if build finds
+  that both edit the same output-writing files it will run them one after another.
+- Context: shape decomposition / approved by Max as proposed
+
+## 2026-09-13 — Keep the Notebook export project's own milestones, with four delivery stages absent
+
+- Decision: the Notebook export project keeps its existing milestones, Shaped, Editorial
+  review and Specified, untouched. Its Shaped and Specified milestones stand for the kit's
+  Shaped and Specified stages; Prototyped, Handed off, Built and Shipped have no milestone in
+  this project, and Editorial review stands for no stage. The mapping is recorded under
+  milestone_names, the per-project milestone mapping in .ai-delivery/config.md.
+- Alternatives considered: creating the four missing stages after the existing milestones,
+  or reusing Shaped and Specified by exact name while adding the missing names and leaving
+  Editorial review unused.
+- Reason: Max chose to keep the project's milestone set as it is and create nothing.
+- Cost, accepted knowingly: issues in this project cannot be moved to a Prototyped, Handed
+  off, Built or Shipped milestone, and at handoff the kit finds no Handed off milestone here
+  and must use its choice for a missing milestone.
+- Context: shape decomposition / milestone set chosen and approved by Max

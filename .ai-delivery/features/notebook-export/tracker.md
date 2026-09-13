@@ -7,4 +7,8 @@
 
 ## Units
 
+- export-notebook-text-outputs: MAX-19 https://linear.app/max-test-workspace/issue/MAX-19/export-a-notebook-and-its-text-outputs-to-one-shareable-file
+- include-image-chart-outputs: MAX-20 https://linear.app/max-test-workspace/issue/MAX-20/include-image-and-chart-outputs-in-the-exported-notebook-file
+- note-undisplayable-outputs: MAX-21 https://linear.app/max-test-workspace/issue/MAX-21/show-a-note-where-an-exported-notebook-output-cannot-be-displayed
+
 ## Build
