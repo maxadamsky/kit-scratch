@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: 2026-09-07
+regenerated_on: 2026-09-15
 ---
 
 # Delivery Conventions
@@ -34,11 +34,11 @@ documentation, so those lines keep their original dates rather than borrowing to
 - Modules and packages take short, all-lowercase names. Underscores are acceptable in
   module names where they aid readability, and discouraged in package names.
   [source: https://peps.python.org/pep-0008/ · tier: 1-docs · verified: 2026-08-12]
-- The repository exists as a harness for exercising the ai-delivery kit, so anything added
-  here serves that purpose unless stated otherwise. The README names kit version 1.7.0
-  while the installed kit is 1.12.0, so the README is out of date; correcting it is an edit
-  to this repository that setup does not make on its own.
-  [source: README.md · tier: 1-code · verified: 2026-09-07]
+- The repository is a fixture for exercising the ai-delivery kit, not a product. Its files,
+  branches and pull requests exist so the kit can be run against a real repository, and
+  they are kept as a worked example of what the kit produces, so anything added here serves
+  that purpose unless stated otherwise.
+  [source: README.md · tier: 1-code · verified: 2026-09-15]
 
 ## Code Style
 
@@ -181,11 +181,11 @@ Not applicable — software profile, no data-pipeline surface detected.
 - Priority is Linear's native field (Urgent/High/Medium/Low/None). Out-of-scope ("won't")
   items are never created as issues — they belong in the requirements document.
 - Statuses: address states by the names recorded in config.md ## Linear; branch on state
-  *type*, never on name. For this team those names are Backlog, Todo, In Progress, Done,
-  Canceled, and Duplicate. New issues are created in the backlog- or unstarted-type state,
-  which here means Backlog or Todo. This team has no second started-type state, so there is
-  no separate review state to move through.
-  [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-09-07]
+  *type*, never on name. For this team those names are Triage, Backlog, Todo, In Progress,
+  Done, Canceled, and Duplicate. New issues are created in the backlog- or unstarted-type
+  state, which here means Backlog or Todo. This team has no second started-type state, so
+  there is no separate review state to move through.
+  [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-09-15]
 - Titles: short imperative phrases naming the outcome ("Add rate limiting to the token
   endpoint"), no story grammar, no ticket-style prefixes.
 - Labels: search before creating; creating a label requires user approval. Issue label
