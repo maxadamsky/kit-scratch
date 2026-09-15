@@ -52,7 +52,7 @@ treated as team decisions), never the structure. Re-run setup after a stack chan
 - team_name: Max-test-workspace
 - initiative_id: null
 - initiative_name: null
-- state_triage: null
+- state_triage: Triage
 - state_backlog: Backlog
 - state_unstarted: Todo
 - state_started: In Progress
@@ -62,7 +62,7 @@ treated as team decisions), never the structure. Re-run setup after a stack chan
 - handoff_milestone_name: Handed off
 - handoff_reviewer: null
 - milestone_names: {"21d2580f-fa80-4227-9df6-48894a9c798e":{"shaped":"Shaped","specified":"Specified","prototyped":"Prototyped","handed_off":"Handed off","built":"Built","shipped":"Shipped"},"9d5b5c3b-01ff-4189-aa7d-ebb8d408e893":{"shaped":"Shaped","specified":"Specified","prototyped":null,"handed_off":null,"built":null,"shipped":null},"fcffa165-dcf9-4da0-a6c1-ba12936b8531":{"shaped":"Shaped","specified":"Specified","prototyped":"Prototyped","handed_off":"Handed off","built":"Built","shipped":"Shipped"},"4c1e19e7-c231-4a35-a34a-fb759cae57c7":{"shaped":"Shaped","specified":"Specified","prototyped":"Prototyped","handed_off":"Handed off","built":"Built","shipped":"Shipped"}}
-- state_table: Backlog=backlog; Todo=unstarted; In Progress=started; Done=completed; Canceled=canceled; Duplicate=duplicate
+- state_table: Triage=triage; Backlog=backlog; Todo=unstarted; In Progress=started; Done=completed; Canceled=canceled; Duplicate=duplicate
 - detected_on: 2026-09-15
 
 ## Preferences
