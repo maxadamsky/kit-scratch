@@ -537,3 +537,40 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   work", and Prototyped words the same meaning as a fuller sentence. Max chose to continue
   with both as created; restoring the approved wording is an edit in Linear that Max owns.
 - Context: shape decomposition / milestone set chosen and approved by Max
+
+## 2026-09-15 — Shape the reading list export from one group of four requests, keeping dates and links in a single delivery unit
+
+- Decision: MAX-27 and MAX-28, which ask for the same Markdown export in different words,
+  and two requests brought into the sitting by hand — saved dates, and a link back to each
+  article — were shaped as one feature with three delivery issues: MAX-31 for the export
+  itself, MAX-32 for the saved date and link on each entry, and MAX-33 for the plain
+  message when there is nothing to export. The two brought-in requests became request
+  issues MAX-34 and MAX-35, which record the original requests and are not units of work.
+- Alternatives considered: splitting the saved date and the article link into two delivery
+  issues, one per brought-in request; or shaping MAX-27 and MAX-28 as separate features.
+- Reason: the saved date and the link both change what a single entry shows, so splitting
+  them would have put two units in the same file, which the software profile's strict
+  independence rule rejects. MAX-27 and MAX-28 describe one capability.
+- Cost, accepted knowingly: two of the three delivery issues are Urgent or High, which is
+  67 percent and above the kit's 60 percent guideline. Max was shown that ratio at the
+  decomposition review and approved the priorities unchanged. Five questions the intake
+  could not answer stay open in the requirements document, all owned by Max: whether the
+  export covers the week or the whole list, what else an entry shows, what starts the
+  export and where the file goes, entry ordering, and the success measure.
+- Context: triage grouping approved by Max, then shape decomposition approved by Max
+
+## 2026-09-15 — Create the full kit milestone spine on the new Reading list export project
+
+- Decision: the Reading list export project, which had no milestones, gained all six kit
+  stages in order: Shaped, Specified, Prototyped, Handed off, Built and Shipped. Each
+  carries a description naming the stage it marks and who moves issues into it — the kit
+  for the first four, engineering by hand for Built and Shipped. The mapping is recorded
+  under milestone_names, the per-project milestone mapping in .ai-delivery/config.md.
+- Alternatives considered: keeping the project without milestones, which would leave every
+  stage absent and every issue without one; or replacing, which on an empty project has
+  the same result as adopting the delta.
+- Reason: Max chose to adopt the delta on an empty project, so every role was unmapped and
+  all six names were created.
+- Cost, accepted knowingly: none identified. No existing milestone was renamed, reordered
+  or deleted, because the project had none.
+- Context: shape decomposition / milestone set chosen and approved by Max
