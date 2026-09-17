@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: 2026-09-07
+regenerated_on: 2026-09-17
 ---
 
 # Quality Gates
@@ -13,56 +13,59 @@ project's own invocation form. `detected` = found in repo config/scripts/CI;
 `adopted` = proposed by setup and confirmed, no prior project config; `unavailable` = no
 such gate exists here. `blocking` gates fail verification; `advisory` gates report only.
 
-This project is greenfield: nothing was discovered, so every command below is `adopted` and
-none has been executed. The first verify run is what proves them.
+This project now has a dependency manifest: `pyproject.toml` declares the tools below in its
+dev group, and `uv.lock` fixes their versions. The manifest names the tools; it defines no
+entry point for running them, and the project has no scripts, Makefile or CI, so every
+command below remains `adopted` — setup's invocation, not the project's own. None has been
+executed here. The first verify run is what proves them.
 
 ## Commands
 
 ### Lint
 - command: uv run ruff check src/ tests/
-- source: adopted (no repo config found — greenfield)
+- source: adopted (ruff declared in pyproject.toml dev group; no [tool.ruff] config and no project-defined entry point)
 - status: adopted
 - gate: blocking
 
 ### Format
 - command: uv run ruff format --check src/ tests/
-- source: adopted (no repo config found — greenfield)
+- source: adopted (ruff declared in pyproject.toml dev group; no formatter config and no project-defined entry point)
 - status: adopted
 - gate: blocking
 
 ### Type Check
 - command: uv run mypy src/
-- source: adopted (no repo config found — greenfield)
+- source: adopted (mypy declared in pyproject.toml dev group; no [tool.mypy] config and no project-defined entry point)
 - status: adopted
 - gate: blocking
 
 ### Test
 - command: uv run pytest
-- source: adopted (no repo config found — greenfield)
+- source: adopted (pytest declared in pyproject.toml dev group; no [tool.pytest.ini_options] and no project-defined entry point)
 - status: adopted
 - gate: blocking
 
 ### Coverage
 - command: uv run pytest --cov=src --cov-report=term-missing
-- source: adopted (no repo config found — greenfield)
+- source: adopted (pytest-cov declared in pyproject.toml dev group; no [tool.coverage] config and no project-defined entry point)
 - status: adopted
 - gate: blocking
 
 ### SAST
 - command: uv run bandit -r src/ -ll
-- source: adopted (no repo config found — greenfield)
+- source: adopted (bandit declared in pyproject.toml dev group; no .bandit config and no project-defined entry point)
 - status: adopted
 - gate: blocking
 
 ### Dependency Scan
 - command: uv run pip-audit
-- source: adopted (no repo config found — greenfield)
+- source: adopted (pip-audit declared in pyproject.toml dev group; no CI invocation and no project-defined entry point)
 - status: adopted
 - gate: blocking
 
 ### Secret Detection
 - command: gitleaks detect --source .
-- source: adopted (no repo config found — greenfield)
+- source: adopted (no secret scanner declared in the manifest and no repo config found)
 - status: adopted
 - gate: blocking
 

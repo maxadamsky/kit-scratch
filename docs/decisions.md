@@ -574,3 +574,26 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
 - Cost, accepted knowingly: none identified. No existing milestone was renamed, reordered
   or deleted, because the project had none.
 - Context: shape decomposition / milestone set chosen and approved by Max
+
+## 2026-09-17 — End greenfield now that a real manifest exists, and keep the gates adopted
+
+- Decision: greenfield flips from true to false, package_manifests records pyproject.toml,
+  and the toolchain the manifest declares — pytest, pytest-cov, ruff, mypy, bandit,
+  pip-audit, with uv as the package manager from uv.lock — is now manifest-grounded rather
+  than chosen. Every gate command keeps its existing uv invocation and its `adopted` status;
+  only each command's source line changes, from "no repo config found — greenfield" to the
+  manifest that declares the tool. rubrics.md, the thresholds, and every answered preference
+  including the null default reviewer are left exactly as they stand.
+- Alternatives considered: marking the gates `detected` now that the tools are declared in
+  the repository; regenerating rubrics.md from the current catalog at the same time.
+- Reason: a manifest naming a tool is not the project defining how it runs. pyproject.toml
+  declares the dev group and nothing else — no [tool.ruff], [tool.mypy],
+  [tool.pytest.ini_options] or [tool.coverage] section, no scripts, no Makefile, no CI — so
+  the commands in gates.md are still setup's invocation, which is what `adopted` means. This
+  supersedes the 2026-09-07 entry that kept greenfield true: the reason given there was that
+  the repository held no dependency manifest, and it now holds one. Rubrics were left alone
+  because the profile is unchanged and existing artifacts are standing decisions.
+- Cost, accepted knowingly: the coverage and lint commands point at src/ and tests/, which do
+  not exist yet, so the first verify run in this repository will be the first time any of
+  these commands is proved.
+- Context: setup re-run / proposal confirmed by Max as proposed

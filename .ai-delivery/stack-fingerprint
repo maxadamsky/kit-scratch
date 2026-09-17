@@ -71,7 +71,9 @@
     "file:pom.xml": [],
     "file:prettier.config.*": [],
     "file:profiles.yml": [],
-    "file:pyproject.toml": [],
+    "file:pyproject.toml": [
+      "pyproject.toml"
+    ],
     "file:pyrightconfig.json": [],
     "file:pytest.ini": [],
     "file:requirements*.txt": [],
@@ -83,7 +85,9 @@
     "file:tox.ini": [],
     "file:tsconfig.json": [],
     "file:turbo.json": [],
-    "file:uv.lock": [],
+    "file:uv.lock": [
+      "uv.lock"
+    ],
     "file:vitest.config.*": [],
     "file:yarn.lock": []
   },
@@ -95,6 +99,14 @@
     {
       "path": "README.md",
       "sha256": "c67266bfe350306fd94ad07c9b976da31bca2e02c1c8c29f24f384a758db79ff"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "09cefeefcae59f9fb777b4bfdfef0ea87aa8af73205954db5f239d822872dda3"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "1a47eaff3898d8a45cfcf6735bc9e24c437ba309b9ebdf574d82437d5b225dfd"
     }
   ]
 }

@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: 2026-09-15
+regenerated_on: 2026-09-17
 ---
 
 # Delivery Conventions
@@ -12,14 +12,17 @@ How this project actually does things — read from the code first, researched o
 code is silent. Every convention names its source and date. Edit freely; your edits are
 team decisions and survive re-runs. H2 headings are fixed.
 
-This project is greenfield: there is no code to read, so almost every convention below is
-grounded in fetched official documentation (tier 1-docs) rather than in this repository.
-The first real modules to land here outrank all of it — when the code disagrees with a line
-below, the code is the convention and this file gets corrected, not the code.
+This project is no longer greenfield: pyproject.toml and uv.lock now declare the toolchain,
+and the 2026-09-17 re-run read them. There are still no source or test modules, so almost
+every convention below remains grounded in fetched official documentation (tier 1-docs)
+rather than in this repository. The first real modules to land here outrank all of it — when
+the code disagrees with a line below, the code is the convention and this file gets
+corrected, not the code.
 
-A date after `verified:` is the day that source was last read. The 2026-09-07 re-run re-read
-this repository's own files and the Linear team; it did not re-fetch the external
-documentation, so those lines keep their original dates rather than borrowing today's.
+A date after `verified:` is the day that source was last read. The 2026-09-07 and 2026-09-17
+re-runs re-read this repository's own files and the Linear team; neither re-fetched the
+external documentation, so those lines keep their original dates rather than borrowing
+today's.
 
 ## Project Structure & Naming
 
@@ -95,6 +98,11 @@ documentation, so those lines keep their original dates rather than borrowing to
   [source: https://docs.pytest.org/en/stable/explanation/goodpractices.html · tier: 1-docs · verified: 2026-08-12]
 - pytest configuration lives in pyproject.toml alongside package metadata, in strict mode.
   [source: https://docs.pytest.org/en/stable/explanation/goodpractices.html · tier: 1-docs · verified: 2026-08-12]
+- The toolchain is declared in pyproject.toml's dev group — pytest, pytest-cov, ruff, mypy,
+  bandit and pip-audit — and pinned by uv.lock, but no tool section configures any of them
+  yet. Until a pytest configuration section exists, the commands in gates.md are the only
+  invocation this project has, and strict mode above is the target rather than the state.
+  [source: pyproject.toml · tier: 1-code · verified: 2026-09-17]
 - Tests are written before the implementation they cover, and the suite that runs at
   verification is the same suite those tests joined.
   [source: ai-delivery/skills/setup/profiles/software.md § Test-first meaning · tier: 1-profile · verified: 2026-08-12]
