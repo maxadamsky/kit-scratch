@@ -26,7 +26,8 @@ decision in `.ai-delivery/conventions.md` is that the repository owns every docu
 > request; the request text stays in Linear. Requirement IDs (FR-001 onward) are this
 > document's labels for its requirements, so issues and later documents can cite them. A
 > line marked **[ASSUMPTION]** gives a working answer to one of the open questions at the
-> end, and holds until Max Adamsky settles that question.
+> end, and holds until Max Adamsky settles that question. A line marked **[SETTLED]** gives
+> the answer Max Adamsky settled on, recorded with the question.
 
 ---
 
@@ -83,7 +84,7 @@ redoing finished work.
 - `CONTRIBUTING.md` at the repository root: about 30 lines, holding five items. Each item
   is one imperative sentence plus one example.
 - One sentence at the end of `README.md` pointing to it, together with the refreshed kit
-  setup record that editing `README.md` requires. **[ASSUMPTION — open question 4]**
+  setup record that editing `README.md` requires. **[SETTLED — open question 4]**
 
 **Out of Scope:**
 - Automated enforcement of any kind, including CI checks and hooks.
@@ -132,11 +133,11 @@ GitHub issue → review asks for none of the five → Done
 |----|-------------|----------|---------------------|
 | FR-001 | `CONTRIBUTING.md` at the repository root holds the pull request checklist. | Urgent | The file exists at the root. It has a title, at most one introductory sentence, and exactly five numbered items in the order FR-002 to FR-006, each one imperative sentence followed by one example. It runs to about 30 lines. It covers none of the out-of-scope topics and does not describe how the kit works. Once the file is on `main`, GitHub shows it as the repository's Contributing tab and sidebar link, and links it from the new-issue and new-pull-request pages. |
 | FR-002 | Item 1 says how to name a branch. | Urgent | The item says to name the branch `<GitHub handle>/<short topic>` and gives one example, such as `octocat/fix-readme-typo`. It says the `codex/` prefix is reserved for branches made by agents. |
-| FR-003 | Item 2 says how to scope commits. | Urgent | The item says to make one commit per change, and gives one example showing what one change means. **[ASSUMPTION — open question 2]** "Per change" means one commit per logical change, so a pull request may hold several commits. |
+| FR-003 | Item 2 says how to scope commits. | Urgent | The item says to make one commit per change, and gives one example showing what one change means. **[SETTLED — open question 2]** "Per change" means one commit per logical change, so a pull request may hold several commits. |
 | FR-004 | Item 3 says to run the tests before opening a pull request. | High | The item says to run `uv run pytest` before opening a pull request. It says that until the first test module lands, "no tests ran" (pytest's exit code 5) is the expected result. Running the command in this repository exits with code 5 (checked 2026-09-22). This is High rather than Urgent because a reviewer cannot see from a pull request whether it was done, so it stays out of the success count until tests exist. |
 | FR-005 | Item 4 asks for a description that says why. | Urgent | The item asks for a one-paragraph pull request description saying why the change was made, and gives a one-paragraph example. |
-| FR-006 | Item 5 asks for a linked GitHub issue. | Urgent | The item asks for a link to a GitHub issue on this repository in the pull request description, and gives one example of the link. It says the maintainer adds any Linear link at review. GitHub issues are enabled on this repository (checked 2026-09-22). **[ASSUMPTION — open question 5]** The contributor files the issue, or picks an existing one, before starting work. |
-| FR-007 | `README.md` points to the checklist. | High | `README.md` ends with one sentence containing a relative link to `CONTRIBUTING.md`, and the link opens the file on GitHub. No other line of `README.md` changes. Once the change lands, the kit's setup check still passes; it reports FRESH, not STALE. **[ASSUMPTION — open question 4]** The refreshed setup record, `.ai-delivery/stack-fingerprint`, lands in the same pull request as the sentence. That file stores a hash of `README.md`. |
+| FR-006 | Item 5 asks for a linked GitHub issue. | Urgent | The item asks for a link to a GitHub issue on this repository in the pull request description, and gives one example of the link. It says the maintainer adds any Linear link at review. GitHub issues are enabled on this repository (checked 2026-09-22). **[SETTLED — open question 5]** The contributor files the issue, or picks an existing one, before starting work. |
+| FR-007 | `README.md` points to the checklist. | High | `README.md` ends with one sentence containing a relative link to `CONTRIBUTING.md`, and the link opens the file on GitHub. No other line of `README.md` changes. Once the change lands, the kit's setup check still passes; it reports FRESH, not STALE. **[SETTLED — open question 4]** The refreshed setup record, `.ai-delivery/stack-fingerprint`, lands in the same pull request as the sentence. That file stores a hash of `README.md`. |
 
 **Design-system components:** none. The work is not UI-facing.
 
@@ -164,20 +165,25 @@ GitHub issue → review asks for none of the five → Done
 
 ## Open Questions
 
-Every question below is open, and Max Adamsky owns each one. The brief's section 10 rates
-the risks behind questions 1, 3, 5, 6, 7 and 8.
+Max Adamsky owns every question below. Questions 1, 2, 4 and 5 were settled on
+2026-09-22, in the prototype skill's design discovery; each carries its answer. The rest
+are open. The brief's section 10 rates the risks behind questions 1, 3, 5, 6, 7 and 8.
 
-- [ ] **1. Does a pull request exactly as the kit's ship skill produces it meet the
+- [x] **1. Does a pull request exactly as the kit's ship skill produces it meet the
   standard?** Ship suggests a `feat/…` branch, writes a multi-section description and
   links Linear rather than a GitHub issue. If it does not meet the standard, may the guide
   say how to override ship, given that anything about how the kit works is excluded?
   Otherwise contributors must choose between the guide and the kit, and the count
   measures that conflict instead of the guide. *Owner:* Max Adamsky. *Needed:* before the
   guide is written (affects FR-002, FR-005 and FR-006).
-- [ ] **2. What does "one commit per change" mean: one squashed commit per pull request,
+  **Settled 2026-09-22:** no, it misses items 1, 4 and 5. The guide's one introductory
+  sentence says the five items apply whichever tool opens the pull request. It does not
+  name the kit, so the scope line on anything about how the kit works holds.
+- [x] **2. What does "one commit per change" mean: one squashed commit per pull request,
   or one commit per logical change?** Contributors and ship read it differently, since
   ship commits one unit at a time, and the count includes it. FR-003 assumes one commit
   per logical change. *Owner:* Max Adamsky. *Needed:* before the guide is written.
+  **Settled 2026-09-22:** one commit per logical change, as FR-003 assumed.
 - [ ] **3. How does `main` receive the checklist, and does "in place" mean on `main` on
   GitHub?**
   - `main` has not changed since 2026-08-28, and no pull request has ever merged into it.
@@ -185,16 +191,22 @@ the risks behind questions 1, 3, 5, 6, 7 and 8.
   - `main` has no `pyproject.toml` or `uv.lock`.
 
   *Owner:* Max Adamsky. *Needed:* before 2026-10-05.
-- [ ] **4. How do the README sentence and the refreshed setup record land together, and
+- [x] **4. How do the README sentence and the refreshed setup record land together, and
   how does the sentence relate to MAX-16's rewrite?** The rewrite is already built (commit
   890dea8, draft pull request #3), and this branch already carries it. FR-007 assumes one
   pull request carries both the sentence and the refreshed record. *Owner:* Max Adamsky.
   *Needed:* before unit 2 is built.
-- [ ] **5. Who files the GitHub issue a contributor links, and when? Who triages GitHub
+  **Settled 2026-09-22:** the sentence is appended to this branch's README, after the
+  MAX-16 rewrite. A setup re-run at integration refreshes the setup record in the same
+  change, as FR-007 assumed. Whether the sentence reaches `main` ahead of the MAX-16
+  rewrite is settled at handoff, under question 3.
+- [x] **5. Who files the GitHub issue a contributor links, and when? Who triages GitHub
   issues?** No GitHub issue has ever been filed here, and item 5 would leave the
   maintainer running a second tracker. FR-006 assumes the contributor files or picks the
   issue before starting work. *Owner:* Max Adamsky. *Needed:* before the guide is
   written.
+  **Settled 2026-09-22:** the contributor files the issue, or picks an existing one,
+  before starting work, as FR-006 assumed. Max Adamsky triages GitHub issues.
 - [ ] **6. May contributor pull requests change `.ai-delivery/` and `docs/decisions.md`?
   Would saying so in the guide count as describing the kit?** Running kit setup rewrites
   those shared files. That puts unrelated changes into pull requests and makes
@@ -222,5 +234,6 @@ the risks behind questions 1, 3, 5, 6, 7 and 8.
   The repository is public with no license, so the terms that cover a contribution are
   unanswered. *Owner:* Max Adamsky. *Needed:* before the first outside pull request.
 
-**Next action:** Max Adamsky settles open questions 1, 2 and 5 before the guide is
-written, and the rest by the dates above.
+**Next action:** Max Adamsky settles open questions 3, 6 and 9 before 2026-10-05,
+questions 7 and 10 before the first outside pull request, and question 8 by the time the
+first test module lands.

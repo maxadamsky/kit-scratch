@@ -662,3 +662,99 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   Max Adamsky, listed in the requirements document. Questions 1, 2 and 5 must be settled
   before the checklist is written, and question 4 before the README sentence.
 - Context: shape decomposition / approved by Max as proposed
+
+## 2026-09-22 — Settle how the pull request checklist treats tool defaults, commits and the linked issue
+
+- Decision: three of the checklist's open questions are settled. The questions are
+  numbered as in `.ai-delivery/features/pull-request-checklist/requirements.md`.
+  - Question 1: a pull request made exactly as the kit's ship skill makes it misses
+    items 1, 4 and 5. Ship is the kit's commit-and-pull-request workflow. For anyone
+    without Linear it suggests a `feat/…` branch, writes a multi-section description and
+    links Linear instead of a GitHub issue. The checklist's one introductory sentence
+    says the five items apply whichever tool opens the pull request, without naming the
+    kit.
+  - Question 2: "one commit per change" means one commit per logical change, so a pull
+    request may hold several commits.
+  - Question 5: the contributor files a GitHub issue, or picks an existing one, before
+    starting work. Max triages GitHub issues and adds any Linear link at review.
+- Alternatives considered: for question 1, a sentence naming ship and saying how to
+  override it, or saying nothing about tools. For question 2, one squashed commit per pull
+  request. For question 5, letting the issue be filed at any point before the pull
+  request opens.
+- Reason: naming ship would move the requirements' line that the guide says nothing
+  about how the kit works, and would tie the guide to ship's current behaviour. Saying
+  nothing would let the success count measure the conflict between ship and the guide
+  instead of the guide. A tool-neutral introductory sentence answers the conflict inside
+  the one sentence the requirements already allow. One commit per logical change matches
+  how ship commits one unit at a time. Filing the issue before the work keeps item 5's
+  purpose, which is to record the intent before the branch exists.
+- Context: prototype design discovery / answered by Max
+
+## 2026-09-22 — Append the README sentence on this branch and refresh the setup record by a setup re-run
+
+- Decision: the README sentence, tracked as Linear issue MAX-46, is appended to README.md
+  as it stands on the live-proof-2026-09-21 branch. That README already holds the
+  purpose-statement rewrite built for MAX-16 (commit 890dea8). At integration, prototype
+  re-runs setup in the same session, so the kit's setup check reads FRESH again in the
+  same change. This settles the checklist requirements' open question 4.
+- Alternatives considered: leaving the setup check STALE for Max to refresh by hand;
+  holding MAX-46 until the route to main is settled.
+- Reason: the setup record, `.ai-delivery/stack-fingerprint`, stores a hash of
+  README.md, so any README edit makes every kit skill's setup check read STALE and stop
+  until setup re-runs. The kit's write guard refuses a subagent's write to that record,
+  so the refresh belongs to the main session, and a setup re-run is the kit's own way to
+  make it. Running it at integration confines the STALE window to this one session.
+- Cost, accepted knowingly: a setup re-run after a README change runs full detection and
+  may also update conventions.md and this file, so the change carries more than one
+  sentence and a refreshed record. Discovery decided the sentence reaches main ahead of
+  the MAX-16 rewrite. Whether that holds is now settled at handoff, under open question
+  3, which Max owns and must settle before 2026-10-05.
+- Context: prototype design discovery / answered by Max
+
+## 2026-09-22 — Keep the pull request checklist's acceptance checks out of pytest's default run
+
+- Decision: the feature's acceptance checks are pytest modules in
+  `.ai-delivery/features/pull-request-checklist/checks/`, run only by naming that
+  directory. A plain `uv run pytest` from the repository root still collects nothing and
+  exits with code 5.
+- Alternatives considered: checks in a top-level `tests/` directory, where the
+  conventions put tests; no checks, with verification done by reading the two files.
+- Reason: checklist item 3 tells contributors that "no tests ran" (exit code 5) is the
+  expected result until the first test module lands, and requirement FR-004 checks
+  exactly that. A module under `tests/` would make item 3 false on the day it landed and
+  start the rewrite that the requirements' open question 8 asks about. pytest skips
+  directories whose names begin with a dot. On 2026-09-22, with pytest 9.1.1, a plain run
+  exited with code 5 and a run naming the directory collected the checks. Reading alone
+  would lose a repeatable proof written before the files it checks. The checks verify
+  this feature's two files. They are not enforcement on contributors' pull requests,
+  which the requirements exclude.
+- Cost, accepted knowingly: the checks sit outside the recorded lint and type-check
+  gates, which name `src/` and `tests/` only, so ruff and mypy are run on the checks
+  directory by name. The checks also depart from the conventions' tests-directory layout,
+  for the reason above. They depart as well from the project rubric's blocking item that
+  anything added be reachable from the test command in `.ai-delivery/gates.md`. FR-004
+  outranks that item under config's `nfr_precedence`, which puts requirements first.
+- Context: prototype design discovery / proposed by the orchestrator, for Max's approval
+  with the implementation plan
+
+## 2026-09-22 — Mark the Test gate detected, and read CONTRIBUTING.md as a convention source
+
+- Decision: the Test gate in `.ai-delivery/gates.md` keeps its command, `uv run pytest`,
+  and moves from `adopted` to `detected`. Its source is now item 3 of CONTRIBUTING.md,
+  which names that command as the one every contributor runs before opening a pull
+  request. The other gates stay `adopted`. Setup also reads CONTRIBUTING.md as a tier
+  1-code source: its five rules join `.ai-delivery/conventions.md`, and the file joins
+  the setup record's read journal, `.ai-delivery/stack-fingerprint`.
+- Alternatives considered: keeping every gate `adopted`, as the 2026-09-17 entry decided;
+  leaving CONTRIBUTING.md unread by setup.
+- Reason: the 2026-09-17 entry kept the gates `adopted` because a manifest naming a tool
+  is not the project defining how it runs. CONTRIBUTING.md now defines exactly that for
+  the tests, so for this one gate the reason no longer holds. It still holds for lint,
+  format, type check, coverage and the scans, which nothing in the repository invokes.
+  Setup reads contributing guides as written conventions, so leaving the file unread
+  would leave the conventions record behind the repository.
+- Cost, accepted knowingly: any later edit to CONTRIBUTING.md, including the rewrite of
+  item 3 that the pull request checklist's open question 8 anticipates, makes the setup
+  check read STALE until setup re-runs, as README edits already do.
+- Context: setup re-run invoked from the pull request checklist's integration (MAX-47) /
+  proposal confirmed by Max as proposed

@@ -17,3 +17,7 @@
 - build: MAX-40 https://linear.app/max-test-workspace/issue/MAX-40/build-review
 - validate: MAX-41 https://linear.app/max-test-workspace/issue/MAX-41/validate-review
 - release: MAX-42 https://linear.app/max-test-workspace/issue/MAX-42/release-review
+
+## Prototype
+
+- integration: MAX-47 https://linear.app/max-test-workspace/issue/MAX-47/integrate-the-pull-request-checklist-with-its-readme-link

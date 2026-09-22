@@ -97,8 +97,12 @@
       "sha256": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e"
     },
     {
+      "path": "CONTRIBUTING.md",
+      "sha256": "f047515476622e3a9afaec56054d8e784648771b24bfcff8104221cf0e838a8c"
+    },
+    {
       "path": "README.md",
-      "sha256": "c67266bfe350306fd94ad07c9b976da31bca2e02c1c8c29f24f384a758db79ff"
+      "sha256": "e9f5a6dbe5edd4b8cb2024a4cad5014d4d208640195ae26672e4904f6fdbec9d"
     },
     {
       "path": "pyproject.toml",

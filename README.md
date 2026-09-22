@@ -5,3 +5,5 @@ for delivery work such as shaping requirements, tracking work in Linear and hand
 off to engineering. It is not a product. Its files, branches and pull requests exist so the
 kit can be run against a real repository, and they are kept as a worked example of what
 the kit produces.
+
+Before you open a pull request, read the [pull request checklist](CONTRIBUTING.md).

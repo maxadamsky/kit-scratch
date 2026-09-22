@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: 2026-09-17
+regenerated_on: 2026-09-22
 ---
 
 # Quality Gates
@@ -16,8 +16,10 @@ such gate exists here. `blocking` gates fail verification; `advisory` gates repo
 This project now has a dependency manifest: `pyproject.toml` declares the tools below in its
 dev group, and `uv.lock` fixes their versions. The manifest names the tools; it defines no
 entry point for running them, and the project has no scripts, Makefile or CI, so every
-command below remains `adopted` — setup's invocation, not the project's own. None has been
-executed here. The first verify run is what proves them.
+command below except Test remains `adopted` — setup's invocation, not the project's own.
+Test is `detected`: `CONTRIBUTING.md` names `uv run pytest` as the command every
+contributor runs before opening a pull request. No verify run has executed these gates
+yet; the first one is what proves them.
 
 ## Commands
 
@@ -41,8 +43,8 @@ executed here. The first verify run is what proves them.
 
 ### Test
 - command: uv run pytest
-- source: adopted (pytest declared in pyproject.toml dev group; no [tool.pytest.ini_options] and no project-defined entry point)
-- status: adopted
+- source: detected (CONTRIBUTING.md item 3 names this command as the one every contributor runs before opening a pull request; pytest declared in pyproject.toml dev group, with no [tool.pytest.ini_options])
+- status: detected
 - gate: blocking
 
 ### Coverage

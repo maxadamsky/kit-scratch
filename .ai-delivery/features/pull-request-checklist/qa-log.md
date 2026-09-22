@@ -595,3 +595,149 @@ the project root?
 **Decision recorded:** The requirements document stays only at
 `.ai-delivery/features/pull-request-checklist/requirements.md`, and nothing was copied. The
 shape run is complete.
+
+## Prototype — 2026-09-22
+
+Prototype ran on this feature after shape. It reads the Linear project for what to build
+and the requirements document for why, and it writes the design, the specifications and
+the code for the two units. Its exchanges continue the numbering above.
+
+### 37. Feature to prototype
+**Asked:** No feature was named. Of the features with a tracker or design documents,
+where does each stand, and which should prototype work on? Pull request checklist has no
+design yet, and its two work issues, MAX-45 and MAX-46, are in project P-MAX-12's Prototype
+milestone. Cited source staleness has historical design and specifications, and its
+tracker points at the handoff-probe project. Five older features have requirements only,
+with units in the earlier "Shaped" and "Handed off" milestones and no Prototype milestone.
+**Answer:** "Pull request checklist (Recommended)"
+
+**Decision recorded:** Prototype works on pull-request-checklist, starting at design
+discovery. The profile is software, as config records, with no per-feature override.
+
+### 38. Four open questions the checklist and the README sentence wait on
+**Asked:** The requirements say open questions 1, 2 and 5 must be settled before the
+checklist is written, and open question 4 before the README sentence. Four questions were
+asked:
+- Question 1: a pull request made exactly as the kit's ship skill (its
+  commit-and-pull-request workflow) makes it misses items 1, 4 and 5. What should the
+  checklist do about that?
+- Question 2: does "one commit per change" mean one commit per logical change, or one
+  squashed commit per pull request?
+- Question 5: who files the GitHub issue a contributor links, and when, and who triages
+  GitHub issues?
+- Question 4: how does the README sentence land, given that this branch's README already
+  holds the MAX-16 rewrite and that any README edit turns the kit's setup check from FRESH
+  to STALE until setup re-runs?
+**Answer:** "Tool-neutral intro (Recommended)", "Per logical change (Recommended)",
+"Contributor, before work (Recommended)", "Append, re-run setup here (Recommended)"
+
+**Decision recorded:**
+- **Question 1:** a pull request made exactly as ship makes it does not meet items 1, 4
+  and 5. The checklist's one introductory sentence says the five items apply whichever
+  tool opens the pull request. It does not name the kit, so the scope line "nothing about
+  how the kit works" holds. A contributor using ship types their own branch name when ship
+  offers one, and edits the description and issue link to match.
+- **Question 2:** one commit per logical change, so a pull request may hold several
+  commits. FR-003's working assumption stands.
+- **Question 5:** the contributor files a GitHub issue, or picks an existing one, before
+  starting work. Max Adamsky triages GitHub issues and adds any Linear link at review.
+  FR-006's working assumption stands.
+- **Question 4:** the sentence is appended to README.md as it stands on this branch, after
+  the MAX-16 rewrite. At integration, prototype re-runs setup in this session, so the
+  setup check reads FRESH again in the same change. Whether the sentence reaches main
+  ahead of the MAX-16 rewrite is settled at handoff, under open question 3. FR-007's
+  working assumption stands, with the refresh made by a setup re-run.
+
+### 39. Decomposition and its Linear writes
+**Asked:** Shape's two issues match the build grain: MAX-45 builds `CONTRIBUTING.md` and
+its check, and MAX-46 appends the README sentence and its check. They share no file, so
+both go in the first batch. Approve three writes? First, create one integration issue,
+"Integrate the pull request checklist with its README link", in the Prototype milestone.
+That milestone's description says it holds the project's one integration issue. The
+issue carries the `integration` label, High priority and Backlog status, and is blocked
+by MAX-45 and MAX-46. Second, append a dated "Prototype notes" paragraph to MAX-45 and
+MAX-46. Third, record the new issue in tracker.md under `## Prototype`.
+**Answer:** "Approve as proposed (Recommended)"
+
+**Decision recorded:** The decomposition is approved. MAX-45 and MAX-46 stay the two
+units, with no sub-issues, and both are built in the first batch. The integration issue
+owns the integration check and the setup re-run.
+
+### 40. The three code specifications
+**Asked:** Approve each unit's completed specification?
+- MAX-45: `specs/publish-pull-request-checklist.md`. The check module is written first.
+  Then comes `CONTRIBUTING.md`: its items begin with the verbs Name, Make, Run, Write and
+  Link, each carries fixed required phrases, the file runs to 24 to 36 lines, and item
+  5's example has no closing keyword.
+- MAX-46: `specs/link-checklist-from-readme.md`. The check module is written first,
+  then one new last paragraph in README.md holding one sentence and one link to exactly
+  `CONTRIBUTING.md`.
+- MAX-47: `specs/integration.md`. The orchestrator builds it directly: the integration
+  check, then a setup re-run, then the evidence run.
+**Answer:** "Approve (Recommended)" for each of the three.
+
+**Decision recorded:** All three specifications are approved as written, so each unit's
+spec is done. The check modules sit outside the recorded test command, as ADR-001 in
+`design/1a-discovery.md` records.
+
+### 41. Implementation plan
+**Asked:** Approve the implementation plan? MAX-45 and MAX-46 are built in parallel in
+one batch, each within its own file list, with the Linear moves listed. Verification then
+runs one verifier per unit, with the rework loop capped at three attempts. Integration of
+MAX-47 is done in this session, including a setup re-run, and closes the three issues.
+The plan makes no commit, push or pull request.
+**Answer:** The plan was approved in plan mode.
+
+**Decision recorded:** Implementation starts with batch 1: MAX-45 and MAX-46 in
+parallel.
+
+### 42. Verification warnings on MAX-45 and MAX-46
+**Asked:** Both units passed verification with warnings, all about the check modules
+rather than the documents. MAX-45's warnings:
+- the excluded-word check misses hyphenated compounds such as "kit-based";
+- several checks have no failing sample proving they can fire;
+- required phrases match as substrings, without the settled wording "one commit per" or
+  "filed or picked".
+
+MAX-46's warning: its title, file-ending and two-link checks have no failing sample.
+Fix all the warnings, fix only the hyphenated-compound gap, or proceed as is?
+**Answer:** "Proceed as is"
+
+**Decision recorded:** Both units are treated as verified, and the warnings are accepted
+as recorded. No rework cycle ran, and the check modules are unchanged. The warnings are
+kept in each issue's verification comment and in `verification.md`.
+
+### 43. Setup re-run at integration
+**Asked:** Setup re-ran from MAX-47's integration step, because the README sentence made
+the setup check read STALE. Confirm its proposal?
+- Refresh two outdated Linear lines in conventions.md: the `gate` and `request` labels
+  now exist, and Pull request checklist is the one project carrying the five stage
+  milestones.
+- Refresh README's verified date.
+- Add the five rules of CONTRIBUTING.md as tier 1-code conventions.
+- Mark the Test gate `detected`, because CONTRIBUTING.md now documents `uv run pytest`.
+- Rewrite the setup record with CONTRIBUTING.md included. Later edits to that file will
+  then make the setup check read STALE until setup re-runs.
+**Answer:** "Confirm all (Recommended)"
+
+**Decision recorded:** Setup rewrote `.ai-delivery/conventions.md`, `.ai-delivery/gates.md`
+and `.ai-delivery/stack-fingerprint`, and added one entry to `docs/decisions.md`.
+`config.md` and `rubrics.md` are unchanged. The setup check now reads FRESH.
+
+### 44. Post-integration verification warnings
+**Asked:** The post-integration verifier passed the joined feature with warnings.
+- A stray `.coverage` file sat at the root, left by the orchestrator's coverage-gate run.
+- The setup re-run left some records out of date. Five design and spec statements still
+  say CONTRIBUTING.md leaves the setup record alone, or that gates.md is unchanged. The
+  error table in contract C4 misses one condition. Deployment constraint 3 covers only
+  README.
+- There are small wording and check gaps: "pushed to this repository" in the conventions'
+  branch line, and two missing failing samples in the integration check.
+
+Fix all of them, fix only the records, or accept as is?
+**Answer:** "Accept as is"
+
+**Decision recorded:** The warnings are accepted and listed in `verification.md`. The
+stray `.coverage` file was removed anyway, as announced before the question, because it
+was a byproduct of the orchestrator's own gate run and not part of the feature.
+Close-out proceeds.

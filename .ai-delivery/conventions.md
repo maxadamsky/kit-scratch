@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: 2026-09-21
+regenerated_on: 2026-09-22
 ---
 
 # Delivery Conventions
@@ -15,14 +15,16 @@ team decisions and survive re-runs. H2 headings are fixed.
 This project is no longer greenfield: pyproject.toml and uv.lock now declare the toolchain,
 and the 2026-09-17 re-run read them. There are still no source or test modules, so almost
 every convention below remains grounded in fetched official documentation (tier 1-docs)
-rather than in this repository. The first real modules to land here outrank all of it — when
-the code disagrees with a line below, the code is the convention and this file gets
-corrected, not the code.
+rather than in this repository. The 2026-09-22 re-run read CONTRIBUTING.md, the
+repository's first written contribution guide, and records its rules below as tier 1-code
+conventions. The first real modules to land here outrank all of it — when the code
+disagrees with a line below, the code is the convention and this file gets corrected, not
+the code.
 
-A date after `verified:` is the day that source was last read. The 2026-09-07 and 2026-09-17
-re-runs re-read this repository's own files and the Linear team; neither re-fetched the
-external documentation, so those lines keep their original dates rather than borrowing
-today's.
+A date after `verified:` is the day that source was last read. The 2026-09-07, 2026-09-17
+and 2026-09-22 re-runs re-read this repository's own files and the Linear team; none
+re-fetched the external documentation, so those lines keep their original dates rather
+than borrowing today's.
 
 ## Project Structure & Naming
 
@@ -41,7 +43,11 @@ today's.
   branches and pull requests exist so the kit can be run against a real repository, and
   they are kept as a worked example of what the kit produces, so anything added here serves
   that purpose unless stated otherwise.
-  [source: README.md · tier: 1-code · verified: 2026-09-15]
+  [source: README.md · tier: 1-code · verified: 2026-09-22]
+- Branches pushed to this repository are named for the contributor's GitHub handle and a
+  short topic, separated by a slash, such as octocat/fix-readme-typo. The codex prefix is
+  reserved for branches made by an agent.
+  [source: CONTRIBUTING.md · tier: 1-code · verified: 2026-09-22]
 
 ## Code Style
 
@@ -102,7 +108,10 @@ today's.
   bandit and pip-audit — and pinned by uv.lock, but no tool section configures any of them
   yet. Until a pytest configuration section exists, the commands in gates.md are the only
   invocation this project has, and strict mode above is the target rather than the state.
-  [source: pyproject.toml · tier: 1-code · verified: 2026-09-17]
+  [source: pyproject.toml · tier: 1-code · verified: 2026-09-22]
+- Every contributor runs uv run pytest before opening a pull request. Until the first test
+  module lands, the expected result is that no tests ran, with exit code 5.
+  [source: CONTRIBUTING.md · tier: 1-code · verified: 2026-09-22]
 - Tests are written before the implementation they cover, and the suite that runs at
   verification is the same suite those tests joined.
   [source: ai-delivery/skills/setup/profiles/software.md § Test-first meaning · tier: 1-profile · verified: 2026-08-12]
@@ -172,6 +181,14 @@ Not applicable — software profile, no data-pipeline surface detected.
   reachable again as of this re-run, but the standing decision is that the repository owns
   every document, so no Notion parent is nominated and nothing is written there.
   [source: .ai-delivery/config.md § Integrations · tier: 1-code · verified: 2026-09-07]
+- A pull request holds one commit per logical change, so it may hold several commits; a
+  typo fix and a new section are two commits.
+  [source: CONTRIBUTING.md · tier: 1-code · verified: 2026-09-22]
+- A pull request description is one paragraph that says why the change was made.
+  [source: CONTRIBUTING.md · tier: 1-code · verified: 2026-09-22]
+- A pull request description links a GitHub issue on this repository, filed or picked
+  before the work starts. The maintainer adds any Linear link at review.
+  [source: CONTRIBUTING.md · tier: 1-code · verified: 2026-09-22]
 
 ## Linear Conventions
 
@@ -213,9 +230,9 @@ Not applicable — software profile, no data-pipeline surface detected.
   than introducing parallel names for the same distinction. A sixth label, kit-e2e-test,
   marks disposable objects created by kit probes and end-to-end tests. The `gate` label,
   which marks the review issue that closes each stage, and the `request` label, which
-  marks an issue recording an original request, do not exist on this team yet; the
-  search-before-create rule above applies to both.
-  [source: Linear list_issue_labels for team MAX · tier: 1-code · verified: 2026-09-21]
+  marks an issue recording an original request, exist too; triage created both on
+  2026-09-21.
+  [source: Linear list_issue_labels for team MAX · tier: 1-code · verified: 2026-09-22]
 - No default handoff reviewer is recorded, so ship asks who the reviewer is at each
   handoff rather than assuming one.
   [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-09-21]
@@ -260,15 +277,16 @@ Not applicable — software profile, no data-pipeline surface detected.
 - Two projects in this workspace share the name "kit-scratch handoff probe". Resolve that
   project by identifier, never by name, because a name lookup picks arbitrarily between
   them.
-  [source: Linear list_projects for team MAX · tier: 1-code · verified: 2026-09-07]
-- No project on this team carries any of the five stage milestones yet. Seven carry the
-  earlier six-stage names instead — Shaped, Specified, Prototyped, Handed off, Built and
-  Shipped: Repository usage documentation, Folder summary, Text preview, Reading list
-  export and both kit-scratch handoff probe projects carry all six, and Notebook export
-  carries only Shaped and Specified. Folder summary, Text preview and Notebook export also
-  carry an unused Editorial review milestone. Looking up a stage milestone by exact name
-  in any project here therefore finds nothing.
-  [source: Linear list_projects for team MAX · tier: 1-code · verified: 2026-09-21]
+  [source: Linear list_projects for team MAX · tier: 1-code · verified: 2026-09-22]
+- Pull request checklist is the only project on this team carrying the five stage
+  milestones, which triage created on 2026-09-21. Seven others carry the earlier
+  six-stage names instead — Shaped, Specified, Prototyped, Handed off, Built and Shipped:
+  Repository usage documentation, Folder summary, Text preview, Reading list export and
+  both kit-scratch handoff probe projects carry all six, and Notebook export carries only
+  Shaped and Specified. Folder summary, Text preview and Notebook export also carry an
+  unused Editorial review milestone. Looking up a stage milestone by exact name in any of
+  those seven therefore finds nothing.
+  [source: Linear list_projects for team MAX · tier: 1-code · verified: 2026-09-22]
 - Search-before-create, the transactional-gate rule, and rework-time state transitions
   are likewise conventions, not hooks, for the same platform reason: each requires a
   Linear-side read (existing issues, a write's outcome, an issue's current state) that
