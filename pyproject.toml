@@ -1,0 +1,15 @@
+[project]
+name = "kit-scratch-text-tools"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "mypy",
+    "bandit",
+    "pip-audit",
+]

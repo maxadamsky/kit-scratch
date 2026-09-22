@@ -1,7 +1,7 @@
 ---
 schema_version: 2
 generated_on: 2026-08-12
-regenerated_on: null
+regenerated_on: 2026-09-07
 generated_under_profile: software
 ---
 
@@ -76,7 +76,7 @@ reported, never gate. Every item is checkable in a single review pass and cites 
 ## Project Rubric
 
 - [ ] Anything added to this repository is reachable from the test command in gates.md; a module no test run can reach is not verified here, whatever the coverage number says — severity: blocking
-      [source: README.md · tier: 1-code · verified: 2026-08-12]
+      [source: README.md · tier: 1-code · verified: 2026-09-07]
 - [ ] Runtime dependencies are declared in the project manifest rather than assumed present in the environment; a run that needs an undeclared package is a defect in the manifest, not a machine to fix — severity: blocking
       [source: https://docs.pytest.org/en/stable/explanation/goodpractices.html · tier: 1-docs · verified: 2026-08-12]
 - [ ] Untrusted string input is checked against an allowlist with explicit length bounds, and numeric input against explicit ranges, before it reaches any sink — severity: blocking

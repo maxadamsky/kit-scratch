@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: null
+regenerated_on: 2026-09-22
 ---
 
 # Delivery Conventions
@@ -12,10 +12,19 @@ How this project actually does things — read from the code first, researched o
 code is silent. Every convention names its source and date. Edit freely; your edits are
 team decisions and survive re-runs. H2 headings are fixed.
 
-This project is greenfield: there is no code to read, so almost every convention below is
-grounded in fetched official documentation (tier 1-docs) rather than in this repository.
-The first real modules to land here outrank all of it — when the code disagrees with a line
-below, the code is the convention and this file gets corrected, not the code.
+This project is no longer greenfield: pyproject.toml and uv.lock now declare the toolchain,
+and the 2026-09-17 re-run read them. There are still no source or test modules, so almost
+every convention below remains grounded in fetched official documentation (tier 1-docs)
+rather than in this repository. The 2026-09-22 re-run read CONTRIBUTING.md, the
+repository's first written contribution guide, and records its rules below as tier 1-code
+conventions. The first real modules to land here outrank all of it — when the code
+disagrees with a line below, the code is the convention and this file gets corrected, not
+the code.
+
+A date after `verified:` is the day that source was last read. The 2026-09-07, 2026-09-17
+and 2026-09-22 re-runs re-read this repository's own files and the Linear team; none
+re-fetched the external documentation, so those lines keep their original dates rather
+than borrowing today's.
 
 ## Project Structure & Naming
 
@@ -30,9 +39,15 @@ below, the code is the convention and this file gets corrected, not the code.
 - Modules and packages take short, all-lowercase names. Underscores are acceptable in
   module names where they aid readability, and discouraged in package names.
   [source: https://peps.python.org/pep-0008/ · tier: 1-docs · verified: 2026-08-12]
-- The repository exists to verify the ai-delivery kit at version 1.7.0, so anything added
-  here is a harness for that purpose unless stated otherwise.
-  [source: README.md · tier: 1-code · verified: 2026-08-12]
+- The repository is a fixture for exercising the ai-delivery kit, not a product. Its files,
+  branches and pull requests exist so the kit can be run against a real repository, and
+  they are kept as a worked example of what the kit produces, so anything added here serves
+  that purpose unless stated otherwise.
+  [source: README.md · tier: 1-code · verified: 2026-09-22]
+- Branches pushed to this repository are named for the contributor's GitHub handle and a
+  short topic, separated by a slash, such as octocat/fix-readme-typo. The codex prefix is
+  reserved for branches made by an agent.
+  [source: CONTRIBUTING.md · tier: 1-code · verified: 2026-09-22]
 
 ## Code Style
 
@@ -56,7 +71,7 @@ below, the code is the convention and this file gets corrected, not the code.
   review finding.
   [source: https://peps.python.org/pep-0008/ · tier: 1-docs · verified: 2026-08-12]
 - Formatting and line length are settled by the format gate in gates.md, not by review.
-  [source: .ai-delivery/gates.md · tier: 1-code · verified: 2026-08-12]
+  [source: .ai-delivery/gates.md · tier: 1-code · verified: 2026-09-07]
 
 ## Error Handling & Logging
 
@@ -89,6 +104,14 @@ below, the code is the convention and this file gets corrected, not the code.
   [source: https://docs.pytest.org/en/stable/explanation/goodpractices.html · tier: 1-docs · verified: 2026-08-12]
 - pytest configuration lives in pyproject.toml alongside package metadata, in strict mode.
   [source: https://docs.pytest.org/en/stable/explanation/goodpractices.html · tier: 1-docs · verified: 2026-08-12]
+- The toolchain is declared in pyproject.toml's dev group — pytest, pytest-cov, ruff, mypy,
+  bandit and pip-audit — and pinned by uv.lock, but no tool section configures any of them
+  yet. Until a pytest configuration section exists, the commands in gates.md are the only
+  invocation this project has, and strict mode above is the target rather than the state.
+  [source: pyproject.toml · tier: 1-code · verified: 2026-09-22]
+- Every contributor runs uv run pytest before opening a pull request. Until the first test
+  module lands, the expected result is that no tests ran, with exit code 5.
+  [source: CONTRIBUTING.md · tier: 1-code · verified: 2026-09-22]
 - Tests are written before the implementation they cover, and the suite that runs at
   verification is the same suite those tests joined.
   [source: ai-delivery/skills/setup/profiles/software.md § Test-first meaning · tier: 1-profile · verified: 2026-08-12]
@@ -107,7 +130,7 @@ below, the code is the convention and this file gets corrected, not the code.
   [source: ai-delivery/skills/setup/profiles/software.md § Spec contents · tier: 1-profile · verified: 2026-08-12]
 - Public function signatures carry type annotations, because the type-check gate has
   nothing to check without them.
-  [source: .ai-delivery/gates.md · tier: 1-code · verified: 2026-08-12]
+  [source: .ai-delivery/gates.md · tier: 1-code · verified: 2026-09-07]
 
 ## Data Conventions
 
@@ -153,55 +176,153 @@ Not applicable — software profile, no data-pipeline surface detected.
   [source: ai-delivery/skills/setup/profiles/software.md § Verification method · tier: 1-profile · verified: 2026-08-12]
 - Engineering decisions are recorded in docs/decisions.md at the point the decision is
   made — what was chosen, what else was considered, and why. Not a transcript.
-  [source: .ai-delivery/config.md § Preferences · tier: 1-code · verified: 2026-08-12]
-- Stakeholder documents live in this repository, under the feature directory, because
-  Notion is not connected for this project.
-  [source: .ai-delivery/config.md § Integrations · tier: 1-code · verified: 2026-08-12]
+  [source: .ai-delivery/config.md § Preferences · tier: 1-code · verified: 2026-09-07]
+- Stakeholder documents live in this repository, under the feature directory. Notion is
+  reachable again as of this re-run, but the standing decision is that the repository owns
+  every document, so no Notion parent is nominated and nothing is written there.
+  [source: .ai-delivery/config.md § Integrations · tier: 1-code · verified: 2026-09-07]
+- A pull request holds one commit per logical change, so it may hold several commits; a
+  typo fix and a new section are two commits.
+  [source: CONTRIBUTING.md · tier: 1-code · verified: 2026-09-22]
+- A pull request description is one paragraph that says why the change was made.
+  [source: CONTRIBUTING.md · tier: 1-code · verified: 2026-09-22]
+- A pull request description links a GitHub issue on this repository, filed or picked
+  before the work starts. The maintainer adds any Linear link at review.
+  [source: CONTRIBUTING.md · tier: 1-code · verified: 2026-09-22]
 
 ## Linear Conventions
 
-- Hierarchy: a Linear project is one feature; milestones are its delivery stages (MVP
-  first); issues are units of work with plain-language titles and acceptance criteria as
+- Hierarchy: a Linear project is one accepted group of requests, carrying the five
+  stage milestones — Discovery, Prototype, Build, Validate, Release — whose names are
+  identical in every project and come from the shared spine. A milestone holds the work
+  of its own stage; an issue's own maturity is its issue status, never its milestone.
+  Issues are units of work with plain-language titles and acceptance criteria as
   prose in the description; sub-issues are implementation units when finer decomposition
-  is needed — always created with the project set explicitly (sub-issues do not inherit
-  the parent's project, and project-scoped listing misses unprojected ones). Exactly one
-  build-created integration issue per project (label integration, final milestone).
-  [source: kit design · tier: 1-docs · verified: 2026-08-12]
-- Work for this project lives in team CDR (Cdrun-metrics).
-  [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-08-12]
-- Priority is Linear's native field (Urgent/High/Medium/Low/None). Out-of-scope items are
-  never created as issues — they belong in the requirements document.
+  is needed — **always created with the project set explicitly** (sub-issues do not
+  inherit the parent's project, and project-scoped listing misses unprojected ones).
+  Exactly one integration issue per project (label `integration`), created by the
+  prototype skill in the Prototype milestone, never in an engineering-owned stage.
+  [source: kit design · tier: 1-docs · verified: 2026-08-04]
+- Work for this project lives in team MAX (Max-test-workspace). This is the only team the
+  connected Linear workspace exposes.
+  [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-09-07]
+- Priority is Linear's native field (Urgent/High/Medium/Low/None). Out-of-scope ("won't")
+  items are never created as issues — they belong in the requirements document.
 - Statuses: address states by the names recorded in config.md ## Linear; branch on state
-  type, never on name. For this team those names are Backlog, Todo, In Progress, Done,
-  Canceled, and Duplicate. New issues are created in Backlog or Todo. This team has no
-  second in-progress state, so there is no separate review state to move through.
-  [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-08-12]
-- Titles: short imperative phrases naming the outcome, no story grammar, no ticket-style
-  prefixes.
+  *type*, never on name. For this team those names are Triage, Backlog, Todo, In Progress,
+  Done, Canceled, and Duplicate. New issues are created in the backlog- or unstarted-type
+  state, which here means Backlog or Todo. This team has no second started-type state, so
+  there is no separate review state to move through.
+  [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-09-15]
+- Titles: short imperative phrases naming the outcome ("Add rate limiting to the token
+  endpoint"), no story grammar, no ticket-style prefixes.
 - Labels: search before creating; creating a label requires user approval. Issue label
   writes REPLACE the full set — always read the issue's current labels and write back the
   merged list. This read-modify-write rule is a convention, not an enforced hook: a hook
   must be decidable from the tool call's arguments plus files on disk, and the current
-  label set exists only in Linear, so there is nothing on disk to diff against.
-- Kit-reserved labels are defined by the skills, not by this file, and are never renamed
-  here. Three already exist on this team — awaiting-verification, verified, and
-  integration. Two do not — escalated and rework — so the first skill that needs one will
-  ask before creating it.
-  [source: Linear list_issue_labels for team CDR · tier: 1-code · verified: 2026-08-12]
-- This team's own taxonomy is Feature, Bug, and Improvement. Reuse these rather than
-  introducing parallel names for the same distinction.
-  [source: Linear list_issue_labels for team CDR · tier: 1-code · verified: 2026-08-12]
-- Search before create, always: list existing projects and issues before creating; after
-  every successful create, record the returned identifier in the feature's tracker.md
-  immediately — resume matches by identifier, never by title.
-- Search-before-create, the transactional-gate rule, and rework-time state transitions are
-  likewise conventions, not hooks, for the same platform reason: each requires a
-  Linear-side read that no check decidable from the tool call's arguments plus files on
-  disk can perform.
-- Required on every kit-created issue: description with acceptance criteria, priority,
-  milestone (when milestones exist), and the project.
-- Linear Documents are not used — the repo owns specs, design docs, and (because Notion is
-  absent here) stakeholder documents too. Attach links, not documents.
+  label set exists only in Linear (the tracker is references-only by design), so there is
+  nothing on disk to diff a proposed labels array against. The kit-reserved labels
+  (awaiting-verification, verified, escalated,
+  rework, integration) are defined by the skills, not by this file, and are never renamed
+  here.
+- All five kit-reserved labels already exist on this team, so no skill needs to ask to
+  create one. The team's own taxonomy is Bug, Improvement, and Feature; reuse these rather
+  than introducing parallel names for the same distinction. A sixth label, kit-e2e-test,
+  marks disposable objects created by kit probes and end-to-end tests. The `gate` label,
+  which marks the review issue that closes each stage, and the `request` label, which
+  marks an issue recording an original request, exist too; triage created both on
+  2026-09-21.
+  [source: Linear list_issue_labels for team MAX · tier: 1-code · verified: 2026-09-22]
+- No default handoff reviewer is recorded, so ship asks who the reviewer is at each
+  handoff rather than assuming one.
+  [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-09-21]
+- Before create: resolve initiative state; read tracker.md; read bound-initiative projects.
+  Nothing may be created before the applicable reads finish.
+  [source: owner ruling · tier: 1-docs · verified: 2026-08-15]
+- A tracker is valid for this gate when it names a project identifier and URL. Under a
+  present-null initiative state, a valid tracker is a resume outside an initiative: select
+  that project silently, do not ask a project question, and do not create or rebind one.
+  No initiative-membership check applies because no initiative is bound.
+  [source: owner ruling · tier: 1-docs · verified: 2026-08-15]
+- For a bound initiative, read its projects across every team and complete every page.
+  If a valid tracker's project identifier appears in that read, select that project
+  silently and do not report the read's extent or ask the three-branch project question.
+  [source: owner ruling · tier: 1-docs · verified: 2026-08-15]
+- If the tracked project identifier does not appear in the bound-initiative read, stop,
+  say that it is no longer in the initiative, and show every project the read did find by
+  name and identifier plus the count. Do not create or rebind a project.
+  [source: owner ruling · tier: 1-docs · verified: 2026-08-15]
+- With no tracker, report every project read by name and count, then say a project would
+  not appear if its owning team is private and the reader does not belong to it. Offer all
+  three branches together: attach to one reported project; create a project whose
+  kit-proposed name the human confirms or edits; or create nothing. Never choose a branch.
+  A created project is attached beneath the bound initiative.
+  [source: kit design · tier: 1-docs · verified: 2026-08-15]
+- Initiative binding has three states: a non-null identifier binds new work beneath that
+  initiative; present null records a deliberate decline, so read tracker.md before any
+  project create and say that new work is outside an initiative and no overlap check ran;
+  an absent key identifies a config that predates initiative binding, so the gate stops
+  and offers a setup re-run rather than treating it as a decline.
+  [source: kit design · tier: 1-docs · verified: 2026-08-15]
+- This project records a present-null initiative binding: the decline branch above is the
+  live one. Beyond that standing decline, the connected Linear server exposes no
+  initiative-listing call at all, so the bound-initiative read cannot be performed here
+  even if a binding were later added by hand.
+  [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-09-07]
+- After an attach or create, record the selected project's identifier and URL in the
+  feature's tracker.md immediately. A valid tracker is retained on resume. After every
+  successful issue create, record its returned identifier there too; resume matches by
+  identifier, never by title.
+  [source: kit design · tier: 1-docs · verified: 2026-08-15]
+- Two projects in this workspace share the name "kit-scratch handoff probe". Resolve that
+  project by identifier, never by name, because a name lookup picks arbitrarily between
+  them.
+  [source: Linear list_projects for team MAX · tier: 1-code · verified: 2026-09-22]
+- Pull request checklist is the only project on this team carrying the five stage
+  milestones, which triage created on 2026-09-21. Seven others carry the earlier
+  six-stage names instead — Shaped, Specified, Prototyped, Handed off, Built and Shipped:
+  Repository usage documentation, Folder summary, Text preview, Reading list export and
+  both kit-scratch handoff probe projects carry all six, and Notebook export carries only
+  Shaped and Specified. Folder summary, Text preview and Notebook export also carry an
+  unused Editorial review milestone. Looking up a stage milestone by exact name in any of
+  those seven therefore finds nothing.
+  [source: Linear list_projects for team MAX · tier: 1-code · verified: 2026-09-22]
+- Search-before-create, the transactional-gate rule, and rework-time state transitions
+  are likewise conventions, not hooks, for the same platform reason: each requires a
+  Linear-side read (existing issues, a write's outcome, an issue's current state) that
+  no check decidable from the tool call's arguments plus files on disk can perform.
+- Required on every kit-created work issue: description with acceptance
+  criteria, priority, the milestone of the stage whose outcome its work
+  delivers, and the project. A work issue never changes milestone afterwards.
+  A request issue records an original request rather than a unit of work, and
+  is the exception: it carries the `request` label and **no milestone**.
+  Triage creates it when it accepts the group, with the request text,
+  requester, channel, date, configured team, backlog state and project, plus
+  a comment linking the project, delivery issues and other grouped requests.
+- Linear Documents are not used — the repo owns specs and design docs, and (because no
+  Notion parent is nominated here) stakeholder documents too. Attach links, not documents.
 - Descriptions are annotated, never rewritten: use anchored patch edits; never anchor a
-  patch across an issue identifier, because Linear rewrites identifiers into mention markup
-  on save.
+  patch across an issue identifier (Linear rewrites identifiers into mention markup on
+  save).
+
+# Anchor rules for tracker descriptions
+
+Read this before editing any tracker issue or project description with an
+anchored patch.
+
+Build every patch against a fresh read of the stored description, never against
+text this session sent. What the caller submitted and what the tracker stored
+are different bytes, and only the stored bytes are a valid patch baseline.
+
+Read the stored description immediately before each patch. One read does not
+cover a later patch: a save between the read and the patch moves the text the
+anchor depends on, so a second patch needs its own read.
+
+The tracker rewrites markdown on every save. It does not only substitute
+characters; it inserts structure, including a blank line between a paragraph
+and a list beneath it. Identifiers become mention markup. The stored form is
+therefore not the form that was sent.
+
+An anchor built from stale text fails while every character in it still looks
+correct. Nothing in review shows the defect, because the anchor is wrong only
+against bytes the reviewer is not looking at. The fresh read is the control.
