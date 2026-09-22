@@ -635,3 +635,30 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   write that sets it is refused after its project already exists, where a null would have
   stopped the skill before any write.
 - Context: setup re-run / interview answer from Max
+
+## 2026-09-22 — Build the pull request checklist as two independent units, with no blocked-by links
+
+- Decision: decompose the pull request checklist into two Linear issues in project P-MAX-12,
+  Pull request checklist. Both sit in the Prototype milestone, with no blocked-by links
+  between them:
+  - MAX-45 (Urgent) publishes the five-item checklist in CONTRIBUTING.md, covering FR-001
+    to FR-006.
+  - MAX-46 (High) links the checklist from the README, covering FR-007.
+
+  FR means functional requirement in
+  .ai-delivery/features/pull-request-checklist/requirements.md. MAX-46's link target is
+  fixed as CONTRIBUTING.md at the repository root. Both can therefore be built at once, and
+  the link resolves once both land.
+- Alternatives considered: one issue covering both the file and the README sentence, or
+  one issue per checklist item.
+- Reason: the README sentence carries two things open question 4 has not settled: the
+  setup-record refresh, and its ordering against the MAX-16 README rewrite. Keeping it
+  apart lets the checklist file go ahead while that question is open. Splitting the five
+  items apart would put several issues in one file, which the software profile forbids.
+- Cost, accepted knowingly: two units is below the software profile's typical range of
+  three to nine. All seven requirements and both units are Urgent or High, above the kit's
+  guideline that no more than 60% be. Max approved the priorities as drafted, because
+  discovery had already cut everything that could wait. Ten decisions stay open for
+  Max Adamsky, listed in the requirements document. Questions 1, 2 and 5 must be settled
+  before the checklist is written, and question 4 before the README sentence.
+- Context: shape decomposition / approved by Max as proposed

@@ -478,3 +478,120 @@ pull-request-checklist-brief.md for easy sharing?
 **Decision recorded:** The brief stays only at
 `.ai-delivery/features/pull-request-checklist/brief.md`, and nothing was copied. The discover
 run is complete.
+
+## Shape — 2026-09-22
+
+Shape ran on this feature after discover. It read the discovery brief in place and took
+intake from it rather than from a fresh interview. Its exchanges continue the numbering
+above.
+
+### 28. Feature to shape
+**Asked:** No feature was named. Of the eight feature folders, seven are finished shaping.
+pull-request-checklist has a completed discovery brief but no requirements yet. Which
+feature should shape work on?
+**Answer:** "pull-request-checklist (Recommended)"
+
+**Decision recorded:** Shape works on pull-request-checklist, starting at intake.
+
+### 29. Intake from the discovery brief
+**Asked:** Shape extracted the users, goal, scope, exclusions and constraints from brief.md
+and listed the brief's ten open questions. Answer the open questions now, proceed with the
+extraction as it stands, or change something?
+**Answer:** "Looks good, proceed"
+
+**Decision recorded:** The extraction stands as presented. The ten open questions in the
+brief's section 13 were not answered at intake. Each goes into the requirements document as
+a flagged assumption owned by Max Adamsky. Intake checked two facts against the repository
+and added them to the questions:
+- This branch already contains MAX-16's README rewrite, commit 890dea8, while `main` still
+  has the two-line README.
+- This branch is 20 commits ahead of `main` and has not been pushed.
+
+### 30. Depth of the requirements document
+**Asked:** Full (ten sections with a section-by-section review) or Lite (four sections, approved
+directly)? Q&A logging, UI-facing and framework were not asked: config.md records
+`qa_log: on` and `ui_facing: false`, and a framework matters only for UI-facing work.
+**Answer:** "Lite, 4 sections (Recommended)"
+
+**Decision recorded:** The requirements document follows the Lite template: problem and
+context, scope, units of work, and requirements, followed by an open questions list that
+carries the brief's ten questions. UX ideation is skipped because the work is not
+UI-facing.
+
+### 31. Linear issues at the end
+**Asked:** At the end, split the requirements into units of work and create them as issues
+in Linear project P-MAX-12, after you review the split? Triage already created that project
+and its five stage milestones.
+**Answer:** "Yes, create delivery issues (Recommended)"
+
+**Decision recorded:** Decomposition is planned. Each approved unit becomes one issue in the
+project's Prototype milestone, and nothing is created in Linear until the split is
+approved.
+
+### 32. Requirements approval
+**Asked:** The draft is at requirements.md. It has two units of work and seven
+requirements. Four working assumptions are each tied to an open question, and all seven
+requirements are Urgent or High, above the kit's 60% guide. Approve as written, or revise
+something?
+**Answer:** "Approve as written (Recommended)"
+
+**Decision recorded:** The requirements document is approved on 2026-09-22 with its
+priorities as drafted. The two approved units are:
+- Unit 1 (Urgent): Publish the pull request checklist in CONTRIBUTING.md.
+- Unit 2 (High): Link the pull request checklist from the README.
+
+The ten open questions remain open, and Max Adamsky owns each one. The document stays in
+this repository and nothing is published to Notion, per the standing decision in
+`.ai-delivery/conventions.md`.
+
+### 33. Split into Linear issues
+**Asked:** Approve splitting the work into two Linear issues in project P-MAX-12's Prototype
+milestone, in Backlog, with no dependency between them? Or correct an issue, merge or
+split, or change a priority or dependency? The exact titles and descriptions were shown
+for review.
+**Answer:** "Approve as-is (Recommended)"
+
+**Decision recorded:** The approved split is:
+- Unit 1 (Urgent): Publish the pull request checklist in CONTRIBUTING.md. Covers FR-001 to
+  FR-006.
+- Unit 2 (High): Link the pull request checklist from the README. Covers FR-007.
+
+The README sentence stays a separate issue so that the checklist file can go ahead while
+open question 4 is unsettled. There is no blocked-by relation, because the link target is
+fixed as CONTRIBUTING.md at the repository root.
+
+### 34. Project status on entry
+**Asked:** Move project P-MAX-12 from Discovery to Ready? Its Discovery review issue, MAX-38,
+is closed. The same read found all five stage milestones already present by exact name, so
+none is created. It also found the five review issues MAX-38 to MAX-42 with their expected
+titles, and no delivery issues yet.
+**Answer:** "Set Ready (Recommended)"
+
+**Decision recorded:** Shape sets P-MAX-12 to Ready, reading the status immediately before
+the write and again in a separate call afterwards.
+
+**Linear (decomposition):** Shape set P-MAX-12 to Ready and read it back in a separate call.
+It created MAX-45, "Publish the pull request checklist in CONTRIBUTING.md" (Urgent), and
+MAX-46, "Link the pull request checklist from the README" (High). Both are in the Prototype
+milestone, in Backlog. Each was recorded in tracker.md as soon as its create returned, then
+read back in a separate call and matched the approved write. Linear added related-to links
+from MAX-46 to MAX-16 and MAX-18 on its own, because the description names them. No
+blocked-by link exists. tracker.md also records the five review issues, MAX-38 to MAX-42.
+The research issue MAX-44 is still In Progress; closing it is Max Adamsky's call.
+
+### 35. Hand off to prototype
+**Asked:** Hand this off to prototype for implementation? Prototype reads the Linear project
+for what to build and the requirements document for context, and nothing is copied.
+**Answer:** "No, I'll pick it up later"
+
+**Decision recorded:** Shape ends here without starting prototype. The next prototype run
+finds P-MAX-12 and its two Prototype-milestone issues, MAX-45 and MAX-46, on its own.
+
+### 36. Export the requirements document
+**Asked:** Keep the requirements document only in this repository, or also export a copy to
+the project root?
+**Answer:** "Keep it where it is (Recommended)"
+
+**Decision recorded:** The requirements document stays only at
+`.ai-delivery/features/pull-request-checklist/requirements.md`, and nothing was copied. The
+shape run is complete.
