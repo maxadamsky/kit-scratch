@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: 2026-09-17
+regenerated_on: 2026-09-21
 ---
 
 # Delivery Conventions
@@ -175,13 +175,16 @@ Not applicable — software profile, no data-pipeline surface detected.
 
 ## Linear Conventions
 
-- Hierarchy: a Linear project is one feature; milestones are its delivery stages (MVP
-  first); issues are units of work with plain-language titles and acceptance criteria as
+- Hierarchy: a Linear project is one accepted group of requests, carrying the five
+  stage milestones — Discovery, Prototype, Build, Validate, Release — whose names are
+  identical in every project and come from the shared spine. A milestone holds the work
+  of its own stage; an issue's own maturity is its issue status, never its milestone.
+  Issues are units of work with plain-language titles and acceptance criteria as
   prose in the description; sub-issues are implementation units when finer decomposition
   is needed — **always created with the project set explicitly** (sub-issues do not
   inherit the parent's project, and project-scoped listing misses unprojected ones).
-  Exactly one build-created integration issue per project (label `integration`, final
-  milestone).
+  Exactly one integration issue per project (label `integration`), created by the
+  prototype skill in the Prototype milestone, never in an engineering-owned stage.
   [source: kit design · tier: 1-docs · verified: 2026-08-04]
 - Work for this project lives in team MAX (Max-test-workspace). This is the only team the
   connected Linear workspace exposes.
@@ -208,13 +211,14 @@ Not applicable — software profile, no data-pipeline surface detected.
 - All five kit-reserved labels already exist on this team, so no skill needs to ask to
   create one. The team's own taxonomy is Bug, Improvement, and Feature; reuse these rather
   than introducing parallel names for the same distinction. A sixth label, kit-e2e-test,
-  marks disposable objects created by kit probes and end-to-end tests.
-  [source: Linear list_issue_labels for team MAX · tier: 1-code · verified: 2026-09-07]
-- The handoff milestone for this workspace is "Handed off" — the last stage the kit moves
-  before "Built", which engineering moves. Reaching it means engineering is being asked to
-  take or delegate the work. No default reviewer is recorded, so ship asks who the reviewer
-  is at handoff time rather than assuming one.
-  [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-09-07]
+  marks disposable objects created by kit probes and end-to-end tests. The `gate` label,
+  which marks the review issue that closes each stage, and the `request` label, which
+  marks an issue recording an original request, do not exist on this team yet; the
+  search-before-create rule above applies to both.
+  [source: Linear list_issue_labels for team MAX · tier: 1-code · verified: 2026-09-21]
+- No default handoff reviewer is recorded, so ship asks who the reviewer is at each
+  handoff rather than assuming one.
+  [source: .ai-delivery/config.md § Linear · tier: 1-code · verified: 2026-09-21]
 - Before create: resolve initiative state; read tracker.md; read bound-initiative projects.
   Nothing may be created before the applicable reads finish.
   [source: owner ruling · tier: 1-docs · verified: 2026-08-15]
@@ -257,12 +261,26 @@ Not applicable — software profile, no data-pipeline surface detected.
   project by identifier, never by name, because a name lookup picks arbitrarily between
   them.
   [source: Linear list_projects for team MAX · tier: 1-code · verified: 2026-09-07]
+- No project on this team carries any of the five stage milestones yet. Seven carry the
+  earlier six-stage names instead — Shaped, Specified, Prototyped, Handed off, Built and
+  Shipped: Repository usage documentation, Folder summary, Text preview, Reading list
+  export and both kit-scratch handoff probe projects carry all six, and Notebook export
+  carries only Shaped and Specified. Folder summary, Text preview and Notebook export also
+  carry an unused Editorial review milestone. Looking up a stage milestone by exact name
+  in any project here therefore finds nothing.
+  [source: Linear list_projects for team MAX · tier: 1-code · verified: 2026-09-21]
 - Search-before-create, the transactional-gate rule, and rework-time state transitions
   are likewise conventions, not hooks, for the same platform reason: each requires a
   Linear-side read (existing issues, a write's outcome, an issue's current state) that
   no check decidable from the tool call's arguments plus files on disk can perform.
-- Required on every kit-created issue: description with acceptance criteria, priority,
-  milestone (when milestones exist), and the project.
+- Required on every kit-created work issue: description with acceptance
+  criteria, priority, the milestone of the stage whose outcome its work
+  delivers, and the project. A work issue never changes milestone afterwards.
+  A request issue records an original request rather than a unit of work, and
+  is the exception: it carries the `request` label and **no milestone**.
+  Triage creates it when it accepts the group, with the request text,
+  requester, channel, date, configured team, backlog state and project, plus
+  a comment linking the project, delivery issues and other grouped requests.
 - Linear Documents are not used — the repo owns specs and design docs, and (because no
   Notion parent is nominated here) stakeholder documents too. Attach links, not documents.
 - Descriptions are annotated, never rewritten: use anchored patch edits; never anchor a

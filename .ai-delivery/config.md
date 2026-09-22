@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: 2026-09-17
+regenerated_on: 2026-09-21
 greenfield: false
 ---
 
@@ -59,11 +59,20 @@ treated as team decisions), never the structure. Re-run setup after a stack chan
 - state_completed: Done
 - state_canceled: Canceled
 - state_review: null
-- handoff_milestone_name: Handed off
 - handoff_reviewer: null
-- milestone_names: {"21d2580f-fa80-4227-9df6-48894a9c798e":{"shaped":"Shaped","specified":"Specified","prototyped":"Prototyped","handed_off":"Handed off","built":"Built","shipped":"Shipped"},"9d5b5c3b-01ff-4189-aa7d-ebb8d408e893":{"shaped":"Shaped","specified":"Specified","prototyped":null,"handed_off":null,"built":null,"shipped":null},"fcffa165-dcf9-4da0-a6c1-ba12936b8531":{"shaped":"Shaped","specified":"Specified","prototyped":"Prototyped","handed_off":"Handed off","built":"Built","shipped":"Shipped"},"4c1e19e7-c231-4a35-a34a-fb759cae57c7":{"shaped":"Shaped","specified":"Specified","prototyped":"Prototyped","handed_off":"Handed off","built":"Built","shipped":"Shipped"},"0b81ff52-0e82-4ee2-8293-b01cbe4ece63":{"shaped":"Shaped","specified":"Specified","prototyped":"Prototyped","handed_off":"Handed off","built":"Built","shipped":"Shipped"}}
+- project_status_idea: Idea
+- project_status_proposal: Proposal
+- project_status_discovery: Discovery
+- project_status_ready: Ready
+- project_status_paused: Paused
+- project_status_prototype: Prototype
+- project_status_build: Build
+- project_status_validate: Validate
+- project_status_release: Release
+- project_status_completed: Completed
+- project_status_canceled: Canceled
 - state_table: Triage=triage; Backlog=backlog; Todo=unstarted; In Progress=started; Done=completed; Canceled=canceled; Duplicate=duplicate
-- detected_on: 2026-09-17
+- detected_on: 2026-09-21
 
 ## Preferences
 

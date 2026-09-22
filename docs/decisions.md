@@ -597,3 +597,41 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   not exist yet, so the first verify run in this repository will be the first time any of
   these commands is proved.
 - Context: setup re-run / proposal confirmed by Max as proposed
+
+## 2026-09-21 — Retire the per-project milestone map and the handoff milestone for the five fixed stages
+
+- Decision: milestone_names, the per-project map from each kit stage to that project's
+  milestone name, and handoff_milestone_name ("Handed off") are removed from
+  .ai-delivery/config.md. The Linear lines in .ai-delivery/conventions.md that described
+  the six-stage model now carry the kit's current text. The null default handoff reviewer
+  recorded on 2026-09-07 stands.
+- Alternatives considered: keeping both keys, which kit 3.0.0 accepts but ignores; moving
+  the existing projects' milestones to the stage names as part of setup.
+- Reason: kit 3.0.0 gives every project the same five stage milestones — Discovery,
+  Prototype, Build, Validate and Release — so there is no per-project name to map and no
+  handoff milestone to resolve. Keys that nothing reads would only mislead a person reading
+  the config, and setup never writes Linear projects or milestones. This supersedes the
+  2026-09-07 entry that adopted "Handed off" as the handoff milestone, and it retires the
+  milestone_names mappings that earlier entries recorded for five projects; the milestones
+  themselves remain in Linear.
+- Cost, accepted knowingly: no project on team MAX carries a stage milestone yet. Seven
+  still carry the earlier six-stage names, so a skill looking up a stage milestone in any
+  of them by exact name finds nothing. Whether and when to move them is Max's decision.
+- Context: setup re-run after the kit update to 3.0.0 / proposal confirmed by Max
+
+## 2026-09-21 — Record all eleven project statuses by the kit's names, on Max's word
+
+- Decision: the eleven project_status_* keys in .ai-delivery/config.md record Idea,
+  Proposal, Discovery, Ready, Paused, Prototype, Build, Validate, Release, Completed and
+  Canceled, exactly as the kit names them.
+- Alternatives considered: recording only Completed and Canceled, the two of the eleven that
+  Linear provides by default, and leaving the nine custom statuses null until one could be
+  seen; asking for each name separately.
+- Reason: Max confirmed that a workspace administrator created all nine custom statuses
+  with exactly these names. No Linear call lists a workspace's project statuses, so this
+  session could not confirm it: the eleven projects on team MAX currently hold only
+  Backlog, Planned and Canceled.
+- Cost, accepted knowingly: if a recorded name does not match the workspace, the first
+  write that sets it is refused after its project already exists, where a null would have
+  stopped the skill before any write.
+- Context: setup re-run / interview answer from Max
