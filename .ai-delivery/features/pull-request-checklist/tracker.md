@@ -21,3 +21,8 @@
 ## Prototype
 
 - integration: MAX-47 https://linear.app/max-test-workspace/issue/MAX-47/integrate-the-pull-request-checklist-with-its-readme-link
+
+## Mirrors
+
+- publish-pull-request-checklist: MAX-48 https://linear.app/max-test-workspace/issue/MAX-48/publish-the-pull-request-checklist-in-contributingmd
+- link-checklist-from-readme: MAX-49 https://linear.app/max-test-workspace/issue/MAX-49/link-the-pull-request-checklist-from-the-readme
