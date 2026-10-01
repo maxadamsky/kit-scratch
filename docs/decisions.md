@@ -758,3 +758,27 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   check read STALE until setup re-runs, as README edits already do.
 - Context: setup re-run invoked from the pull request checklist's integration (MAX-47) /
   proposal confirmed by Max as proposed
+
+## 2026-10-01 — Split scratch-notes into one unit per printed output, sharing one script
+
+- Decision: scratch-notes is tracked as four Prototype-milestone issues in project
+  P-MAX-14 (Scratch notes). Three of them cover the three things the script prints: the
+  open count (MAX-82, the foundation), the headings (MAX-83) and the `--json` output
+  (MAX-84). All three change `scratch_notes.py` and its single test file, so MAX-83 is
+  blocked by MAX-82, and MAX-84 is blocked by both. The fourth, MAX-85, updates item 3 of
+  `CONTRIBUTING.md` and touches no file the others touch, so it can be built alongside
+  MAX-82.
+- Alternatives considered: one issue for the whole script plus the `CONTRIBUTING.md`
+  issue, which was shape's proposal because the software profile treats units sharing
+  files as a defect; folding the `CONTRIBUTING.md` change into the count issue.
+- Reason: Max Adamsky asked for one unit per printed output and accepted the shared files.
+  The `CONTRIBUTING.md` change stays separate because it touches different files, serves
+  a different reader, and is the only work that can run alongside the foundation.
+- Cost, accepted knowingly: the three script issues are built one after another, not in
+  parallel. The chain is three deep, the most the kit allows. MAX-84 is Urgent but waits
+  on MAX-83, which is Medium. The approved requirements put `scratch_notes.py` at the
+  repository root, but the recorded lint, format and type-check gates in
+  `.ai-delivery/gates.md` cover only `src/` and `tests/`. Those gates therefore don't
+  check the script until prototype either runs them on the file by name or settles where
+  it lives.
+- Context: shape Phase 3 decomposition / split requested by Max in review, 2026-10-01

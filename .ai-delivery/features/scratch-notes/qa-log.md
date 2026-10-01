@@ -181,3 +181,53 @@ Recorded: the Chosen Direction's constraint and criterion 4 updated to match.
 ### 23. Brief review
 **Asked:** Does the brief capture the outcome — finalize, or change something?
 **Answer:** "1. Finalize it, then stop here: don't start shape in this session."
+
+## Shape exchanges
+
+Shape started 2026-09-30 from the discovery brief (entry point: discover). Numbering
+continues from the discovery exchanges above.
+
+### 24. Feature to shape
+**Asked:** Which feature should shape work on — scratch-notes (discovery finished, no
+requirements yet), a new feature, or a revision to a finished one?
+**Answer:** "scratch-notes."
+
+### 25. Intake summary from the brief
+**Asked:** Does the summary extracted from the brief look right, and should the six open
+questions from the brief be answered now, or drafted as flagged assumptions?
+**Answer:** "Looks good, draft now." The six open questions go into the requirements as
+`[ASSUMPTION]` items, to be settled in review.
+
+### 26. Document depth and Linear population
+**Asked:** Full (10 sections with review) or Lite (4 sections) requirements document? And
+after approval, decompose into units of work and create them as issues in project P-MAX-14?
+**Answer:** "Lite." "Yes, create them." Recorded as `Decomposition: planned` in the
+requirements header.
+
+### 27. Requirements approval
+**Asked:** Approve the Lite requirements document as written (all seven working answers
+accepted, headings at Medium), approve with headings at High, or revise?
+**Answer:** "Approve as written." Header set to `Status: approved (2026-09-30)`; open
+questions 1–7 closed on their working answers.
+
+### 28. Decomposition review
+**Asked:** Create the proposed two issues (the whole script as one, and the `CONTRIBUTING.md`
+update as the other), adjust them, or write nothing to Linear?
+**Answer:** "Split the script into three units, one per printed item: the open count, the
+headings, and the --json output. I accept that they share scratch_notes.py. Keep the
+CONTRIBUTING.md change as its own unit or fold it into one of those, whichever you judge
+better, but no more than four units in total."
+Recorded: the `CONTRIBUTING.md` change was kept as its own unit, making four units in all.
+Section 3 of the requirements was revised as a Moderate rework dated 2026-10-01: FR-001's
+`--json` form moved to FR-007, and FR-008's heading lines became the new FR-016. The unit
+titles are now: Count the open checklist items in a notes file; List the notes file's
+headings under the count; Give the shell prompt the count and headings as JSON; Tell
+contributors that `uv run pytest` now runs real tests.
+
+### 29. Revised decomposition approval
+**Asked:** Create the four issues (count, headings, JSON and `CONTRIBUTING.md`), with
+headings blocked by count and JSON blocked by count and headings?
+**Answer:** "Approve as-is." Created MAX-82, MAX-83, MAX-84 and MAX-85 in the Prototype
+milestone of P-MAX-14, with three blocked-by links, and moved the project from Discovery
+to Ready because the Discovery review gate issue was closed. Header set to
+`Decomposition: populated (2026-10-01)`.
