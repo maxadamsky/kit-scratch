@@ -782,3 +782,108 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   check the script until prototype either runs them on the file by name or settles where
   it lives.
 - Context: shape Phase 3 decomposition / split requested by Max in review, 2026-10-01
+
+## 2026-10-01 — Drop the CONTRIBUTING.md unit from scratch-notes for this release
+
+- Decision: scratch-notes ships without rewriting item 3 of `CONTRIBUTING.md`. MAX-85, the
+  Linear issue for that unit, is Canceled with the reason "descoped for this release".
+  Requirements FR-014 (rewrite item 3) and FR-015 (keep the kit's setup check FRESH after
+  that edit) are marked descoped. `CONTRIBUTING.md`, the setup record
+  `.ai-delivery/stack-fingerprint` and the older pull request checklist checks stay as
+  they are. Three units remain: the open count (MAX-82), the headings (MAX-83) and the
+  `--json` output (MAX-84).
+- Alternatives considered: updating the older check's expected wording inside MAX-85;
+  leaving that check failing; moving the older checks into `tests/` so `uv run pytest`
+  runs them.
+- Reason: Max Adamsky descoped the unit when asked what should happen to the older check,
+  `.ai-delivery/features/pull-request-checklist/checks/test_contributing.py`, which
+  requires item 3 to say "no tests ran" and "exit code 5".
+- Cost, accepted knowingly: once the first scratch-notes test lands, `uv run pytest` runs
+  real tests. Item 3's rule sentence stays accurate, because it only promises the empty
+  result "until the first test module lands", but its example line, which says the
+  command exits with code 5 "today", is then wrong. `.ai-delivery/conventions.md` repeats
+  the same expectation and goes out of date with it. Max Adamsky decides in which later
+  release both are rewritten.
+- Context: prototype, start of technical design / Max's answer to a design question,
+  2026-10-01
+
+## 2026-10-01 — Settle two gaps in the scratch-notes requirements before design
+
+- Decision: anything, or nothing, may follow the `[ ]` of an open checklist item, so a
+  bare `- [ ]` and `- [ ]buy milk` both count as open. The 50 ms timing (FR-012) uses a
+  sample file built by the tests, and the check of the line rule against real notes files
+  moves from before the code is written to after the script exists.
+- Alternatives considered: requiring a space or the end of the line after `[ ]`, as
+  GitHub's task lists do; requiring text after a space; waiting for real notes files
+  before designing.
+- Reason: Max Adamsky chose "both count", which is the rule as accepted in discovery, read
+  literally. No real notes files exist in or near this repository, so neither the timing
+  nor the hand-count check can use one.
+- Cost, accepted knowingly: the first success measure, that the count equals a hand count
+  on real notes files, is unproven when the prototype finishes. Max Adamsky owns running
+  the finished script on real files.
+- Context: prototype, start of technical design / Max's answers, 2026-10-01
+
+## 2026-10-01 — Refuse notes files over 1 MiB, and read one-line backtick snippets as text
+
+- Decision: `scratch_notes.py` refuses a file larger than 1,048,576 bytes with a non-zero
+  exit (new requirement FR-017), and never reads more than the limit plus one byte. A
+  line that starts with three or more backticks opens a code fence only when no further
+  backtick follows that opening run, so a one-line snippet such as "```ls -la```" is
+  ordinary text (FR-003, revised).
+- Alternatives considered: no size limit, with the stall named as an accepted risk; a
+  256 KiB limit; keeping FR-003 as written, where the one-line snippet opens a fence that
+  swallows the rest of the file.
+- Reason: the prompt calls the script on every draw, so a huge file passed by mistake
+  would stall it, and nothing in the requirements bounded the read. A throwaway scan
+  took 29 ms on a 1 MB sample, so the 50 ms limit holds at the largest file allowed. The
+  backtick rule follows standard Markdown and removes a way for one ordinary line to
+  turn the whole count into an error.
+- Cost, accepted knowingly: a notes file over 1 MiB shows `?` in the prompt until it is
+  split. The script's fence rule now has one clause more than the rule accepted in
+  discovery.
+- Context: prototype, contracts design / Max's answers to two design questions,
+  2026-10-01
+
+## 2026-10-02 — Promise 50 ms for a notes-like file, not for every file under 1 MiB
+
+- Decision: `scratch_notes.py` keeps its 1 MiB size limit. The 50 ms limit (FR-012) is
+  promised for a notes-like file at that size, which is what the timing test builds: a
+  mix of headings, items, prose and fenced code. It is not promised for every file the
+  script accepts.
+- Alternatives considered: lowering the size limit to 128 KiB, so that every accepted
+  file finishes under 50 ms; keeping 1 MiB and reworking the scan to do less per line,
+  which still could not bring the slowest case under 50 ms.
+- Reason: the entry of 2026-10-01 said the 50 ms limit holds at the largest file
+  allowed. Timing the real script at exactly 1 MiB showed the time follows the number of
+  lines, not bytes: at most 21 ms on prose, 33 ms on a notes-like mix, 47 ms with an open
+  item on every line, and 165 ms on empty lines only. A real notes file is a few
+  kilobytes and takes 18 ms, and a megabyte of near-empty lines is not a notes file.
+  Max Adamsky chose to keep the larger limit over refusing long notes files.
+- Cost, accepted knowingly: a file of very short lines near the limit stalls the prompt
+  for up to about 165 ms. The timing test has about 10 ms of headroom once headings and
+  JSON are added, so it can fail on a busy machine and need a re-run.
+- Context: prototype, after the count unit (MAX-82) was built / Max's answer to a
+  finding from implementation
+
+## 2026-10-02 — Close the scratch-notes prototype with the 50 ms limit met by its stated method only
+
+- Decision: the scratch-notes prototype closes. FR-012, the 50 ms limit, is recorded as
+  met by the method it states, 20 calls in a row, with a slowest call of 33.7 ms on a
+  notes-like 1 MiB sample. It is not recorded as met "as the prompt calls it".
+- Alternatives considered: holding the prototype open, restating the limit for calls
+  spaced like prompt draws and adding a test for that, which on today's numbers fails
+  at 1 MiB and is borderline on a 4 KB file; closing after tidying two minor warnings in
+  the test file.
+- Reason: integration showed the timing test failing only on its first, cold call.
+  Single calls 1.5 seconds apart took about 46 ms on a 4 KB notes file and mostly 59 to
+  66 ms on the 1 MiB sample, against 17 ms and about 30 ms in a row. Starting the
+  interpreter after a pause is about 42 ms of that, so no change to the script helps,
+  and the figures come from a timing harness on one machine, not from the real prompt.
+  Max Adamsky chose to close and measure in the real prompt.
+- Cost, accepted knowingly: the success measure "each call takes under 50 ms, timed the
+  way the prompt calls it" is unproven, and may fail in the real prompt. If it does, the
+  fix is outside this script: the prompt's own call, for example running the interpreter
+  with `-I -S`, or the direction chosen in discovery of starting Python on every draw.
+- Context: prototype integration (MAX-86) / Max's answer to the post-integration
+  verifier's warning

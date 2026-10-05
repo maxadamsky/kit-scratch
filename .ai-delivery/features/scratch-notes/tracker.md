@@ -19,3 +19,7 @@
 - build: MAX-78 https://linear.app/max-test-workspace/issue/MAX-78/build-review
 - validate: MAX-79 https://linear.app/max-test-workspace/issue/MAX-79/validate-review
 - release: MAX-80 https://linear.app/max-test-workspace/issue/MAX-80/release-review
+
+## Prototype
+
+- integration: MAX-86 https://linear.app/max-test-workspace/issue/MAX-86/prove-scratch-notes-end-to-end-as-the-prompt-and-the-developer-use-it
