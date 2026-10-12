@@ -1,8 +1,8 @@
 ---
 schema_version: 1
 generated_on: 2026-08-12
-regenerated_on: null
-greenfield: true
+regenerated_on: 2026-09-21
+greenfield: false
 ---
 
 # Delivery Config
@@ -25,7 +25,7 @@ treated as team decisions), never the structure. Re-run setup after a stack chan
 - iac_tool: null
 - design_system: null
 - ui_facing: false
-- package_manifests: []
+- package_manifests: [pyproject.toml]
 - test_frameworks: [pytest]
 - security_tools: [bandit, pip-audit, gitleaks]
 - quality_tools: [ruff, mypy]
@@ -40,24 +40,39 @@ treated as team decisions), never the structure. Re-run setup after a stack chan
 ## Integrations
 
 - linear: connected
-- linear_team: CDR
-- notion: absent
+- linear_team: MAX
+- notion: connected
 - notion_parent: null
 - context7: absent
 
 ## Linear
 
-- team_id: dfb47107-1a3f-4ff6-8078-b0fdb40e4310
-- team_key: CDR
-- team_name: Cdrun-metrics
+- team_id: 06118a06-7715-441f-9c3e-7a216a09549d
+- team_key: MAX
+- team_name: Max-test-workspace
+- initiative_id: null
+- initiative_name: null
+- state_triage: Triage
 - state_backlog: Backlog
 - state_unstarted: Todo
 - state_started: In Progress
 - state_completed: Done
 - state_canceled: Canceled
 - state_review: null
-- state_table: Backlog=backlog; Todo=unstarted; In Progress=started; Done=completed; Canceled=canceled; Duplicate=duplicate
-- detected_on: 2026-08-12
+- handoff_reviewer: null
+- project_status_idea: Idea
+- project_status_proposal: Proposal
+- project_status_discovery: Discovery
+- project_status_ready: Ready
+- project_status_paused: Paused
+- project_status_prototype: Prototype
+- project_status_build: Build
+- project_status_validate: Validate
+- project_status_release: Release
+- project_status_completed: Completed
+- project_status_canceled: Canceled
+- state_table: Triage=triage; Backlog=backlog; Todo=unstarted; In Progress=started; Done=completed; Canceled=canceled; Duplicate=duplicate
+- detected_on: 2026-09-21
 
 ## Preferences
 
