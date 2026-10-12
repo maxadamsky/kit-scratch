@@ -70,8 +70,9 @@ items. Neither the developer nor their shell prompt can trust the count.
 - Errors on stderr with a non-zero exit code, and nothing on stdout.
 - One pytest file, including a test that runs the script with `python3 -I -S` to prove it
   imports only the standard library.
-- Item 3 of `CONTRIBUTING.md`, updated for the first tests, together with the refreshed kit
-  setup record that editing that file requires.
+- ~~Item 3 of `CONTRIBUTING.md`, updated for the first tests, together with the refreshed kit
+  setup record that editing that file requires.~~ **[REVISED in MAX-101, 2026-10-01]:**
+  descoped for this release. See Out of Scope.
 
 **Out of Scope:**
 - More than one file per run, and listing across projects.
@@ -86,6 +87,12 @@ items. Neither the developer nor their shell prompt can trust the count.
 - Finding a project's notes file. The prompt script passes an explicit path.
   **[ASSUMPTION — open question 3]**
 - Detecting cloud-synced files that haven't downloaded yet. **[ASSUMPTION — open question 6]**
+- **[REVISED in MAX-101, 2026-10-01]:** Rewriting item 3 of `CONTRIBUTING.md`, and anything
+  else in that file, in the kit's setup record or in the older pull request checklist
+  checks. Max Adamsky descoped this for this release. Item 3's rule sentence stays accurate
+  once tests land, because it only promises an empty run "until the first test module
+  lands". Its example line, which says `uv run pytest` exits with code 5 "today", will then
+  be out of date.
 
 ---
 
@@ -114,13 +121,15 @@ through below.
   `--json`, the prompt gets the count and headings on one line it can read on every draw,
   fast enough not to be noticed. It extends the same script and test file and prints the
   headings Unit 2 collects, so it is blocked by Units 1 and 2.
-- **Unit 4 (Medium): Tell contributors that `uv run pytest` now runs real tests.**
+- ~~**Unit 4 (Medium): Tell contributors that `uv run pytest` now runs real tests.**
   Contributors following the pull request checklist learn that `uv run pytest` must pass,
   instead of reading that "no tests ran" is expected. This unit touches only
   `CONTRIBUTING.md` and the kit's setup record, `.ai-delivery/stack-fingerprint`. Its
   wording doesn't depend on the script, so it can be built alongside Unit 1. It stays a
   unit of its own rather than folding into Unit 1, because it touches different files and
-  serves a different reader.
+  serves a different reader.~~
+  **[REVISED in MAX-101, 2026-10-01]:** dropped. Max Adamsky descoped it for this release,
+  and its Linear issue, MAX-101, is Canceled. Three units remain, built one after another.
 
 **Happy path:** Developer switches into a project → prompt runs
 `python3 scratch_notes.py <notes file> --json` → prompt shows the open count → developer
@@ -133,27 +142,32 @@ runs the same command without `--json` → reads the count and the headings → 
 | ID | Description | Priority | Acceptance Criteria |
 |----|-------------|----------|---------------------|
 | FR-001 | The command reads exactly one file and never changes it. | Urgent | `python3 scratch_notes.py <file>` works. **[REVISED 2026-10-01]:** the `--json` form moved to FR-007, so that this requirement and FR-007 fall in different units. Zero files, two files or an unknown option is a usage error on stderr with a non-zero exit. The file's bytes and modification time are unchanged after any run. |
-| FR-002 | Open checklist items are counted by the fixed line rule. | Urgent | A line counts as open when it has any indentation (spaces or tabs), then `-`, `*` or `+`, then one or more spaces or tabs, then exactly `[ ]`. These do not count: `[x]`, `[X]` and `[-]`; `- []`, `- [  ]` and `-[ ]`; numbered items such as `1. [ ]`. Each form listed here is its own test case. |
-| FR-003 | Lines inside fenced code blocks count as neither open items nor headings. | High | A fence opens on a line that, after any indentation, starts with three or more backticks or three or more tildes. The fence closes on the first later line that, after any indentation, holds only the same character, at least as many times, and optional trailing whitespace. Tests cover a checkbox line and a heading line inside a backtick fence and inside a tilde fence, a fence nested in a list item, and a backtick line inside a tilde fence. **[ASSUMPTION — open question 2]** |
+| FR-002 | Open checklist items are counted by the fixed line rule. | Urgent | A line counts as open when it has any indentation (spaces or tabs), then `-`, `*` or `+`, then one or more spaces or tabs, then exactly `[ ]`. These do not count: `[x]`, `[X]` and `[-]`; `- []`, `- [  ]` and `-[ ]`; numbered items such as `1. [ ]`. Each form listed here is its own test case. **[REVISED 2026-10-01]:** anything, or nothing, may follow `[ ]`: a bare `- [ ]` and `- [ ]buy milk`, with no space after the bracket, both count as open, and each is its own test case. |
+| FR-003 | Lines inside fenced code blocks count as neither open items nor headings. | High | A fence opens on a line that, after any indentation, starts with three or more backticks or three or more tildes. The fence closes on the first later line that, after any indentation, holds only the same character, at least as many times, and optional trailing whitespace. Tests cover a checkbox line and a heading line inside a backtick fence and inside a tilde fence, a fence nested in a list item, and a backtick line inside a tilde fence. **[ASSUMPTION — open question 2]** **[REVISED 2026-10-01]:** a backtick line opens a fence only when no further backtick follows the opening run, so a one-line snippet such as ` ```ls -la``` ` is ordinary text and not a fence. Tilde fences are unchanged. This is its own test case. |
 | FR-004 | An unclosed fence is an error. | Medium | A file that ends inside an open fence exits non-zero with a message on stderr that names the line where the fence opened. Nothing goes to stdout. This includes a fence the developer is still typing. **[ASSUMPTION — open question 2]** |
 | FR-005 | Headings are collected as written. | Medium | A heading is a line that starts, with no indentation, with one to six `#` followed by a space, a tab or the end of the line. It is reported exactly as written, `#` marks included, without the line ending or trailing whitespace. `#tag`, `#######` and underlined (setext) headings are not headings. **[ASSUMPTION — open question 5]** |
 | FR-006 | CRLF line endings and a leading byte-order mark are accepted. | Medium | A CRLF copy of a test file gives the same count and headings as the LF original. A UTF-8 byte-order mark before a first-line heading doesn't stop it counting. A file that isn't valid UTF-8 is an error. **[ASSUMPTION — open question 5]** |
 | FR-007 | `--json` prints exactly the count and the headings. | Urgent | `python3 scratch_notes.py <file> --json` works **[REVISED 2026-10-01: moved here from FR-001]**. Stdout is one line of JSON, `{"open": N, "headings": [...]}`, with no other keys. `N` is an integer and each heading is a string, in file order. An empty file gives `{"open": 0, "headings": []}`. |
 | FR-008 | Plain-text output opens with the count. | Medium | The first line of stdout is `open: N`, where N is the FR-002 count. **[REVISED 2026-10-01]:** the heading lines moved to FR-016, so that the count and the headings fall in different units. **[ASSUMPTION — open question 7]** |
-| FR-009 | Every failure is an error on stderr with a non-zero exit, and never output. | Urgent | Covered failures: a missing file, an unreadable file, invalid UTF-8, an unclosed fence and a usage error. For each one, stdout is empty, stderr holds a one-line message and the exit code is non-zero. No failure exits 0, so a broken run can never look like "nothing open". |
+| FR-009 | Every failure is an error on stderr with a non-zero exit, and never output. | Urgent | Covered failures: a missing file, an unreadable file, invalid UTF-8, an unclosed fence and a usage error, and, **[REVISED 2026-10-01]**, a file over the size limit in FR-017. For each one, stdout is empty, stderr holds a one-line message and the exit code is non-zero. No failure exits 0, so a broken run can never look like "nothing open". |
 | FR-010 | Only regular files are opened, so the prompt never hangs. | High | A directory, a named pipe or a device path exits non-zero within the time limit in FR-012, and is checked before the file is opened. The named-pipe case is a test with a timeout. |
 | FR-011 | The script imports only the standard library. | High | A test runs the script with `python3 -I -S` on a sample file and checks that it succeeds. The script declares no dependency and adds nothing to `pyproject.toml` or `uv.lock`. |
-| FR-012 | Each call finishes within 50 ms, timed as the prompt calls it. | High | Using the interpreter the prompt uses, run `python3 scratch_notes.py <largest notes file> --json` 20 times in a row. The slowest run is under 50 ms, and the timings are recorded with the unit's verification. **[ASSUMPTION — open question 1]** |
+| FR-012 | Each call finishes within 50 ms, timed as the prompt calls it. | High | Using the interpreter the prompt uses, run `python3 scratch_notes.py <largest notes file> --json` 20 times in a row. The slowest run is under 50 ms, and the timings are recorded with the unit's verification. **[ASSUMPTION — open question 1]** **[REVISED 2026-10-01]:** no real notes files exist in or near this repository, so the timing uses a sample file built by the tests at the size limit in FR-017, the largest file the script accepts. **[REVISED in MAX-100, 2026-10-02]:** the sample is a notes-like mix of headings, items, prose and fenced code, and the 50 ms limit is promised for that kind of file. It is not promised for every file the script accepts: the time follows the number of lines, and a 1 MiB file of very short lines took up to 165 ms when timed. **[REVISED in MAX-102, 2026-10-02]:** this requirement is met by its stated method, 20 runs in a row, with a slowest run of 33.7 ms. That method times warm calls. Timed as single calls 1.5 seconds apart, the way a prompt draw arrives, the script took about 46 ms on a 4 KB notes file (up to 51.4 ms) and mostly 59 to 66 ms on the 1 MiB sample; starting the interpreter after a pause accounts for about 42 ms of that. Whether the limit holds as the prompt really calls the script is therefore not shown, and Max Adamsky owns timing it in the real prompt. |
 | FR-013 | Running under a Python older than 3.11 fails clearly. | Medium | Under `/usr/bin/python3` (3.9.6 on this machine), the script exits non-zero with a message on stderr naming the required version, and prints nothing on stdout. |
-| FR-014 | The contributor checklist says `uv run pytest` now runs and must pass. | Medium | Item 3 of `CONTRIBUTING.md` and its example no longer say that "no tests ran" with exit code 5 is expected. They say that `uv run pytest` runs the tests and must pass before a pull request is opened. No other item changes. |
-| FR-015 | The kit's setup check still passes after `CONTRIBUTING.md` changes. | Medium | Once the change lands, the setup check reports FRESH, not STALE. The refreshed setup record, `.ai-delivery/stack-fingerprint`, lands in the same change as the `CONTRIBUTING.md` edit. That file stores a hash of `CONTRIBUTING.md`, so any edit to it makes the check report STALE until setup re-runs. |
+| ~~FR-014~~ | **[REVISED in MAX-101, 2026-10-01]: descoped for this release.** ~~The contributor checklist says `uv run pytest` now runs and must pass. | Medium | Item 3 of `CONTRIBUTING.md` and its example no longer say that "no tests ran" with exit code 5 is expected. They say that `uv run pytest` runs the tests and must pass before a pull request is opened. No other item changes.~~ |
+| ~~FR-015~~ | **[REVISED in MAX-101, 2026-10-01]: descoped for this release.** ~~The kit's setup check still passes after `CONTRIBUTING.md` changes. | Medium | Once the change lands, the setup check reports FRESH, not STALE. The refreshed setup record, `.ai-delivery/stack-fingerprint`, lands in the same change as the `CONTRIBUTING.md` edit. That file stores a hash of `CONTRIBUTING.md`, so any edit to it makes the check report STALE until setup re-runs.~~ |
+| FR-017 | A file over 1 MiB is refused, so the prompt can't stall on a huge file. | High | **[REVISED 2026-10-01: new]** A file larger than 1,048,576 bytes exits non-zero with a one-line message on stderr that names the limit, and prints nothing on stdout. A file of exactly 1,048,576 bytes is read. The script never reads more than the limit plus one byte, even if the file grows while it is being read. Each case is a test. **[REVISED in MAX-100, 2026-10-02]:** the limit bounds how long a run can take, at about 165 ms for the slowest file timed; it does not by itself keep every run under the 50 ms of FR-012. |
 | FR-016 | Plain-text output lists the headings after the count line. | Medium | **[REVISED 2026-10-01: split from FR-008]** After the `open: N` line, each heading appears on its own line, in file order, as collected by FR-005. A file with no headings prints only the `open: N` line. **[ASSUMPTION — open question 7]** |
 
-Priorities: 4 Urgent, 4 High and 8 Medium. Urgent and High together are 8 of 16, or 50%.
+Priorities: 4 Urgent, 5 High and 6 Medium, across the 15 requirements in scope, FR-017
+included. Urgent and High together are 9 of 15, or 60%. **[REVISED in MAX-101, 2026-10-01]:** this was
+4 Urgent, 4 High and 8 Medium, 8 of 16, before FR-014 and FR-015 were descoped.
 
 **Which unit covers which requirement** (each requirement in exactly one unit):
-Unit 1 — FR-001, FR-002, FR-003, FR-004, FR-006, FR-008, FR-009, FR-010, FR-011, FR-013.
-Unit 2 — FR-005, FR-016. Unit 3 — FR-007, FR-012. Unit 4 — FR-014, FR-015.
+Unit 1 — FR-001, FR-002, FR-003, FR-004, FR-006, FR-008, FR-009, FR-010, FR-011, FR-013,
+FR-017 **[REVISED 2026-10-01]**.
+Unit 2 — FR-005, FR-016. Unit 3 — FR-007, FR-012. ~~Unit 4 — FR-014, FR-015.~~
+**[REVISED in MAX-101, 2026-10-01]:** Unit 4 is dropped, and FR-014 and FR-015 with it.
 
 **Design-system components:** none. The work is not UI-facing.
 
@@ -172,6 +186,8 @@ Unit 2 — FR-005, FR-016. Unit 3 — FR-007, FR-012. Unit 4 — FR-014, FR-015.
   `pyproject.toml` and the presence of files such as `conftest.py` and `pytest.ini`.
   Adding either of those files would make the setup check report STALE, so the tests
   need neither (checked against `.ai-delivery/stack-fingerprint`, 2026-09-30).
+  **[REVISED in MAX-101, 2026-10-01]:** with Unit 4 dropped, this feature changes none of
+  the tracked files, so the setup check stays FRESH throughout.
 - **Quality gates.** The script and its tests pass the project's `ruff` and `mypy` checks.
 - **Shared files between units.** Units 1–3 all change `scratch_notes.py` and its test
   file, so they are built one after another, not in parallel. This departs from the
@@ -221,10 +237,21 @@ working answer. Question 5 still needs the check on the real notes files describ
   the plain text. Working answer: FR-008's `open: N` line, followed by the headings
   (FR-016). Affects FR-008 and FR-016.
 
-**Action this document surfaced.** Max Adamsky owns it:
+**Actions this document surfaced.** Max Adamsky owns both:
 
-- Before any code is written, run the line rule against the ten real notes files
-  (question 5). Bring any disagreement back so it becomes a test case.
+- ~~Before any code is written, run the line rule against the ten real notes files
+  (question 5). Bring any disagreement back so it becomes a test case.~~
+  **[REVISED 2026-10-01]:** this can't be done before the code is written, because no real
+  notes files exist in or near this repository. The tests use a representative sample file
+  instead. The first success measure, that the count equals a hand count on real notes
+  files, is therefore unproven until Max Adamsky runs the finished script on real notes
+  files. Any disagreement found then comes back as a revision of this document and a new
+  test case.
+- **[REVISED in MAX-101, 2026-10-01]:** decide in which later release item 3 of
+  `CONTRIBUTING.md` and its example are rewritten.
+- **[REVISED in MAX-102, 2026-10-02]:** time the script in the real shell prompt, one
+  call per draw, before trusting the 50 ms success measure. Calls spaced 1.5 seconds
+  apart measured about 46 ms on a 4 KB notes file, most of it interpreter start-up.
 
 Discovery is closed: its review gate issue and its research issue were both marked Done
 on 2026-09-30.
@@ -236,3 +263,10 @@ on 2026-09-30.
 | Date | Change | Reason | Rework ID |
 |------|--------|--------|-----------|
 | 2026-10-01 | Section 3: the two units became four. The script now has one unit for each thing it prints (count, headings, `--json`), and the `CONTRIBUTING.md` unit is unchanged. FR-001's `--json` form moved to FR-007. FR-008's heading lines became the new FR-016. A shared-files constraint was added. | Max Adamsky asked for this split while reviewing the decomposition, and accepted that Units 1–3 share `scratch_notes.py`. This was classed as a Moderate change to the decomposition, made before any Linear issue existed. | 2026-10-01 |
+| 2026-10-01 | Unit 4 dropped; FR-014 and FR-015 descoped. The `CONTRIBUTING.md` bullet moved from In Scope to Out of Scope. Priority totals and the unit-to-requirement map updated. | Max Adamsky dropped the unit when asked what should happen to the older check that requires item 3's current wording, with the reason "descoped for this release". A requirements change of Moderate size: one unit, no effect on the other three. | MAX-101 |
+| 2026-10-01 | FR-002 now says that anything, or nothing, may follow `[ ]`. | The rule didn't say what may follow the brackets. Max Adamsky chose "both count" for a bare `- [ ]` and for `- [ ]buy milk`. A Targeted clarification, made at the start of technical design. | MAX-98 |
+| 2026-10-01 | New FR-017: a file over 1 MiB is refused. FR-009's list of failures gains it, and FR-012 is timed at that size. | Nothing limited the size of the file read, so a huge file passed by mistake could stall the prompt. Max Adamsky chose a 1 MiB limit; a throwaway scan took 29 ms on a 1 MB sample. A Targeted addition to one unit, made during technical design. | MAX-98 |
+| 2026-10-01 | FR-003: a backtick line opens a fence only when no further backtick follows the opening run. | As written, a one-line snippet such as ` ```ls -la``` ` opened a fence that swallowed the rest of the file. Max Adamsky chose the standard Markdown reading. A Targeted clarification, made during technical design. | MAX-98 |
+| 2026-10-02 | The 50 ms limit is promised for a notes-like file at the size limit, not for every file the script accepts. | Timing the real script at 1 MiB took at most 33 ms on a notes-like mix, 47 ms with an open item on every line and 165 ms on empty lines only: the time follows the number of lines. Max Adamsky kept the 1 MiB limit and restated the promise. A Targeted change to wording, with no code change. | MAX-100 |
+| 2026-10-02 | FR-012 is recorded as met by its stated method only. A note says what spaced calls measured, and an action asks for a timing in the real prompt. | Integration showed the timing test failing only on its first, cold call, and single calls 1.5 seconds apart taking about 46 ms on a 4 KB file. Max Adamsky chose to close the prototype with the gap recorded. A Targeted change to wording, with no code change. | MAX-102 |
+| 2026-10-01 | FR-012 is timed against a sample file built by the tests. The action to run the line rule on ten real notes files before coding is replaced by a check after the script exists. | Max Adamsky confirmed that no real notes files exist here. A Targeted change, made at the start of technical design. | MAX-98 |

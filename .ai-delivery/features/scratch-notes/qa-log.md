@@ -231,3 +231,109 @@ headings blocked by count and JSON blocked by count and headings?
 milestone of P-MAX-15, with three blocked-by links, and moved the project from Discovery
 to Ready because the Discovery review gate issue was closed. Header set to
 `Decomposition: populated (2026-10-01)`.
+
+## Prototype exchanges
+
+Prototype started 2026-10-01 from the approved requirements. Numbering continues from the
+shape exchanges above. Requirement labels such as FR-002 are the ones defined in
+`requirements.md` in this folder.
+
+### 30. Feature to prototype
+**Asked:** Which feature should prototype pick up — scratch-notes (shaped today, four units
+in Backlog), repository-changelog, or one of the older shaped features?
+**Answer:** "Scratch notes 3.0.2 live proof."
+
+### 31. Where the real notes files are
+**Asked:** The requirements ask for the line rule to be run against the ten real notes
+files before any code is written, and for the 50 ms timing to use the largest one. Where
+are those files?
+**Answer:** "No real files here." Recorded: the tests build a representative sample file,
+and the 50 ms timing uses it. The first success measure, that the count equals a hand count
+on real notes files, stays unproven until Max Adamsky runs the finished script on real
+files. FR-012 and the surfaced action in the requirements were revised to say so.
+
+### 32. The older check that requires item 3's current wording
+**Asked:** Rewriting item 3 of `CONTRIBUTING.md` breaks a check from the pull request
+checklist feature, which requires item 3 to say "no tests ran" and "exit code 5". Update
+that check in the same unit, leave it failing, or move the old checks into `tests/`?
+**Answer:** "Drop MAX-101 (the CONTRIBUTING.md unit) with the reason "descoped for this
+release". CONTRIBUTING.md and the old check stay as they are."
+Recorded: MAX-101, the Linear issue for the `CONTRIBUTING.md` unit, was moved to Canceled
+with a comment giving the reason. FR-014 and FR-015 are marked descoped in the
+requirements, and three units remain. The cost is recorded too: once the first test lands,
+item 3's example line, which says `uv run pytest` exits with code 5 "today", is out of
+date. Its rule sentence stays accurate.
+
+### 33. What may follow the brackets of an open item
+**Asked:** The open-item rule ends at "exactly `[ ]`". Should `- [ ]buy milk`, with no
+space after the bracket, or a bare `- [ ]` count as open?
+**Answer:** "Both count." FR-002 was revised to say that anything, or nothing, may follow
+`[ ]`, and each form is its own test case.
+
+### 34. A limit on the size of the file read
+**Asked:** Nothing in the requirements limits how big a file the script will read. Refuse
+files over 1 MiB, refuse over 256 KiB, or set no limit? A throwaway scan took 29 ms on a
+1 MB sample and 41 ms on a 2 MB one.
+**Answer:** "Refuse over 1 MiB." Recorded as the new requirement FR-017 in MAX-98's unit.
+FR-009's list of failures gains it, and the 50 ms timing (FR-012) uses a sample file of
+that size.
+
+### 35. A one-line snippet that starts with three backticks
+**Asked:** FR-003 says any line starting with three backticks opens a code fence, so a
+one-line snippet such as "```ls -la```" would swallow the rest of the file. Treat such a
+line as not a fence, or keep FR-003 as written?
+**Answer:** "Not a fence." FR-003 was revised: a backtick line opens a fence only when no
+further backtick follows the opening run. Tilde fences are unchanged.
+
+### 36. The unit breakdown
+**Asked:** Keep the three units in sequence (MAX-98, MAX-99, MAX-100, all sharing the same
+two files), create one integration issue blocked by all three, and append a pointer to
+its spec on each issue's description?
+**Answer:** "Approve as described." Created MAX-102, "Prove scratch-notes end to end, as
+the prompt and the developer use it", in the Prototype milestone with the `integration`
+label and High priority, blocked by the three units, and recorded it in `tracker.md`. A
+"Prototype notes" section was appended to MAX-98, MAX-99 and MAX-100.
+
+### 37. The four specs
+**Asked:** Approve the four specs as written — `count-open-items.md`, `list-headings.md`,
+`json-output.md` and `integration.md` in `specs/`?
+**Answer:** "Approve all four." Each spec was marked complete.
+
+### 38. The implementation plan
+**Asked:** Approve the implementation plan — three batches of one unit each (MAX-98, then
+MAX-99, then MAX-100), each limited to `scratch_notes.py` and
+`tests/test_scratch_notes.py`, then verification and integration (MAX-102), with the
+Linear changes listed? The plan also stated one reading of the kit's rules: a block
+between these units counts as lifted once the blocking unit is built and passes the whole
+suite, because the kit moves units to Done only at integration.
+**Answer:** Approved in plan mode, as written.
+
+### 39. The 50 ms limit against the 1 MiB size limit
+**Asked:** Timing the real script at exactly 1 MiB showed the 50 ms limit holds for prose
+(21 ms), a notes-like mix (33 ms) and an open item on every line (47 ms), but not for a
+file of empty lines only (165 ms). Keep 1 MiB and restate the promise, lower the limit to
+128 KiB so the promise holds for every file, or keep 1 MiB and speed up the scan?
+**Answer:** "Keep 1 MiB, restate promise." FR-012 and FR-017 were revised: the 50 ms limit
+is promised for a notes-like file at the size limit, and a file of very short lines may
+take up to about 165 ms. No code changed. This corrects a statement made at exchange 34,
+that the 50 ms limit holds at the largest file allowed.
+
+### 40. Warnings from verification
+**Asked:** The headings unit (MAX-99) passed. The count unit (MAX-98) and the JSON unit
+(MAX-100) passed with warnings: invisible characters typed raw into ten lines of the two
+files, two small test gaps, a timing test that can fail on a busy machine, four failures
+tested in plain mode only, and a repeated-option message that reads "given twice" for
+three. Fix the MAX-98 ones, accept all warnings, or fix everything fixable?
+**Answer:** "Accept all warnings." Both units were marked verified with the warnings
+recorded on their issues and in `verification.md`. The four failures tested in plain
+mode only were added to the integration unit's failure journey, with `--json`.
+
+### 41. Closing the prototype with the timing gap
+**Asked:** The whole-feature verifier returned pass-with-warnings. The 50 ms limit passes
+by its stated method, 20 calls in a row (slowest 33.7 ms), but single calls 1.5 seconds
+apart, the way prompt draws arrive, took about 46 ms on a 4 KB file and about 60 ms on
+the 1 MiB sample, most of it interpreter start-up. Close with the gap recorded, hold the
+prototype open and rework FR-012, or close after fixing the two minor warnings?
+**Answer:** "Close, with the gap recorded." FR-012 is recorded as met by its stated
+method only, and timing the script in the real prompt is an open action for Max
+Adamsky. MAX-98, MAX-99, MAX-100 and MAX-102 were moved to Done.
