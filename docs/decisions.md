@@ -762,12 +762,12 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
 ## 2026-10-01 — Split scratch-notes into one unit per printed output, sharing one script
 
 - Decision: scratch-notes is tracked as four Prototype-milestone issues in project
-  P-MAX-14 (Scratch notes). Three of them cover the three things the script prints: the
-  open count (MAX-82, the foundation), the headings (MAX-83) and the `--json` output
-  (MAX-84). All three change `scratch_notes.py` and its single test file, so MAX-83 is
-  blocked by MAX-82, and MAX-84 is blocked by both. The fourth, MAX-85, updates item 3 of
+  P-MAX-15 (Scratch notes 3.0.2 live proof). Three of them cover the three things the script prints: the
+  open count (MAX-98, the foundation), the headings (MAX-99) and the `--json` output
+  (MAX-100). All three change `scratch_notes.py` and its single test file, so MAX-99 is
+  blocked by MAX-98, and MAX-100 is blocked by both. The fourth, MAX-101, updates item 3 of
   `CONTRIBUTING.md` and touches no file the others touch, so it can be built alongside
-  MAX-82.
+  MAX-98.
 - Alternatives considered: one issue for the whole script plus the `CONTRIBUTING.md`
   issue, which was shape's proposal because the software profile treats units sharing
   files as a defect; folding the `CONTRIBUTING.md` change into the count issue.
@@ -775,8 +775,8 @@ On 2026-08-28, owner Max Adamsky ruled. Canonical record: `ai-delivery-kit` comm
   The `CONTRIBUTING.md` change stays separate because it touches different files, serves
   a different reader, and is the only work that can run alongside the foundation.
 - Cost, accepted knowingly: the three script issues are built one after another, not in
-  parallel. The chain is three deep, the most the kit allows. MAX-84 is Urgent but waits
-  on MAX-83, which is Medium. The approved requirements put `scratch_notes.py` at the
+  parallel. The chain is three deep, the most the kit allows. MAX-100 is Urgent but waits
+  on MAX-99, which is Medium. The approved requirements put `scratch_notes.py` at the
   repository root, but the recorded lint, format and type-check gates in
   `.ai-delivery/gates.md` cover only `src/` and `tests/`. Those gates therefore don't
   check the script until prototype either runs them on the file by name or settles where

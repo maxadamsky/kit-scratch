@@ -10,9 +10,9 @@ switch projects, and today the grep they use miscounts it, so the number cannot 
 **Created:** 2026-09-29
 **Topic:** scratch-notes
 **Discover Session Status:** Completed
-**Project:** P-MAX-14 Scratch notes — https://linear.app/max-test-workspace/project/scratch-notes-d9e550798d93
+**Project:** P-MAX-15 Scratch notes 3.0.2 live proof — https://linear.app/max-test-workspace/project/scratch-notes-302-live-proof-bd6ecd9d3df9
 **Council:** constraint, precedent, stress, null, operator
-**Discovery issues:** research: MAX-81 https://linear.app/max-test-workspace/issue/MAX-81/explore-solution-directions-for-scratch-notes-and-write-the-decision
+**Discovery issues:** research: MAX-97 https://linear.app/max-test-workspace/issue/MAX-97/explore-solution-directions-for-scratch-notes-and-write-the-decision
 
 **Reading the finding IDs.** Sections 5, 6, 10 and 11 cite findings from the exploration by
 ID. The prefix names the perspective that produced the finding, and the number is its
@@ -362,8 +362,8 @@ Max Adamsky, as project lead, owns each of these:
 - **Before shape completes:** answer open questions 1–6.
 - **For question 5, before any code is written:** run the agreed line rule against the ten
   real notes files.
-- **When discovery is complete:** close the Discovery review gate issue, `MAX-76`, and the
-  research issue, `MAX-81`. Research is complete and success measures are written here,
+- **When discovery is complete:** close the Discovery review gate issue, `MAX-92`, and the
+  research issue, `MAX-97`. Research is complete and success measures are written here,
   which is what the gate's criteria require.
 
 ---

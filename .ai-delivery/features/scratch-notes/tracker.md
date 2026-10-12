@@ -1,21 +1,21 @@
-# Tracker — Scratch notes
+# Tracker — Scratch notes 3.0.2 live proof
 
-- linear_project: 278ac609-01e3-4a32-bc13-503931188267
-- linear_project_url: https://linear.app/max-test-workspace/project/scratch-notes-d9e550798d93
+- linear_project: c7c90dcf-aa65-45c6-9364-89998f913174
+- linear_project_url: https://linear.app/max-test-workspace/project/scratch-notes-302-live-proof-bd6ecd9d3df9
 - team: MAX
-- created_on: 2026-10-01
+- created_on: 2026-10-12
 
 ## Units
 
-- count-open-items: MAX-82 https://linear.app/max-test-workspace/issue/MAX-82/count-the-open-checklist-items-in-a-notes-file
-- list-headings: MAX-83 https://linear.app/max-test-workspace/issue/MAX-83/list-the-notes-files-headings-under-the-count
-- json-output: MAX-84 https://linear.app/max-test-workspace/issue/MAX-84/give-the-shell-prompt-the-count-and-headings-as-json
-- update-contributing-tests: MAX-85 https://linear.app/max-test-workspace/issue/MAX-85/tell-contributors-that-uv-run-pytest-now-runs-real-tests
+- count-open-items: MAX-98 https://linear.app/max-test-workspace/issue/MAX-98/count-the-open-checklist-items-in-a-notes-file
+- list-headings: MAX-99 https://linear.app/max-test-workspace/issue/MAX-99/list-the-notes-files-headings-under-the-count
+- json-output: MAX-100 https://linear.app/max-test-workspace/issue/MAX-100/give-the-shell-prompt-the-count-and-headings-as-json
+- update-contributing-tests: MAX-101 https://linear.app/max-test-workspace/issue/MAX-101/tell-contributors-that-uv-run-pytest-now-runs-real-tests
 
 ## Gates
 
-- discovery: MAX-76 https://linear.app/max-test-workspace/issue/MAX-76/discovery-review
-- prototype: MAX-77 https://linear.app/max-test-workspace/issue/MAX-77/prototype-review
-- build: MAX-78 https://linear.app/max-test-workspace/issue/MAX-78/build-review
-- validate: MAX-79 https://linear.app/max-test-workspace/issue/MAX-79/validate-review
-- release: MAX-80 https://linear.app/max-test-workspace/issue/MAX-80/release-review
+- discovery: MAX-92 https://linear.app/max-test-workspace/issue/MAX-92/discovery-review
+- prototype: MAX-93 https://linear.app/max-test-workspace/issue/MAX-93/prototype-review
+- build: MAX-94 https://linear.app/max-test-workspace/issue/MAX-94/build-review
+- validate: MAX-95 https://linear.app/max-test-workspace/issue/MAX-95/validate-review
+- release: MAX-96 https://linear.app/max-test-workspace/issue/MAX-96/release-review

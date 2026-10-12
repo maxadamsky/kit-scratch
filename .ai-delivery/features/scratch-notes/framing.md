@@ -3,9 +3,9 @@
 **Created:** 2026-09-29
 **Status:** Completed
 **Profile:** software (of config: software)
-**Project:** P-MAX-14 (Scratch notes)
+**Project:** P-MAX-15 (Scratch notes 3.0.2 live proof)
 **Risk challenge:** requested
-**Discovery issues:** MAX-81 (Explore solution directions for scratch-notes and write the decision brief)
+**Discovery issues:** MAX-97 (Explore solution directions for scratch-notes and write the decision brief)
 **Council roster:** constraint, precedent, stress, null, operator (of: constraint, precedent, stress, null, operator)
 
 ## Raw Description

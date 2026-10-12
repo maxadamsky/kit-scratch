@@ -1,12 +1,12 @@
-# Q&A log — Scratch notes
+# Q&A log — Scratch notes 3.0.2 live proof
 
 Questions and answers behind the scratch-notes discovery. The log keeps each decision
 traceable to the answer that settled it, so a reader who was not in the session can see
 why the framing and the brief say what they say.
 
 - Feature folder: .ai-delivery/features/scratch-notes/
-- Linear project: Scratch notes (P-MAX-14,
-  https://linear.app/max-test-workspace/project/scratch-notes-d9e550798d93), lead Max Adamsky
+- Linear project: Scratch notes 3.0.2 live proof (P-MAX-15,
+  https://linear.app/max-test-workspace/project/scratch-notes-302-live-proof-bd6ecd9d3df9), lead Max Adamsky
 - Started: 2026-09-29
 - Entry point: discover — a new topic, framed by guided interview.
 
@@ -19,11 +19,11 @@ notes file and prints three things: the count of open checklist items, the list 
 headings, and the same summary as JSON when given --json."
 
 ### 2. Linear tracking
-**Asked:** No project named Scratch notes exists in team MAX. Create one, name an existing
+**Asked:** No project named Scratch notes 3.0.2 live proof exists in team MAX. Create one, name an existing
 one, or run untracked?
-**Answer:** Create "Scratch notes", with Max Adamsky as lead. Created as P-MAX-14, unattached
-(no initiative is bound), with the five stage milestones and five gate issues (`MAX-76`
-Discovery review through `MAX-80` Release review), each read back after writing. Project
+**Answer:** Create "Scratch notes 3.0.2 live proof", with Max Adamsky as lead. Created as P-MAX-15, unattached
+(no initiative is bound), with the five stage milestones and five gate issues (`MAX-92`
+Discovery review through `MAX-96` Release review), each read back after writing. Project
 status moved from Backlog to Discovery and read back.
 
 ### 3. Who is affected
@@ -94,7 +94,7 @@ Q&A logging and the five-member council came from config and were not asked.
 **Asked:** Creating the Discovery research issue failed twice with a 503 from Linear; the
 project was checked after each failure and held no such issue. Retry now, explore first and
 create later, or wait?
-**Answer:** "1" — retry now. The retry succeeded: `MAX-81`, "Explore solution directions for
+**Answer:** "1" — retry now. The retry succeeded: `MAX-97`, "Explore solution directions for
 scratch-notes and write the decision brief", in the Discovery milestone, read back.
 
 ### 12. Exploration synthesis review
@@ -200,7 +200,7 @@ questions from the brief be answered now, or drafted as flagged assumptions?
 
 ### 26. Document depth and Linear population
 **Asked:** Full (10 sections with review) or Lite (4 sections) requirements document? And
-after approval, decompose into units of work and create them as issues in project P-MAX-14?
+after approval, decompose into units of work and create them as issues in project P-MAX-15?
 **Answer:** "Lite." "Yes, create them." Recorded as `Decomposition: planned` in the
 requirements header.
 
@@ -227,7 +227,7 @@ contributors that `uv run pytest` now runs real tests.
 ### 29. Revised decomposition approval
 **Asked:** Create the four issues (count, headings, JSON and `CONTRIBUTING.md`), with
 headings blocked by count and JSON blocked by count and headings?
-**Answer:** "Approve as-is." Created MAX-82, MAX-83, MAX-84 and MAX-85 in the Prototype
-milestone of P-MAX-14, with three blocked-by links, and moved the project from Discovery
+**Answer:** "Approve as-is." Created MAX-98, MAX-99, MAX-100 and MAX-101 in the Prototype
+milestone of P-MAX-15, with three blocked-by links, and moved the project from Discovery
 to Ready because the Discovery review gate issue was closed. Header set to
 `Decomposition: populated (2026-10-01)`.

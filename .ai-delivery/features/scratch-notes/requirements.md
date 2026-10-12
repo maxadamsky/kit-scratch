@@ -1,4 +1,4 @@
-# Lite requirements document — Scratch notes
+# Lite requirements document — Scratch notes 3.0.2 live proof
 
 Build scratch-notes, a small Python script that uses only the standard library. It reads one
 Markdown notes file and reports how many checklist items are still open, plus the file's
@@ -12,13 +12,13 @@ number can't be trusted.
 **Decomposition:** populated (2026-10-01)
 **Profile:** software (of config: software)
 **Entry point:** discover — `.ai-delivery/features/scratch-notes/brief.md`
-**Project:** P-MAX-14 Scratch notes — https://linear.app/max-test-workspace/project/scratch-notes-d9e550798d93
+**Project:** P-MAX-15 Scratch notes 3.0.2 live proof — https://linear.app/max-test-workspace/project/scratch-notes-302-live-proof-bd6ecd9d3df9
 **Notes:** UX ideation skipped: not UI-facing (`ui_facing: false` in `.ai-delivery/config.md`).
 This repository file is the home of this document. Notion is connected, but the standing
 decision in `.ai-delivery/conventions.md` is that the repository owns every document.
 
 > The Status, Decomposition and Notes lines are this document's own progress record. The
-> shape skill reads them to tell where the work stands. P-MAX-14 is the Linear project this
+> shape skill reads them to tell where the work stands. P-MAX-15 is the Linear project this
 > work is tracked in; the discover skill created it. Requirement IDs (FR-001 onward) are
 > this document's labels for its requirements, so issues and later documents can cite them.
 > A line marked **[ASSUMPTION]** gives a working answer to one of the numbered open
